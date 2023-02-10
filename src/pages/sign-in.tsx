@@ -3,6 +3,7 @@ import { InputPassword } from '../components/input/input-password';
 import { InputText } from '../components/input/input-text';
 
 const SignIn = () => {
+  // TODO: move reusable parts to /layouts
   return (
     <Stack
       width='100%'
