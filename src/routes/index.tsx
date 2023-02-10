@@ -1,34 +1,37 @@
-import { createBrowserRouter, Outlet } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { queryClient } from '../config/react-query';
 import { userQuery } from '../constants/queries';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Outlet />,
-    children: [
-      {
-        index: true,
-        element: <div>Home</div>,
-      },
-      {
-        path: 'account',
-        children: [
-          { index: true, element: <div>Account</div> },
-          {
-            path: ':id',
-            element: <div>Account Details</div>,
-            loader: async ({ params }) => {
-              const query = userQuery(params.id);
-              return (
-                queryClient.getQueryData(query.queryKey) ??
-                (await queryClient.fetchQuery(query))
-              );
-            },
-          },
-        ],
-      },
-    ],
+    element: <Navigate to='/files' />,
+  },
+  {
+    path: '/files',
+    element: await import('../pages/files').then(({ Files }) => <Files />),
+  },
+  {
+    path: '/shares',
+    element: await import('../pages/shares').then(({ Shares }) => <Shares />),
+  },
+  {
+    path: '/profile',
+    element: await import('../pages/profile').then(({ Profile }) => (
+      <Profile />
+    )),
+    // TODO: implement loaders, this is just an example
+    loader: async ({ params }) => {
+      const query = userQuery(params.id);
+      return (
+        queryClient.getQueryData(query.queryKey) ??
+        (await queryClient.fetchQuery(query))
+      );
+    },
+  },
+  {
+    path: '/signin',
+    element: await import('../pages/signin').then(({ SignIn }) => <SignIn />),
   },
 ]);
 
