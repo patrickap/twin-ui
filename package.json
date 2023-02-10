@@ -12,8 +12,10 @@
     "@chakra-ui/pro-theme": "^0.0.63",
     "@chakra-ui/react": "^2.4.9",
     "@heroicons/react": "^2.0.15",
+    "@tanstack/react-query": "^4.24.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",

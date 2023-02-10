@@ -1,8 +1,8 @@
 import { getUser } from '../api/user';
 
-const UserQuery = (id: string) => ({
+const userQuery = (id?: string) => ({
   queryKey: ['user', id],
   queryFn: async () => getUser(id),
 });
 
-export { UserQuery };
+export { userQuery };

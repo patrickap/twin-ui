@@ -1,6 +1,6 @@
 import { User } from '../types/user';
 
-const getUser = (id: User['id']) => {
+const getUser = (id?: string) => {
   return Promise.resolve({ id: '1', username: 'testuser' } as User);
 };
 
