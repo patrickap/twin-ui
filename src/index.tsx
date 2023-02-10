@@ -6,7 +6,7 @@ import { RouterProvider } from 'react-router-dom';
 import { chakraTheme } from './config/chakra-config';
 import { queryClient } from './config/react-query';
 import './index.css';
-import { router } from './routes/routes';
+import { router } from './routes';
 
 const root = document.getElementById('root') as HTMLElement;
 
