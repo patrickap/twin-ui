@@ -12,6 +12,7 @@ type NavLinkProps = {
 
 const NavLink = ({ icon, children, ...props }: NavLinkProps) => {
   // TODO: why is gray and white the default color in chakra ui using color scheme gray?
+  // TODO: not needed, burton accepts isActive prop!!!
   const linkBackground = useColorModeValue('gray.200', 'whiteAlpha.300');
 
   return (
