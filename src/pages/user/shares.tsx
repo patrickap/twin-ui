@@ -1,5 +1,5 @@
 const Shares = () => {
-  return <>Shares Page</>;
+  return <>Shared files</>;
 };
 
 export { Shares };

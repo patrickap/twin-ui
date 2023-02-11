@@ -10,8 +10,7 @@ import {
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import { InputPassword } from '../components/input/input-password';
-import { InputText } from '../components/input/input-text';
+import { InputPassword, InputText } from '../components/input';
 import { SignInForm, signInFormSchema } from '../schemas/forms';
 
 const SignIn = () => {

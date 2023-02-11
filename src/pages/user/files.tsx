@@ -1,5 +1,5 @@
 const Files = () => {
-  return <>Files Page</>;
+  return <>User files</>;
 };
 
 export { Files };
