@@ -1,4 +1,4 @@
-import { Container, HStack, Stack } from '@chakra-ui/react';
+import { Container, HStack, Stack, useColorModeValue } from '@chakra-ui/react';
 import {
   CalendarDaysIcon,
   CircleStackIcon,
@@ -24,6 +24,7 @@ const Dashboard = ({ children }: DashboardProps) => {
   const user = useQuery(userQuery('1'));
   const isUser = user.data?.role === 'user';
   const isAdmin = user.data?.role === 'admin';
+  const sideBackground = useColorModeValue('gray.100', 'gray.800');
 
   return (
     <HStack h='100vh' spacing={0}>
@@ -32,11 +33,10 @@ const Dashboard = ({ children }: DashboardProps) => {
         h='100%'
         px={4}
         py={8}
-        bg='gray.100'
+        bg={sideBackground}
       >
         {isUser ? (
           <>
-            {' '}
             <NavLink to='files' icon={FolderIcon}>
               Files
             </NavLink>

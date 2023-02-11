@@ -1,4 +1,4 @@
-import { Button, Icon, LinkOverlay } from '@chakra-ui/react';
+import { Button, Icon, LinkOverlay, useColorModeValue } from '@chakra-ui/react';
 import { ForwardRefExoticComponent, ReactElement } from 'react';
 import {
   NavLink as NavLinkBase,
@@ -11,6 +11,9 @@ type NavLinkProps = {
 } & NavLinkBaseProps;
 
 const NavLink = ({ icon, children, ...props }: NavLinkProps) => {
+  // TODO: why is gray and white the default color in chakra ui using color scheme gray?
+  const linkBackground = useColorModeValue('gray.200', 'whiteAlpha.300');
+
   return (
     <NavLinkBase {...props}>
       {({ isActive }) => (
@@ -20,7 +23,7 @@ const NavLink = ({ icon, children, ...props }: NavLinkProps) => {
           colorScheme='gray'
           justifyContent='start'
           w='100%'
-          bg={isActive ? 'gray.200' : ''}
+          bg={isActive ? linkBackground : ''}
         >
           <>{children}</>
         </Button>
