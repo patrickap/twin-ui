@@ -1,4 +1,4 @@
-import { ChakraProvider, Container } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 import { QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -20,9 +20,7 @@ ReactDOM.createRoot(root).render(
     <ErrorBoundary FallbackComponent={Error}>
       <ChakraProvider theme={chakraTheme}>
         <QueryClientProvider client={queryClient}>
-          <Container>
-            <RouterProvider router={router} />
-          </Container>
+          <RouterProvider router={router} />
         </QueryClientProvider>
       </ChakraProvider>
     </ErrorBoundary>

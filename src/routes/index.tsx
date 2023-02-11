@@ -78,8 +78,20 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: '/signin',
-    element: await import('../pages/signin').then(({ SignIn }) => <SignIn />),
+    path: '/account',
+    element: await import('../pages/account').then(({ Layout }) => (
+      <Layout>
+        <Outlet />
+      </Layout>
+    )),
+    children: [
+      {
+        path: 'signin',
+        element: await import('../pages/account').then(({ SignIn }) => (
+          <SignIn />
+        )),
+      },
+    ],
   },
   {
     path: '*',
