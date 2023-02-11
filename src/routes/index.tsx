@@ -2,8 +2,6 @@ import { createBrowserRouter, Navigate, Outlet } from 'react-router-dom';
 import { queryClient } from '../config/react-query';
 import { userQuery } from '../constants/queries';
 
-// TODO: global 404
-
 const router = createBrowserRouter([
   {
     path: '/',
@@ -82,6 +80,12 @@ const router = createBrowserRouter([
   {
     path: '/signin',
     element: await import('../pages/signin').then(({ SignIn }) => <SignIn />),
+  },
+  {
+    path: '*',
+    element: await import('../pages/not-found').then(({ NotFound }) => (
+      <NotFound />
+    )),
   },
 ]);
 
