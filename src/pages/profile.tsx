@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { userQuery } from '../../constants/queries';
+import { userQuery } from '../constants/queries';
 
 const Profile = () => {
   // TODO: implement queries

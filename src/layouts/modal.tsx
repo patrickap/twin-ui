@@ -1,12 +1,12 @@
 import { Center, Container } from '@chakra-ui/react';
 import { ReactElement } from 'react';
 
-type LayoutProps = {
+type ModalProps = {
   children?: ReactElement | ReactElement[];
 };
 
 // TODO: create layout
-const Layout = ({ children }: LayoutProps) => {
+const Modal = ({ children }: ModalProps) => {
   return (
     <Container>
       <Center w='100%' h='100vh'>
@@ -16,5 +16,5 @@ const Layout = ({ children }: LayoutProps) => {
   );
 };
 
-export { Layout };
-export type { LayoutProps };
+export { Modal };
+export type { ModalProps };

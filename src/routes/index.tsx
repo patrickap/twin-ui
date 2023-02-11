@@ -5,27 +5,30 @@ import { userQuery } from '../constants/queries';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Navigate to='/user' />,
+    element: <Navigate to='/dashboard' />,
   },
   {
-    path: '/user',
-    element: await import('../pages/user').then(({ Layout }) => (
-      <Layout>
+    path: '/dashboard',
+    element: await import('../layouts/dashboard').then(({ Dashboard }) => (
+      <Dashboard>
         <Outlet />
-      </Layout>
+      </Dashboard>
     )),
     children: [
+      // user routes
       {
         path: 'files',
-        element: await import('../pages/user').then(({ Files }) => <Files />),
+        element: await import('../pages/files').then(({ Files }) => <Files />),
       },
       {
         path: 'shares',
-        element: await import('../pages/user').then(({ Shares }) => <Shares />),
+        element: await import('../pages/shares').then(({ Shares }) => (
+          <Shares />
+        )),
       },
       {
         path: 'profile',
-        element: await import('../pages/user').then(({ Profile }) => (
+        element: await import('../pages/profile').then(({ Profile }) => (
           <Profile />
         )),
         // TODO: implement loaders, this is just an example
@@ -37,57 +40,48 @@ const router = createBrowserRouter([
           );
         },
       },
-    ],
-  },
-  {
-    path: '/admin',
-    element: await import('../pages/admin').then(({ Layout }) => (
-      <Layout>
-        <Outlet />
-      </Layout>
-    )),
-    children: [
+      // admin routes
       {
         path: 'users',
-        element: await import('../pages/admin').then(({ Users }) => <Users />),
+        element: await import('../pages/users').then(({ Users }) => <Users />),
       },
       {
         path: 'groups',
-        element: await import('../pages/admin').then(({ Groups }) => (
+        element: await import('../pages/groups').then(({ Groups }) => (
           <Groups />
         )),
       },
       {
         path: 'folders',
-        element: await import('../pages/admin').then(({ Folders }) => (
+        element: await import('../pages/folders').then(({ Folders }) => (
           <Folders />
         )),
       },
       {
         path: 'events',
-        element: await import('../pages/admin').then(({ Events }) => (
+        element: await import('../pages/events').then(({ Events }) => (
           <Events />
         )),
       },
       {
         path: 'system',
-        element: await import('../pages/admin').then(({ System }) => (
+        element: await import('../pages/system').then(({ System }) => (
           <System />
         )),
       },
     ],
   },
   {
-    path: '/account',
-    element: await import('../pages/account').then(({ Layout }) => (
-      <Layout>
+    path: '/signin',
+    element: await import('../layouts/modal').then(({ Modal }) => (
+      <Modal>
         <Outlet />
-      </Layout>
+      </Modal>
     )),
     children: [
       {
-        path: 'signin',
-        element: await import('../pages/account').then(({ SignIn }) => (
+        index: true,
+        element: await import('../pages/signin').then(({ SignIn }) => (
           <SignIn />
         )),
       },

@@ -1,5 +1,5 @@
 const Users = () => {
-  return <>Admins & Users</>;
+  return <>Admin & User management</>;
 };
 
 export { Users };

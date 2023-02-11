@@ -1,12 +1,12 @@
 import { Container, HStack, Stack } from '@chakra-ui/react';
 import { ReactElement } from 'react';
 
-type LayoutProps = {
+type DashboardProps = {
   children?: ReactElement | ReactElement[];
 };
 
 // TODO: create layout
-const Layout = ({ children }: LayoutProps) => {
+const Dashboard = ({ children }: DashboardProps) => {
   return (
     <HStack h='100vh' spacing={0}>
       <Stack
@@ -18,12 +18,16 @@ const Layout = ({ children }: LayoutProps) => {
       </Stack>
       <Stack flexGrow={1} h='100%' bg='gray.200'>
         <Container>
-          <div>Main</div>
+          <div>
+            Main
+            <br />
+            {children}
+          </div>
         </Container>
       </Stack>
     </HStack>
   );
 };
 
-export { Layout };
-export type { LayoutProps };
+export { Dashboard };
+export type { DashboardProps };

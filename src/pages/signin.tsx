@@ -2,8 +2,8 @@ import { Button, Card, CardBody, Heading, Link, Stack } from '@chakra-ui/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import { InputPassword, InputText } from '../../components/input';
-import { SignInForm, signInFormSchema } from '../../schemas/forms';
+import { InputPassword, InputText } from '../components/input';
+import { SignInForm, signInFormSchema } from '../schemas/forms';
 
 const SignIn = () => {
   // TODO: use translation and make it type safe
