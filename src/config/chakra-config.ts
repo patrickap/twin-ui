@@ -1,6 +1,5 @@
 import { theme as proTheme } from '@chakra-ui/pro-theme';
-import { baseTheme } from '@chakra-ui/theme';
-import { extendTheme } from '@chakra-ui/theme-utils';
+import { baseTheme, extendTheme } from '@chakra-ui/react';
 
 const chakraTheme = extendTheme(
   {

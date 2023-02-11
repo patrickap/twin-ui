@@ -14,6 +14,14 @@ const router = createBrowserRouter([
         <Outlet />
       </Dashboard>
     )),
+    // TODO: implement loaders, this is just an example
+    loader: async ({ params }) => {
+      const query = userQuery(params.id);
+      return (
+        queryClient.getQueryData(query.queryKey) ??
+        (await queryClient.fetchQuery(query))
+      );
+    },
     children: [
       // user routes
       {
@@ -25,20 +33,6 @@ const router = createBrowserRouter([
         element: await import('../pages/shares').then(({ Shares }) => (
           <Shares />
         )),
-      },
-      {
-        path: 'profile',
-        element: await import('../pages/profile').then(({ Profile }) => (
-          <Profile />
-        )),
-        // TODO: implement loaders, this is just an example
-        loader: async ({ params }) => {
-          const query = userQuery(params.id);
-          return (
-            queryClient.getQueryData(query.queryKey) ??
-            (await queryClient.fetchQuery(query))
-          );
-        },
       },
       // admin routes
       {
@@ -67,6 +61,13 @@ const router = createBrowserRouter([
         path: 'system',
         element: await import('../pages/system').then(({ System }) => (
           <System />
+        )),
+      },
+      // user & admin
+      {
+        path: 'profile',
+        element: await import('../pages/profile').then(({ Profile }) => (
+          <Profile />
         )),
       },
     ],
