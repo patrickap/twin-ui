@@ -5,7 +5,7 @@ type ModalProps = {
   children?: ReactElement | ReactElement[];
 };
 
-// TODO: create layout
+// TODO: rename to Center
 const Modal = ({ children }: ModalProps) => {
   return (
     <Container>
