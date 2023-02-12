@@ -19,6 +19,8 @@ const NavLink = ({ icon, children, ...props }: NavLinkProps) => {
           isActive={isActive}
           leftIcon={icon ? <Icon as={icon} fontSize='xl' /> : undefined}
           colorScheme='gray'
+          variant='solid'
+          bg={isActive ? 'none' : ''}
           justifyContent='start'
           w='100%'
           fontWeight='medium'
