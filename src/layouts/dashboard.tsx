@@ -1,4 +1,11 @@
-import { Container, HStack, Stack, useColorModeValue } from '@chakra-ui/react';
+import {
+  Container,
+  HStack,
+  List,
+  ListItem,
+  Stack,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import {
   CalendarDaysIcon,
   CircleStackIcon,
@@ -36,42 +43,60 @@ const Dashboard = ({ children }: DashboardProps) => {
         bg={sideBackground}
       >
         {isUser ? (
-          <>
-            <NavLink to='files' icon={FolderIcon}>
-              Files
-            </NavLink>
-            <NavLink to='shares' icon={ShareIcon}>
-              Shares
-            </NavLink>
-            {/* TODO: profile link to bottom as select */}
-            <NavLink to='profile' icon={UserIcon}>
-              Profile
-            </NavLink>
-          </>
+          <List>
+            <ListItem>
+              <NavLink to='files' icon={FolderIcon}>
+                Files
+              </NavLink>
+            </ListItem>
+            <ListItem>
+              <NavLink to='shares' icon={ShareIcon}>
+                Shares
+              </NavLink>
+            </ListItem>
+            <ListItem>
+              {/* TODO: profile link to bottom as select */}
+              <NavLink to='profile' icon={UserIcon}>
+                Profile
+              </NavLink>
+            </ListItem>
+          </List>
         ) : null}
 
         {isAdmin ? (
-          <>
-            <NavLink to='users' icon={UsersIcon}>
-              Users
-            </NavLink>
-            <NavLink to='groups' icon={UserGroupIcon}>
-              Groups
-            </NavLink>
-            <NavLink to='folders' icon={FolderPlusIcon}>
-              Folders
-            </NavLink>
-            <NavLink to='events' icon={CalendarDaysIcon}>
-              Events
-            </NavLink>
-            <NavLink to='system' icon={CircleStackIcon}>
-              System
-            </NavLink>
-            {/* TODO: profile link to bottom as select */}
-            <NavLink to='profile' icon={UserIcon}>
-              Profile
-            </NavLink>
-          </>
+          <List>
+            <ListItem>
+              <NavLink to='users' icon={UsersIcon}>
+                Users
+              </NavLink>
+            </ListItem>
+            <ListItem>
+              <NavLink to='groups' icon={UserGroupIcon}>
+                Groups
+              </NavLink>
+            </ListItem>
+            <ListItem>
+              <NavLink to='folders' icon={FolderPlusIcon}>
+                Folders
+              </NavLink>
+            </ListItem>
+            <ListItem>
+              <NavLink to='events' icon={CalendarDaysIcon}>
+                Events
+              </NavLink>
+            </ListItem>
+            <ListItem>
+              <NavLink to='system' icon={CircleStackIcon}>
+                System
+              </NavLink>
+            </ListItem>
+            <ListItem>
+              {/* TODO: profile link to bottom as select */}
+              <NavLink to='profile' icon={UserIcon}>
+                Profile
+              </NavLink>
+            </ListItem>
+          </List>
         ) : null}
       </Stack>
       <Stack flexGrow={1} h='100%'>
