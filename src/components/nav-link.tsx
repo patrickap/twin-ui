@@ -17,10 +17,11 @@ const NavLink = ({ icon, children, ...props }: NavLinkProps) => {
         <Button
           as={LinkOverlay}
           isActive={isActive}
-          leftIcon={icon ? <Icon as={icon} /> : undefined}
+          leftIcon={icon ? <Icon as={icon} fontSize='xl' /> : undefined}
           colorScheme='gray'
           justifyContent='start'
           w='100%'
+          fontWeight='medium'
         >
           <>{children}</>
         </Button>
