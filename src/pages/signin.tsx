@@ -1,4 +1,12 @@
-import { Button, Card, CardBody, Heading, Link, Stack } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Checkbox,
+  Heading,
+  HStack,
+  Stack,
+  Text,
+} from '@chakra-ui/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -14,19 +22,42 @@ const SignIn = () => {
   });
 
   return (
-    <Card
-      px={4}
-      py={4}
-      width='100%'
-      maxWidth='sm'
-      shadow='xs'
-      bg='chakra-body-bg'
+    <Stack
+      spacing='8'
+      maxW='lg'
+      flexGrow='1'
+      py={{ base: '12', md: '24' }}
+      px={{ base: '0', sm: '8' }}
     >
-      <CardBody>
-        <Stack spacing={10}>
-          <Logo />
-          <Heading size='sm'>Sign in to your account</Heading>
-          <Stack spacing={4}>
+      <Stack spacing='6'>
+        <Logo />
+        <Stack spacing='2' textAlign='center'>
+          <Heading size={{ base: 'xs', md: 'sm' }}>
+            Sign in to your account
+          </Heading>
+          <HStack spacing='1' justify='center'>
+            <Text
+              color='muted'
+              // TODO: where is 'muted' from?
+            >
+              Don't have an account?
+            </Text>
+            <Button variant='link' colorScheme='brand'>
+              Sign up
+            </Button>
+          </HStack>
+        </Stack>
+      </Stack>
+      <Box
+        py={{ base: '0', sm: '8' }}
+        px={{ base: '0', sm: '10' }}
+        // TODO: where is 'bg-surface' from?
+        bg={{ base: 'transparent', sm: 'bg-surface' }}
+        boxShadow={{ base: 'none', sm: 'sm' }}
+        borderRadius={{ base: 'none', sm: 'md' }}
+      >
+        <Stack spacing='6'>
+          <Stack spacing='6'>
             <Controller
               control={signInForm.control}
               name='username'
@@ -58,22 +89,39 @@ const SignIn = () => {
               )}
             />
           </Stack>
-          <Stack spacing={4}>
+          <HStack justify='space-between'>
+            <Controller
+              control={signInForm.control}
+              name='remember'
+              render={({ field, fieldState }) => (
+                <Checkbox
+                  ref={field.ref}
+                  defaultChecked={field.value}
+                  isInvalid={!!fieldState.invalid}
+                  onChange={field.onChange}
+                  onBlur={field.onBlur}
+                >
+                  Remember me
+                </Checkbox>
+              )}
+            />
+            <Button variant='link' colorScheme='brand' size='sm'>
+              Forgot password?
+            </Button>
+          </HStack>
+          <Stack spacing='6'>
             <Button
-              colorScheme='teal'
+              variant='primary'
               onClick={signInForm.handleSubmit((form) => {
                 console.log(form);
               })}
             >
               Sign in
             </Button>
-            <Link fontSize={14} textAlign='center'>
-              Forgot your password?
-            </Link>
           </Stack>
         </Stack>
-      </CardBody>
-    </Card>
+      </Box>
+    </Stack>
   );
 };
 

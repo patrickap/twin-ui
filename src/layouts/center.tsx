@@ -8,7 +8,7 @@ type CenterProps = {
 const Center = ({ children }: CenterProps) => {
   return (
     <Container>
-      <CenterContent w='100%' h='100vh'>
+      <CenterContent w='full' h='100vh'>
         {children}
       </CenterContent>
     </Container>

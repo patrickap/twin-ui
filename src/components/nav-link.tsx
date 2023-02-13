@@ -23,7 +23,7 @@ const NavLink = ({ icon, children, ...props }: NavLinkProps) => {
           variant='solid'
           bg={isActive ? 'none' : ''}
           justifyContent='start'
-          w='100%'
+          w='full'
           fontWeight='medium'
         >
           <>{children}</>
