@@ -17,12 +17,12 @@ import {
   UsersIcon,
 } from '@heroicons/react/24/outline';
 import { useQuery } from '@tanstack/react-query';
-import { ReactElement } from 'react';
+import { ReactNode } from 'react';
 import { NavLink } from '../components';
 import { userQuery } from '../constants/queries';
 
 type DashboardProps = {
-  children?: ReactElement | ReactElement[];
+  children?: ReactNode;
 };
 
 // TODO: create layout

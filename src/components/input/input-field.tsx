@@ -7,13 +7,13 @@ import {
   Input,
   InputGroup,
 } from '@chakra-ui/react';
-import { forwardRef, LegacyRef, ReactElement } from 'react';
+import { forwardRef, LegacyRef, ReactNode } from 'react';
 
 type InputFieldProps = {
   label?: string;
   info?: string;
   error?: string;
-  children?: ReactElement | ReactElement[];
+  children?: ReactNode;
 } & FormControlProps;
 
 const InputField = forwardRef(

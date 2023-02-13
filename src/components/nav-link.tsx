@@ -1,5 +1,5 @@
 import { Button, Icon, LinkOverlay } from '@chakra-ui/react';
-import { ForwardRefExoticComponent, ReactElement } from 'react';
+import { ForwardRefExoticComponent, ReactNode } from 'react';
 import {
   NavLink as NavLinkBase,
   NavLinkProps as NavLinkBaseProps,
@@ -7,7 +7,7 @@ import {
 
 type NavLinkProps = {
   icon?: ForwardRefExoticComponent<any>;
-  children?: string | ReactElement | ReactElement[];
+  children?: ReactNode;
 } & NavLinkBaseProps;
 
 // TODO: refactor

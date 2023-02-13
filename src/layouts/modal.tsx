@@ -1,8 +1,8 @@
 import { Center as CenterContent, Container } from '@chakra-ui/react';
-import { ReactElement } from 'react';
+import { ReactNode } from 'react';
 
 type CenterProps = {
-  children?: ReactElement | ReactElement[];
+  children?: ReactNode;
 };
 
 const Center = ({ children }: CenterProps) => {
