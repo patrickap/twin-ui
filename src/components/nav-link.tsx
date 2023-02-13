@@ -10,6 +10,7 @@ type NavLinkProps = {
   children?: string | ReactElement | ReactElement[];
 } & NavLinkBaseProps;
 
+// TODO: refactor
 const NavLink = ({ icon, children, ...props }: NavLinkProps) => {
   return (
     <NavLinkBase {...props}>

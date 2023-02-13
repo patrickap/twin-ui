@@ -9,15 +9,15 @@ import {
 } from '@chakra-ui/react';
 import { forwardRef, LegacyRef, ReactElement } from 'react';
 
-type InputBaseProps = {
+type InputFieldProps = {
   label?: string;
   info?: string;
   error?: string;
   children?: ReactElement | ReactElement[];
 } & FormControlProps;
 
-const InputBase = forwardRef(
-  ({ label, info, error, children, ...props }: InputBaseProps, ref) => {
+const InputField = forwardRef(
+  ({ label, info, error, children, ...props }: InputFieldProps, ref) => {
     return (
       <FormControl {...props} ref={ref as LegacyRef<HTMLDivElement>}>
         {label ? <FormLabel>{label}</FormLabel> : null}
@@ -33,5 +33,5 @@ const InputBase = forwardRef(
   },
 );
 
-export { InputBase };
-export type { InputBaseProps };
+export { InputField };
+export type { InputFieldProps };

@@ -2,6 +2,7 @@ import { Button, Card, CardBody, Heading, Link, Stack } from '@chakra-ui/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
+import { Logo } from '../components';
 import { InputPassword, InputText } from '../components/input';
 import { SignInForm, signInFormSchema } from '../schemas/forms';
 
@@ -12,7 +13,6 @@ const SignIn = () => {
     resolver: zodResolver(signInFormSchema),
   });
 
-  // TODO: move layout in separate file?
   return (
     <Card
       px={4}
@@ -24,6 +24,7 @@ const SignIn = () => {
     >
       <CardBody>
         <Stack spacing={10}>
+          <Logo />
           <Heading size='sm'>Sign in to your account</Heading>
           <Stack spacing={4}>
             <Controller

@@ -1,20 +1,19 @@
-import { Center, Container } from '@chakra-ui/react';
+import { Center as CenterContent, Container } from '@chakra-ui/react';
 import { ReactElement } from 'react';
 
-type ModalProps = {
+type CenterProps = {
   children?: ReactElement | ReactElement[];
 };
 
-// TODO: rename to Center
-const Modal = ({ children }: ModalProps) => {
+const Center = ({ children }: CenterProps) => {
   return (
     <Container>
-      <Center w='100%' h='100vh'>
+      <CenterContent w='100%' h='100vh'>
         {children}
-      </Center>
+      </CenterContent>
     </Container>
   );
 };
 
-export { Modal };
-export type { ModalProps };
+export { Center };
+export type { CenterProps };

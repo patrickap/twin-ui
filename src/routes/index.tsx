@@ -74,10 +74,10 @@ const router = createBrowserRouter([
   },
   {
     path: '/signin',
-    element: await import('../layouts/modal').then(({ Modal }) => (
-      <Modal>
+    element: await import('../layouts/modal').then(({ Center }) => (
+      <Center>
         <Outlet />
-      </Modal>
+      </Center>
     )),
     children: [
       {
