@@ -14,7 +14,14 @@ const SignIn = () => {
 
   // TODO: move layout in separate file?
   return (
-    <Card px={4} py={4} width='100%' maxWidth='sm' shadow='xs'>
+    <Card
+      px={4}
+      py={4}
+      width='100%'
+      maxWidth='sm'
+      shadow='xs'
+      bg='chakra-body-bg'
+    >
       <CardBody>
         <Stack spacing={10}>
           <Heading size='sm'>Sign in to your account</Heading>

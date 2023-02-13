@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { ErrorBoundary } from 'react-error-boundary';
 import { RouterProvider } from 'react-router-dom';
-import { chakraTheme } from './config/chakra-config';
+import { chakraTheme } from './config/chakra-ui';
 import { configureI18n } from './config/i18next';
 import { queryClient } from './config/react-query';
 import './index.css';
