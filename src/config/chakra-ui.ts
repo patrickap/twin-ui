@@ -11,10 +11,10 @@ const chakraTheme = extendTheme(
       Link: {
         variants: {
           primary: (theme: any) => ({
-            color: theme.colorMode === 'dark' ? 'brand.300' : 'brand.700',
+            color: theme.colorMode === 'dark' ? 'brand.200' : 'brand.600',
             _hover: {
               textDecoration: 'none',
-              color: theme.colorMode === 'dark' ? 'brand.200' : 'brand.600',
+              color: theme.colorMode === 'dark' ? 'brand.300' : 'brand.700',
             },
           }),
         },
