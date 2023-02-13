@@ -74,7 +74,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/signin',
-    element: await import('../layouts/modal').then(({ Center }) => (
+    element: await import('../layouts/center').then(({ Center }) => (
       <Center>
         <Outlet />
       </Center>
