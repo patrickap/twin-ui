@@ -67,7 +67,7 @@ const SignIn = () => {
             >
               Sign in
             </Button>
-            <Link fontSize={14} textAlign='center' color='teal'>
+            <Link fontSize={14} textAlign='center'>
               Forgot your password?
             </Link>
           </Stack>
