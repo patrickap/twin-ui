@@ -26,7 +26,7 @@ const SignIn = () => {
       <Stack spacing='6'>
         <Logo />
         <Stack spacing='2' textAlign='center'>
-          <Heading size={{ base: 'xs', md: 'sm' }}>
+          <Heading size={{ base: 'xs', sm: 'sm' }}>
             Sign in to your account
           </Heading>
           <HStack spacing='1' justify='center'>
