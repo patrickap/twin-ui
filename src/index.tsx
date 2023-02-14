@@ -13,6 +13,7 @@ import { chakraTheme } from './theme';
 // TODO: add ts alias imports for features & allow only import from feature root
 // TODO: add index file to each feature
 // TODO: add locales folder to each feature if its a specific translation
+// TODO: setup husky, commitlint, semantic release with changelog, stylelint
 
 const root = document.getElementById('root') as HTMLElement;
 
