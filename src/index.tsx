@@ -6,12 +6,13 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { BrowserRouter, useRoutes } from 'react-router-dom';
 import { useAuth } from './features/auth/hooks';
 import './index.css';
-import { queryClient } from './lib/react-query';
+import { queryClient } from './libs/react-query';
 import { protectedRoutes, publicRoutes } from './routes';
 import { chakraTheme } from './theme';
 
 // TODO: add ts alias imports for features & allow only import from feature root
 // TODO: add index file to each feature
+// TODO: add locales folder to each feature if its a specific translation
 
 const root = document.getElementById('root') as HTMLElement;
 

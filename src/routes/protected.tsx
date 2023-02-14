@@ -1,6 +1,6 @@
 import { Navigate, Outlet, RouteObject } from 'react-router-dom';
 import { userQuery } from '../features/user/queries';
-import { queryClient } from '../lib/react-query';
+import { queryClient } from '../libs/react-query';
 
 const protectedRoutes: RouteObject[] = [
   {
