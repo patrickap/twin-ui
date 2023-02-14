@@ -24,7 +24,7 @@ const SignIn = () => {
   return (
     <Stack spacing={8} maxW='md' flexGrow={1} py={{ base: 4, sm: 0 }}>
       <Stack spacing={6}>
-        <Logo />
+        <Logo size={12} />
         <Stack spacing={2} textAlign='center'>
           <Heading size={{ base: 'xs', sm: 'sm' }}>
             Sign in to your account

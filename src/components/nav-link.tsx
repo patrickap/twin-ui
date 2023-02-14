@@ -1,4 +1,4 @@
-import { Button, Icon } from '@chakra-ui/react';
+import { Button, Icon, IconButton } from '@chakra-ui/react';
 import { ForwardRefExoticComponent, ReactNode } from 'react';
 import {
   NavLink as NavLinkBase,
@@ -7,25 +7,54 @@ import {
 
 type NavLinkProps = {
   icon?: ForwardRefExoticComponent<any>;
+  iconOnly?: boolean;
   children?: ReactNode;
 } & NavLinkBaseProps;
 
-// TODO: refactor
-const NavLink = ({ icon, children, ...props }: NavLinkProps) => {
+const NavLink = ({ icon, iconOnly, children, ...props }: NavLinkProps) => {
   return (
     <NavLinkBase {...props}>
       {({ isActive }) => (
-        <Button
-          w='full'
-          fontWeight='medium'
-          justifyContent='start'
-          colorScheme='gray'
-          variant='ghost'
-          isActive={isActive}
-          leftIcon={icon ? <Icon as={icon} fontSize='xl' /> : undefined}
-        >
-          <>{children}</>
-        </Button>
+        <>
+          {iconOnly ? (
+            <IconButton
+              colorScheme='gray'
+              variant='ghost'
+              isActive={isActive}
+              icon={
+                icon ? (
+                  <Icon
+                    as={icon}
+                    w={{ base: 6, xl: 5 }}
+                    h={{ base: 6, xl: 5 }}
+                  />
+                ) : undefined
+              }
+              aria-label='nav-link'
+            />
+          ) : (
+            <Button
+              w='full'
+              fontSize={14}
+              justifyContent='start'
+              colorScheme='gray'
+              variant='ghost'
+              isActive={isActive}
+              fontWeight={isActive ? 'semibold' : 'medium'}
+              leftIcon={
+                icon ? (
+                  <Icon
+                    as={icon}
+                    w={{ base: 6, xl: 5 }}
+                    h={{ base: 6, xl: 5 }}
+                  />
+                ) : undefined
+              }
+            >
+              <>{children}</>
+            </Button>
+          )}
+        </>
       )}
     </NavLinkBase>
   );
