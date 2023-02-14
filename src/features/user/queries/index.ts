@@ -1,4 +1,4 @@
-import { getUser } from '../api/user';
+import { getUser } from '../api';
 
 const userQuery = (id?: string) => ({
   queryKey: ['user', id],

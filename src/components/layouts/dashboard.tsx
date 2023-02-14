@@ -29,9 +29,9 @@ import {
 } from '@heroicons/react/24/outline';
 import { useQuery } from '@tanstack/react-query';
 import { ReactNode, useState } from 'react';
-import { Logo, NavLink } from '../components';
-import { userQuery } from '../constants/queries';
-import { User } from '../types/user';
+import { userQuery } from '../../features/user/queries';
+import { User } from '../../features/user/types';
+import { Logo, NavLink } from '../elements';
 
 type DashboardProps = {
   children?: ReactNode;
@@ -189,7 +189,7 @@ const NavItems = ({ user, iconOnly }: NavItemsProps) => {
   ];
 
   return (
-    <List spacing={2} alignItems='center' w='full'>
+    <List spacing={2} textAlign='center' w='full'>
       {items
         .filter((item) => user?.role === item.role)
         .map(({ to, icon, label }) => {

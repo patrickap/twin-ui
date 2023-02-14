@@ -10,9 +10,10 @@ import {
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import { Logo } from '../components';
-import { InputPassword, InputText } from '../components/input';
-import { SignInForm, signInFormSchema } from '../schemas/forms';
+import { Logo } from '../../../components/elements';
+import { InputPassword, InputText } from '../../../components/elements/input';
+import { signInFormSchema } from '../schemas';
+import { SignInForm } from '../types';
 
 const SignIn = () => {
   // TODO: use translation and make it type safe

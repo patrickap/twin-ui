@@ -3,24 +3,30 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { ErrorBoundary } from 'react-error-boundary';
-import { RouterProvider } from 'react-router-dom';
-import { chakraTheme } from './config/chakra-ui';
-import { configureI18n } from './config/i18next';
-import { queryClient } from './config/react-query';
+import { BrowserRouter, useRoutes } from 'react-router-dom';
+import { useAuth } from './features/auth/hooks';
 import './index.css';
-import { Error } from './pages/error';
-import { router } from './routes';
-
-configureI18n();
+import { queryClient } from './lib/react-query';
+import { protectedRoutes, publicRoutes } from './routes';
+import { chakraTheme } from './theme';
 
 const root = document.getElementById('root') as HTMLElement;
 
+const App = () => {
+  const isAuth = useAuth();
+  const route = useRoutes(isAuth ? protectedRoutes : publicRoutes);
+  return <>{route}</>;
+};
+
 ReactDOM.createRoot(root).render(
   <React.StrictMode>
-    <ErrorBoundary FallbackComponent={Error}>
+    {/* TODO: add layout around error component... */}
+    <ErrorBoundary FallbackComponent={() => <>Error</>}>
       <ChakraProvider theme={chakraTheme}>
         <QueryClientProvider client={queryClient}>
-          <RouterProvider router={router} />
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
         </QueryClientProvider>
       </ChakraProvider>
     </ErrorBoundary>

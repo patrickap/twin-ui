@@ -1,4 +1,4 @@
-import * as z from 'zod';
+import { z } from 'zod';
 
 const signInFormSchema = z.object({
   username: z.string().min(1, { message: 'Required' }),
@@ -6,7 +6,4 @@ const signInFormSchema = z.object({
   remember: z.boolean().optional(),
 });
 
-type SignInForm = z.infer<typeof signInFormSchema>;
-
 export { signInFormSchema };
-export type { SignInForm };
