@@ -10,6 +10,8 @@ import { queryClient } from './lib/react-query';
 import { protectedRoutes, publicRoutes } from './routes';
 import { chakraTheme } from './theme';
 
+// TODO: add ts alias imports for features & allow only import from feature root
+
 const root = document.getElementById('root') as HTMLElement;
 
 const App = () => {
