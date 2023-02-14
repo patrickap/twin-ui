@@ -11,6 +11,7 @@ import { protectedRoutes, publicRoutes } from './routes';
 import { chakraTheme } from './theme';
 
 // TODO: add ts alias imports for features & allow only import from feature root
+// TODO: add index file to each feature
 
 const root = document.getElementById('root') as HTMLElement;
 
