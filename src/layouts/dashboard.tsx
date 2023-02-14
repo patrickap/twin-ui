@@ -4,6 +4,7 @@ import {
   Container,
   Drawer,
   DrawerBody,
+  DrawerCloseButton,
   DrawerContent,
   DrawerOverlay,
   Flex,
@@ -111,6 +112,7 @@ const Header = () => {
       <Drawer placement='left' onClose={() => setIsOpen(false)} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent bg='bg-surface'>
+          <DrawerCloseButton />
           <DrawerBody px={4} py={8}>
             <Stack h='full' spacing={8}>
               <Logo size={8} />
