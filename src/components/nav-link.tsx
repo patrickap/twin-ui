@@ -1,4 +1,4 @@
-import { Button, Icon, LinkOverlay } from '@chakra-ui/react';
+import { Button, Icon } from '@chakra-ui/react';
 import { ForwardRefExoticComponent, ReactNode } from 'react';
 import {
   NavLink as NavLinkBase,
@@ -16,11 +16,10 @@ const NavLink = ({ icon, children, ...props }: NavLinkProps) => {
     <NavLinkBase {...props}>
       {({ isActive }) => (
         <Button
-          as={LinkOverlay}
           isActive={isActive}
           leftIcon={icon ? <Icon as={icon} fontSize='xl' /> : undefined}
           colorScheme='gray'
-          variant='solid'
+          variant='ghost'
           bg={isActive ? 'none' : ''}
           justifyContent='start'
           w='full'

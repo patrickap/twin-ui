@@ -36,11 +36,11 @@ const Dashboard = ({ children }: DashboardProps) => {
   return (
     <HStack h='100vh' spacing='0'>
       <Stack
-        w={{ base: '0', lg: '76', xl: '256' }}
+        w={{ base: 0, lg: 76, xl: 256 }}
         h='full'
         px='4'
         py='8'
-        bg={sideBackground}
+        bg='bg-surface'
       >
         {isUser ? (
           <List>
