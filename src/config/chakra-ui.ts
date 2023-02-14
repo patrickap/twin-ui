@@ -1,5 +1,5 @@
 import { theme as proTheme } from '@chakra-ui/pro-theme';
-import { baseTheme, extendTheme } from '@chakra-ui/react';
+import { baseTheme, extendTheme, StyleFunctionProps } from '@chakra-ui/react';
 
 const chakraTheme = extendTheme(
   {
@@ -10,7 +10,7 @@ const chakraTheme = extendTheme(
     components: {
       Link: {
         variants: {
-          primary: (theme: any) => ({
+          primary: (theme: StyleFunctionProps) => ({
             color: theme.colorMode === 'dark' ? 'brand.200' : 'brand.600',
             _hover: {
               textDecoration: 'none',

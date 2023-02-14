@@ -1,11 +1,11 @@
 import { Center as CenterContent, Container } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
-type CenterProps = {
+type FullCenterProps = {
   children?: ReactNode;
 };
 
-const Center = ({ children }: CenterProps) => {
+const FullCenter = ({ children }: FullCenterProps) => {
   return (
     <Container>
       <CenterContent w='full' h='100vh'>
@@ -15,5 +15,5 @@ const Center = ({ children }: CenterProps) => {
   );
 };
 
-export { Center };
-export type { CenterProps };
+export { FullCenter };
+export type { FullCenterProps };

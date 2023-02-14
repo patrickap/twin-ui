@@ -22,14 +22,14 @@ const SignIn = () => {
   });
 
   return (
-    <Stack spacing='8' maxW='md' flexGrow='1' py={{ base: '4', sm: '0' }}>
-      <Stack spacing='6'>
+    <Stack spacing={8} maxW='md' flexGrow={1} py={{ base: 4, sm: 0 }}>
+      <Stack spacing={6}>
         <Logo />
-        <Stack spacing='2' textAlign='center'>
+        <Stack spacing={2} textAlign='center'>
           <Heading size={{ base: 'xs', sm: 'sm' }}>
             Sign in to your account
           </Heading>
-          <HStack spacing='1' justify='center'>
+          <HStack spacing={1} justify='center'>
             <Text color='muted'>Don't have an account?</Text>
             <Button variant='link' colorScheme='brand'>
               Sign up
@@ -38,14 +38,14 @@ const SignIn = () => {
         </Stack>
       </Stack>
       <Box
-        py={{ base: '0', sm: '8' }}
-        px={{ base: '0', sm: '8' }}
+        py={{ base: 0, sm: 8 }}
+        px={{ base: 0, sm: 8 }}
         bg={{ base: 'transparent', sm: 'bg-surface' }}
         boxShadow={{ base: 'none', sm: 'sm' }}
         borderRadius={{ base: 'none', sm: 'md' }}
       >
-        <Stack spacing='6'>
-          <Stack spacing='6'>
+        <Stack spacing={6}>
+          <Stack spacing={6}>
             <Controller
               control={signInForm.control}
               name='username'
@@ -97,7 +97,7 @@ const SignIn = () => {
               Forgot password?
             </Button>
           </HStack>
-          <Stack spacing='6'>
+          <Stack spacing={6}>
             <Button
               variant='primary'
               onClick={signInForm.handleSubmit((form) => {

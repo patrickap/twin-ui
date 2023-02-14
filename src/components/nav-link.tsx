@@ -16,14 +16,13 @@ const NavLink = ({ icon, children, ...props }: NavLinkProps) => {
     <NavLinkBase {...props}>
       {({ isActive }) => (
         <Button
-          isActive={isActive}
-          leftIcon={icon ? <Icon as={icon} fontSize='xl' /> : undefined}
-          colorScheme='gray'
-          variant='ghost'
-          bg={isActive ? 'none' : ''}
-          justifyContent='start'
           w='full'
           fontWeight='medium'
+          justifyContent='start'
+          colorScheme='gray'
+          variant='ghost'
+          isActive={isActive}
+          leftIcon={icon ? <Icon as={icon} fontSize='xl' /> : undefined}
         >
           <>{children}</>
         </Button>

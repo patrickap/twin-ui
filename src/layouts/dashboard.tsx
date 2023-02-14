@@ -34,12 +34,12 @@ const Dashboard = ({ children }: DashboardProps) => {
   const sideBackground = useColorModeValue('gray.100', 'gray.800');
 
   return (
-    <HStack h='100vh' spacing='0'>
+    <HStack h='100vh' spacing={0}>
       <Stack
         w={{ base: 0, lg: 76, xl: 256 }}
         h='full'
-        px='4'
-        py='8'
+        px={4}
+        py={8}
         bg='bg-surface'
       >
         {isUser ? (
@@ -99,7 +99,7 @@ const Dashboard = ({ children }: DashboardProps) => {
           </List>
         ) : null}
       </Stack>
-      <Stack flexGrow='1' h='full'>
+      <Stack flexGrow={1} h='full'>
         <Container>
           <div>
             Main
