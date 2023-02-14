@@ -33,6 +33,8 @@ import { userQuery } from '../../features/user/queries';
 import { User } from '../../features/user/types';
 import { Logo, NavLink } from '../elements';
 
+// TODO: refactor stuff in separate files
+
 type DashboardProps = {
   children?: ReactNode;
 };
