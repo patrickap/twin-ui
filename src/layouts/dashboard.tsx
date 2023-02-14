@@ -2,6 +2,10 @@ import {
   Box,
   Center,
   Container,
+  Drawer,
+  DrawerBody,
+  DrawerContent,
+  DrawerOverlay,
   Flex,
   Heading,
   Icon,
@@ -23,9 +27,10 @@ import {
   UsersIcon,
 } from '@heroicons/react/24/outline';
 import { useQuery } from '@tanstack/react-query';
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 import { Logo, NavLink } from '../components';
 import { userQuery } from '../constants/queries';
+import { User } from '../types/user';
 
 type DashboardProps = {
   children?: ReactNode;
@@ -43,9 +48,6 @@ const Dashboard = ({ children }: DashboardProps) => {
 const Side = () => {
   // TODO: implement queries / mutations
   const user = useQuery(userQuery('1'));
-  const isUser = user.data?.role === 'user';
-  const isAdmin = user.data?.role === 'admin';
-
   const iconOnly = useBreakpointValue({ base: true, md: true, xl: false });
 
   return (
@@ -60,65 +62,7 @@ const Side = () => {
       shadow='xs'
     >
       <Logo size={8} />
-      {/* TODO: refactor to not have to pass iconOnly for every element */}
-      <List spacing={2} alignItems='center' w='full'>
-        {isUser ? (
-          <>
-            <ListItem>
-              <NavLink to='files' icon={FolderIcon} iconOnly={iconOnly}>
-                Files
-              </NavLink>
-            </ListItem>
-            <ListItem>
-              <NavLink to='shares' icon={ShareIcon} iconOnly={iconOnly}>
-                Shares
-              </NavLink>
-            </ListItem>
-            <ListItem>
-              {/* TODO: profile link to bottom as select */}
-              <NavLink to='profile' icon={UserIcon} iconOnly={iconOnly}>
-                Profile
-              </NavLink>
-            </ListItem>
-          </>
-        ) : null}
-
-        {isAdmin ? (
-          <>
-            <ListItem>
-              <NavLink to='users' icon={UsersIcon} iconOnly={iconOnly}>
-                Users
-              </NavLink>
-            </ListItem>
-            <ListItem>
-              <NavLink to='groups' icon={UserGroupIcon} iconOnly={iconOnly}>
-                Groups
-              </NavLink>
-            </ListItem>
-            <ListItem>
-              <NavLink to='folders' icon={FolderPlusIcon} iconOnly={iconOnly}>
-                Folders
-              </NavLink>
-            </ListItem>
-            <ListItem>
-              <NavLink to='events' icon={CalendarDaysIcon} iconOnly={iconOnly}>
-                Events
-              </NavLink>
-            </ListItem>
-            <ListItem>
-              <NavLink to='system' icon={CircleStackIcon} iconOnly={iconOnly}>
-                System
-              </NavLink>
-            </ListItem>
-            <ListItem>
-              {/* TODO: profile link to bottom as select */}
-              <NavLink to='profile' icon={UserIcon} iconOnly={iconOnly}>
-                Profile
-              </NavLink>
-            </ListItem>
-          </>
-        ) : null}
-      </List>
+      <NavItems user={user.data!} iconOnly={iconOnly} />
     </Stack>
   );
 };
@@ -139,25 +83,123 @@ const Main = ({ children }: Pick<DashboardProps, 'children'>) => {
 };
 
 const Header = () => {
+  const user = useQuery(userQuery('1'));
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <Flex p={4}>
-      <IconButton
-        display={{ base: 'block', md: 'none' }}
-        icon={<Icon as={Bars3Icon} w={6} h={6} />}
-        colorScheme='gray'
-        variant='ghost'
-        aria-label='menu'
-      />
+    <>
+      <Flex p={4}>
+        <IconButton
+          display={{ base: 'block', md: 'none' }}
+          icon={<Icon as={Bars3Icon} w={6} h={6} />}
+          colorScheme='gray'
+          variant='ghost'
+          aria-label='menu'
+          onClick={() => setIsOpen(true)}
+        />
 
-      <Center flex={1}>
-        <Heading fontSize='xl' lineHeight={1}>
-          Page Title
-        </Heading>
-      </Center>
+        <Center flex={1}>
+          <Heading fontSize='xl' lineHeight={1}>
+            Page Title
+          </Heading>
+        </Center>
 
-      {/* Empty box to center page title */}
-      <Box display={{ base: 'flex', md: 'none' }} w={6} h={6} />
-    </Flex>
+        {/* Empty box to center page title */}
+        <Box display={{ base: 'flex', md: 'none' }} w={6} h={6} />
+      </Flex>
+
+      <Drawer placement='left' onClose={() => setIsOpen(false)} isOpen={isOpen}>
+        <DrawerOverlay />
+        <DrawerContent bg='bg-surface'>
+          <DrawerBody px={4} py={8}>
+            <Stack h='full' spacing={8}>
+              <Logo size={8} />
+              <NavItems user={user.data!} />
+            </Stack>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
+    </>
+  );
+};
+
+type NavItemsProps = {
+  user: User;
+  iconOnly?: boolean;
+};
+
+const NavItems = ({ user, iconOnly }: NavItemsProps) => {
+  const items = [
+    {
+      to: 'files',
+      icon: FolderIcon,
+      label: 'Files',
+      role: 'user',
+    },
+    {
+      to: 'shares',
+      icon: ShareIcon,
+      label: 'Shares',
+      role: 'user',
+    },
+    {
+      to: 'profile',
+      icon: UserIcon,
+      label: 'Profile',
+      role: 'user',
+    },
+    {
+      to: 'users',
+      icon: UsersIcon,
+      label: 'Users',
+      role: 'admin',
+    },
+    {
+      to: 'groups',
+      icon: UserGroupIcon,
+      label: 'Groups',
+      role: 'admin',
+    },
+    {
+      to: 'folders',
+      icon: FolderPlusIcon,
+      label: 'Folders',
+      role: 'admin',
+    },
+    {
+      to: 'events',
+      icon: CalendarDaysIcon,
+      label: 'Events',
+      role: 'admin',
+    },
+    {
+      to: 'system',
+      icon: CircleStackIcon,
+      label: 'System',
+      role: 'admin',
+    },
+    {
+      to: 'profile',
+      icon: UserIcon,
+      label: 'Profile',
+      role: 'admin',
+    },
+  ];
+
+  return (
+    <List spacing={2} alignItems='center' w='full'>
+      {items
+        .filter((item) => user?.role === item.role)
+        .map(({ to, icon, label }) => {
+          return (
+            <ListItem>
+              <NavLink to={to} icon={icon} iconOnly={iconOnly}>
+                {label}
+              </NavLink>
+            </ListItem>
+          );
+        })}
+    </List>
   );
 };
 

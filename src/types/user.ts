@@ -1,7 +1,9 @@
+import { Role } from './role';
+
 type User = {
   id: string;
   username: string;
-  role: 'user' | 'admin';
+  role: Role;
 };
 
 export type { User };
