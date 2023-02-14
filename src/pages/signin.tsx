@@ -22,13 +22,7 @@ const SignIn = () => {
   });
 
   return (
-    <Stack
-      spacing='8'
-      maxW='lg'
-      flexGrow='1'
-      py={{ base: '12', md: '24' }}
-      px={{ base: '0', sm: '8' }}
-    >
+    <Stack spacing='8' maxW='md' flexGrow='1' py={{ base: '4', sm: '0' }}>
       <Stack spacing='6'>
         <Logo />
         <Stack spacing='2' textAlign='center'>
@@ -36,12 +30,7 @@ const SignIn = () => {
             Sign in to your account
           </Heading>
           <HStack spacing='1' justify='center'>
-            <Text
-              color='muted'
-              // TODO: where is 'muted' from?
-            >
-              Don't have an account?
-            </Text>
+            <Text color='muted'>Don't have an account?</Text>
             <Button variant='link' colorScheme='brand'>
               Sign up
             </Button>
@@ -50,8 +39,7 @@ const SignIn = () => {
       </Stack>
       <Box
         py={{ base: '0', sm: '8' }}
-        px={{ base: '0', sm: '10' }}
-        // TODO: where is 'bg-surface' from?
+        px={{ base: '0', sm: '8' }}
         bg={{ base: 'transparent', sm: 'bg-surface' }}
         boxShadow={{ base: 'none', sm: 'sm' }}
         borderRadius={{ base: 'none', sm: 'md' }}
