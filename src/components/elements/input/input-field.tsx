@@ -16,6 +16,8 @@ type InputFieldProps = {
   children?: ReactNode;
 } & FormControlProps;
 
+// TODO: rename to InputWrapper
+
 const InputField = forwardRef(
   ({ label, info, error, children, ...props }: InputFieldProps, ref) => {
     return (
