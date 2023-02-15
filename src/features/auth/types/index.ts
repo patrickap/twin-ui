@@ -2,6 +2,7 @@ import { User } from '@/features/user';
 import { z } from 'zod';
 import { signInFormSchema } from '../schemas';
 
+// TODO: do not make generic and dependent...
 type Credentials = Pick<SignInForm, 'username' | 'password'>;
 
 type SignInForm = z.infer<typeof signInFormSchema>;
