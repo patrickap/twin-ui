@@ -1,5 +1,5 @@
 {
   "auth": {
-    "thisIsAuthNamespace": "thisIsAuthNamespace"
+    "authNamespaceKey": "authNamespaceValue"
   }
 }

@@ -18,7 +18,7 @@ import { authStore } from '../stores';
 import { SignInForm } from '../types';
 
 const SignIn = () => {
-  // TODO: use translation and make it type safe
+  // TODO: use translation
   const { t } = useTranslation();
 
   const signInForm = useForm<SignInForm>({

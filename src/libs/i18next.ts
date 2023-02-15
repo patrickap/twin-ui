@@ -1,6 +1,6 @@
 import { locales as authLocales } from '@/features/auth';
 import { locales as commonLocales } from '@/locales';
-import i18n from 'i18next';
+import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 
@@ -13,10 +13,10 @@ const resources = {
   },
 } as const;
 
-i18n
+const i18n = i18next
   .use(languageDetector)
   .use(initReactI18next)
-  .init({
+  .createInstance({
     detection: {
       order: ['navigator'],
     },
