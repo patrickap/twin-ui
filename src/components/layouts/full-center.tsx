@@ -5,6 +5,8 @@ type FullCenterProps = {
   children?: ReactNode;
 };
 
+// TODO: rename CenterContent to Center
+
 const FullCenter = ({ children }: FullCenterProps) => {
   return (
     <Container>
