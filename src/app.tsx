@@ -1,6 +1,6 @@
+import { useAuthenticate } from '@/features/auth';
+import { protectedRoutes, publicRoutes } from '@/routes';
 import { useRoutes } from 'react-router-dom';
-import { useAuthenticate } from './features/auth';
-import { protectedRoutes, publicRoutes } from './routes';
 
 // TODO: add ts alias imports for features & allow only import from feature root
 // TODO: add index file to each feature

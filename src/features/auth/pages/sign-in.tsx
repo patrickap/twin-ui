@@ -1,3 +1,4 @@
+import { InputPassword, InputText, Logo } from '@/components/elements';
 import {
   Box,
   Button,
@@ -11,8 +12,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { Logo } from '../../../components/elements';
-import { InputPassword, InputText } from '../../../components/elements/input';
 import { useSignIn } from '../hooks';
 import { signInFormSchema } from '../schemas';
 import { authStore } from '../stores';

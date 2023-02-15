@@ -7,7 +7,7 @@ const publicRoutes: RouteObject[] = [
   },
   {
     path: '/signin',
-    element: await import('../components/layouts/full-center').then(
+    element: await import('@/components/layouts/full-center').then(
       ({ FullCenter }) => (
         <FullCenter>
           <Outlet />
@@ -17,7 +17,7 @@ const publicRoutes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: await import('../features/auth/pages/sign-in').then(
+        element: await import('@/features/auth/pages/sign-in').then(
           ({ SignIn }) => <SignIn />,
         ),
       },

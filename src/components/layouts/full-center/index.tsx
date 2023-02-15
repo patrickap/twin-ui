@@ -1,18 +1,16 @@
-import { Center as CenterContent, Container } from '@chakra-ui/react';
+import { Center, Container } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
 type FullCenterProps = {
   children?: ReactNode;
 };
 
-// TODO: rename CenterContent to Center
-
 const FullCenter = ({ children }: FullCenterProps) => {
   return (
     <Container>
-      <CenterContent w='full' h='100vh'>
+      <Center w='full' h='100vh'>
         {children}
-      </CenterContent>
+      </Center>
     </Container>
   );
 };
