@@ -116,7 +116,11 @@ const SignIn = () => {
             </Button>
           </HStack>
           <Stack spacing={6}>
-            <Button variant='primary' onClick={onSubmit}>
+            <Button
+              variant='primary'
+              onClick={onSubmit}
+              isLoading={signIn.isLoading}
+            >
               Sign in
             </Button>
           </Stack>
