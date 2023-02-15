@@ -30,7 +30,7 @@ const signIn = async (credentials: Credentials) => {
     } as AuthUser<Admin>);
   }
 
-  return Promise.reject();
+  return Promise.resolve({});
 };
 
 export { signIn };
