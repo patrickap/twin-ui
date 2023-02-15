@@ -1,6 +1,4 @@
-import { Admin } from '@/features/admin';
-import { User } from '@/features/user';
-import { AuthUser, Credentials } from '../types';
+import { Credentials, User } from '../types';
 
 const signIn = async (credentials: Credentials) => {
   // TODO: const url = urlcat(import.meta.env.VITE_API_BASE_URL, '/auth');
@@ -15,7 +13,7 @@ const signIn = async (credentials: Credentials) => {
         value: '123',
         expires: '',
       },
-    } as AuthUser<User>);
+    } as User);
   }
 
   if (credentials.username === 'admin') {
@@ -27,10 +25,10 @@ const signIn = async (credentials: Credentials) => {
         value: '456',
         expires: '',
       },
-    } as AuthUser<Admin>);
+    } as User);
   }
 
-  return Promise.resolve({});
+  return Promise.reject();
 };
 
 export { signIn };

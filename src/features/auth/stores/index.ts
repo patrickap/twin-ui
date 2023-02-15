@@ -1,8 +1,8 @@
 import { Store } from 'pullstate';
-import { AuthUser } from '../types';
+import { User } from '../types';
 
 type AuthState = {
-  user?: AuthUser;
+  user?: User;
 };
 
 const authStore = new Store<AuthState>({});

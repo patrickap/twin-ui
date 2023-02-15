@@ -1,4 +1,4 @@
-import { authStore, AuthUser } from '@/features/auth';
+import { authStore, User } from '@/features/auth';
 import {
   Box,
   Center,
@@ -126,7 +126,7 @@ const Header = () => {
 };
 
 type NavItemsProps = {
-  user: AuthUser;
+  user: User;
   iconOnly?: boolean;
 };
 

@@ -1,4 +1,3 @@
-import { Admin } from '@/features/admin';
 import { User } from '@/features/user';
 import { z } from 'zod';
 import { signInFormSchema } from '../schemas';
@@ -12,8 +11,13 @@ type AccessToken = {
   expires: string;
 };
 
-type AuthUser<T extends User | Admin = User | Admin> = T & {
+type Role = 'USER' | 'ADMIN';
+
+type User = {
+  id: string;
+  role: Role;
+  username: string;
   accessToken: AccessToken;
 };
 
-export type { Credentials, SignInForm, AccessToken, AuthUser };
+export type { Credentials, SignInForm, AccessToken, User };
