@@ -1,4 +1,3 @@
-import { User } from '@/features/user';
 import { z } from 'zod';
 import { signInFormSchema } from '../schemas';
 
