@@ -7,6 +7,7 @@ import { useRoutes } from 'react-router-dom';
 // TODO: add locales folder to each feature if its a specific translation
 // TODO: setup husky, commitlint, semantic release with changelog, stylelint
 // TODO: authguard and roleguard component
+// TODO: fix i18n init and loading
 
 const App = () => {
   const { data: isAuthenticated } = useAuthenticate();
