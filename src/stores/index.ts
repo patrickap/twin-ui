@@ -2,7 +2,7 @@ import { Store } from 'pullstate';
 
 type State = {};
 
-// TODO: global app state
+// TODO: add global app state here
 const store = new Store<State>({});
 
 export { store };

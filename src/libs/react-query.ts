@@ -1,7 +1,7 @@
 import { MutationCache, QueryCache, QueryClient } from '@tanstack/react-query';
 
 const onError = (error: unknown) => {
-  // TODO: handle error
+  // TODO: handle errors with toast messages
 };
 
 const queryClient = new QueryClient({

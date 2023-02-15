@@ -47,7 +47,6 @@ const Dashboard = ({ children }: DashboardProps) => {
 };
 
 const Side = () => {
-  // TODO: implement queries / mutations
   const user = useUser();
   const iconOnly = useBreakpointValue({ base: true, md: true, xl: false });
 

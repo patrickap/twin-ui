@@ -14,7 +14,7 @@ const protectedRoutes: RouteObject[] = [
         </Dashboard>
       ),
     ),
-    // TODO: implement loaders
+    // TODO: implement loaders where possible
     // loader: async ({ params }) => {
     //   const query = customQuery(params.id);
     //   return (
@@ -68,7 +68,7 @@ const protectedRoutes: RouteObject[] = [
         ),
       },
       // admin & user routes
-      // TODO: profile wont be a route instead will be a component
+      // TODO: profile wont be a route, instead will be a selectable component
       // {
       //   path: 'profile',
       //   element: await import('@/features/shared/pages/profile').then(
