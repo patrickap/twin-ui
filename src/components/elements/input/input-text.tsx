@@ -1,14 +1,14 @@
 import { Input } from '@chakra-ui/react';
 import { forwardRef } from 'react';
-import { InputField, InputFieldProps } from './input-field';
+import { InputWrapper, InputWrapperProps } from './input-wrapper';
 
-type InputTextProps = InputFieldProps;
+type InputTextProps = InputWrapperProps;
 
 const InputText = forwardRef((props: InputTextProps, ref) => {
   return (
-    <InputField {...props} ref={ref}>
+    <InputWrapper {...props} ref={ref}>
       <Input type='text' />
-    </InputField>
+    </InputWrapper>
   );
 });
 
