@@ -1,5 +1,5 @@
-import KY from 'ky';
+import Ky from 'ky';
 
-const ky = KY.extend({ credentials: 'same-origin', hooks: {} });
+const ky = Ky.extend({ credentials: 'same-origin', hooks: {} });
 
 export { ky };
