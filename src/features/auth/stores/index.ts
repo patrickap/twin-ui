@@ -1,8 +1,8 @@
 import { Store } from 'pullstate';
-import { User } from '../types';
+import { AccessToken } from '../types';
 
 type AuthState = {
-  user?: User;
+  token?: AccessToken;
 };
 
 const authStore = new Store<AuthState>({});

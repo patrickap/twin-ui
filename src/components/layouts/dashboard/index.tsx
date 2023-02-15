@@ -1,4 +1,4 @@
-import { authStore, User } from '@/features/auth';
+import { User, useUser } from '@/features/auth';
 import {
   Box,
   Center,
@@ -48,7 +48,7 @@ const Dashboard = ({ children }: DashboardProps) => {
 
 const Side = () => {
   // TODO: implement queries / mutations
-  const user = authStore.useState((s) => s.user);
+  const user = useUser();
   const iconOnly = useBreakpointValue({ base: true, md: true, xl: false });
 
   return (
@@ -63,7 +63,7 @@ const Side = () => {
       shadow='xs'
     >
       <Logo size={8} />
-      <NavItems user={user!} iconOnly={iconOnly} />
+      <NavItems user={user.data!} iconOnly={iconOnly} />
     </Stack>
   );
 };
@@ -84,7 +84,7 @@ const Main = ({ children }: Pick<DashboardProps, 'children'>) => {
 };
 
 const Header = () => {
-  const user = authStore.useState((s) => s.user);
+  const user = useUser();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -116,7 +116,7 @@ const Header = () => {
           <DrawerBody px={4} py={8}>
             <Stack h='full' spacing={8}>
               <Logo size={8} />
-              <NavItems user={user!} />
+              <NavItems user={user.data!} />
             </Stack>
           </DrawerBody>
         </DrawerContent>

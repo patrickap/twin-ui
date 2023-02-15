@@ -14,7 +14,6 @@ type User = {
   id: string;
   role: Role;
   username: string;
-  accessToken: AccessToken;
 };
 
 type Role = 'USER' | 'ADMIN';

@@ -1,9 +1,9 @@
-import { authenticate } from '../api';
+import { getUser } from '../api';
 import { AccessToken } from '../types';
 
-const authenticateQuery = (token?: Partial<AccessToken>) => ({
-  queryKey: ['authenticate', token?.value ?? ''],
-  queryFn: () => authenticate(token),
+const userQuery = (token: AccessToken) => ({
+  queryKey: ['getUser', token.value],
+  queryFn: () => getUser(token),
 });
 
-export { authenticateQuery };
+export { userQuery };

@@ -27,9 +27,9 @@ const SignIn = () => {
   const navigate = useNavigate();
 
   const signIn = useSignIn({
-    onSuccess: (user) => {
+    onSuccess: (token) => {
       authStore.update((s) => {
-        s.user = user;
+        s.token = token;
       });
       navigate('/dashboard');
     },
