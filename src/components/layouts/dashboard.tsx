@@ -1,3 +1,4 @@
+import { authStore, AuthUser } from '@/features/auth';
 import {
   Box,
   Center,
@@ -27,10 +28,7 @@ import {
   UserIcon,
   UsersIcon,
 } from '@heroicons/react/24/outline';
-import { useQuery } from '@tanstack/react-query';
 import { ReactNode, useState } from 'react';
-import { userQuery } from '../../features/user/queries';
-import { User } from '../../features/user/types';
 import { Logo, NavLink } from '../elements';
 
 // TODO: refactor stuff in separate files
@@ -50,7 +48,7 @@ const Dashboard = ({ children }: DashboardProps) => {
 
 const Side = () => {
   // TODO: implement queries / mutations
-  const user = useQuery(userQuery('1'));
+  const user = authStore.useState((s) => s.user);
   const iconOnly = useBreakpointValue({ base: true, md: true, xl: false });
 
   return (
@@ -65,7 +63,7 @@ const Side = () => {
       shadow='xs'
     >
       <Logo size={8} />
-      <NavItems user={user.data!} iconOnly={iconOnly} />
+      <NavItems user={user!} iconOnly={iconOnly} />
     </Stack>
   );
 };
@@ -86,7 +84,7 @@ const Main = ({ children }: Pick<DashboardProps, 'children'>) => {
 };
 
 const Header = () => {
-  const user = useQuery(userQuery('1'));
+  const user = authStore.useState((s) => s.user);
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -118,7 +116,7 @@ const Header = () => {
           <DrawerBody px={4} py={8}>
             <Stack h='full' spacing={8}>
               <Logo size={8} />
-              <NavItems user={user.data!} />
+              <NavItems user={user!} />
             </Stack>
           </DrawerBody>
         </DrawerContent>
@@ -128,7 +126,7 @@ const Header = () => {
 };
 
 type NavItemsProps = {
-  user: User;
+  user: AuthUser;
   iconOnly?: boolean;
 };
 
@@ -138,55 +136,55 @@ const NavItems = ({ user, iconOnly }: NavItemsProps) => {
       to: 'files',
       icon: FolderIcon,
       label: 'Files',
-      role: 'user',
+      role: 'USER',
     },
     {
       to: 'shares',
       icon: ShareIcon,
       label: 'Shares',
-      role: 'user',
+      role: 'USER',
     },
     {
       to: 'profile',
       icon: UserIcon,
       label: 'Profile',
-      role: 'user',
+      role: 'USER',
     },
     {
       to: 'users',
       icon: UsersIcon,
       label: 'Users',
-      role: 'admin',
+      role: 'ADMIN',
     },
     {
       to: 'groups',
       icon: UserGroupIcon,
       label: 'Groups',
-      role: 'admin',
+      role: 'ADMIN',
     },
     {
       to: 'folders',
       icon: FolderPlusIcon,
       label: 'Folders',
-      role: 'admin',
+      role: 'ADMIN',
     },
     {
       to: 'events',
       icon: CalendarDaysIcon,
       label: 'Events',
-      role: 'admin',
+      role: 'ADMIN',
     },
     {
       to: 'system',
       icon: CircleStackIcon,
       label: 'System',
-      role: 'admin',
+      role: 'ADMIN',
     },
     {
       to: 'profile',
       icon: UserIcon,
       label: 'Profile',
-      role: 'admin',
+      role: 'ADMIN',
     },
   ];
 
@@ -194,9 +192,9 @@ const NavItems = ({ user, iconOnly }: NavItemsProps) => {
     <List spacing={2} textAlign='center' w='full'>
       {items
         .filter((item) => user?.role === item.role)
-        .map(({ to, icon, label }) => {
+        .map(({ to, icon, label }, i) => {
           return (
-            <ListItem>
+            <ListItem key={to + i}>
               <NavLink to={to} icon={icon} iconOnly={iconOnly}>
                 {label}
               </NavLink>

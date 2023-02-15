@@ -1,6 +1,4 @@
 import { Navigate, Outlet, RouteObject } from 'react-router-dom';
-import { userQuery } from '../features/user/queries';
-import { queryClient } from '../libs/react-query';
 
 const protectedRoutes: RouteObject[] = [
   {
@@ -16,14 +14,14 @@ const protectedRoutes: RouteObject[] = [
         </Dashboard>
       ),
     ),
-    // TODO: implement loaders, this is just an example
-    loader: async ({ params }) => {
-      const query = userQuery(params.id);
-      return (
-        queryClient.getQueryData(query.queryKey) ??
-        (await queryClient.fetchQuery(query))
-      );
-    },
+    // TODO: implement loaders
+    // loader: async ({ params }) => {
+    //   const query = customQuery(params.id);
+    //   return (
+    //     queryClient.getQueryData(query.queryKey) ??
+    //     (await queryClient.fetchQuery(query))
+    //   );
+    // },
     children: [
       // user routes
       {

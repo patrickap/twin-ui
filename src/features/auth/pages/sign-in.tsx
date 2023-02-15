@@ -10,9 +10,12 @@ import {
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import { Logo } from '../../../components/elements';
 import { InputPassword, InputText } from '../../../components/elements/input';
+import { useSignIn } from '../hooks';
 import { signInFormSchema } from '../schemas';
+import { authStore } from '../stores';
 import { SignInForm } from '../types';
 
 const SignIn = () => {
@@ -20,6 +23,20 @@ const SignIn = () => {
   const { t } = useTranslation();
   const signInForm = useForm<SignInForm>({
     resolver: zodResolver(signInFormSchema),
+  });
+  const navigate = useNavigate();
+
+  const signIn = useSignIn({
+    onSuccess: (user) => {
+      authStore.update((s) => {
+        s.user = user;
+      });
+      navigate('/dashboard');
+    },
+  });
+
+  const onSubmit = signInForm.handleSubmit((form) => {
+    signIn.mutate(form);
   });
 
   return (
@@ -99,12 +116,7 @@ const SignIn = () => {
             </Button>
           </HStack>
           <Stack spacing={6}>
-            <Button
-              variant='primary'
-              onClick={signInForm.handleSubmit((form) => {
-                console.log(form);
-              })}
-            >
+            <Button variant='primary' onClick={onSubmit}>
               Sign in
             </Button>
           </Stack>

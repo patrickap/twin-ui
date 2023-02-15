@@ -1,13 +1,9 @@
 import { Store } from 'pullstate';
 
-type State = {
-  version: string;
-};
+type State = {};
 
-// TODO: Store to handle global app state
-const store = new Store<State>({
-  version: '1.0.0',
-});
+// TODO: global app state
+const store = new Store<State>({});
 
 export { store };
 export type { State };
