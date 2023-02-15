@@ -5,12 +5,8 @@ import { components } from './components';
 
 const chakraTheme = extendTheme(
   {
-    colors: {
-      ...colors,
-    },
-    components: {
-      ...components,
-    },
+    colors,
+    components,
   },
   proTheme,
 );

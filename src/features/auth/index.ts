@@ -1,5 +1,6 @@
 export * from './api';
 export * from './hooks';
+export * from './locales';
 export * from './mutations';
 export * from './pages';
 export * from './queries';
