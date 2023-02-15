@@ -53,7 +53,7 @@ const SignIn = () => {
               render={({ field, fieldState }) => (
                 <InputText
                   ref={field.ref}
-                  label={'Username'}
+                  label='Username'
                   defaultValue={field.value}
                   isInvalid={!!fieldState.invalid}
                   error={fieldState.error?.message}
@@ -68,7 +68,7 @@ const SignIn = () => {
               render={({ field, fieldState }) => (
                 <InputPassword
                   ref={field.ref}
-                  label={'Password'}
+                  label='Password'
                   defaultValue={field.value}
                   isInvalid={!!fieldState.invalid}
                   error={fieldState.error?.message}
