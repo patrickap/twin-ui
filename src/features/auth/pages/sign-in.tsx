@@ -20,6 +20,7 @@ import { SignInForm } from '../types';
 const SignIn = () => {
   // TODO: use translation and make it type safe
   const { t } = useTranslation();
+
   const signInForm = useForm<SignInForm>({
     resolver: zodResolver(signInFormSchema),
   });
