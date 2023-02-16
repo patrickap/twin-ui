@@ -1,4 +1,4 @@
-import { authStore } from '@/features/auth';
+import { useAuth } from '@/features/auth';
 import { protectedRoutes, publicRoutes } from '@/routes';
 import { useRoutes } from 'react-router-dom';
 
@@ -6,7 +6,7 @@ import { useRoutes } from 'react-router-dom';
 // TODO: add authguard and roleguard component
 
 const App = () => {
-  const isAuthenticated = authStore.useState((s) => !!s.token?.value);
+  const { isAuthenticated } = useAuth();
   const route = useRoutes(isAuthenticated ? protectedRoutes : publicRoutes);
 
   return route;
