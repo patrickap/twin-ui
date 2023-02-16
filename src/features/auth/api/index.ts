@@ -1,3 +1,4 @@
+import { authStore } from '../stores';
 import { AccessToken, Credentials, User } from '../types';
 
 const signIn = async (credentials: Credentials) => {
@@ -23,8 +24,10 @@ const signIn = async (credentials: Credentials) => {
   return Promise.reject();
 };
 
-const getUser = async (token: AccessToken) => {
-  // TODO: remove mock
+const getUser = async () => {
+  // TODO: remove mock, token is added automatically on requests using ky
+  const { token } = authStore.getRawState();
+
   if (token?.value === 'user-1234567890') {
     return Promise.resolve<User>({ id: '1', username: 'user', role: 'USER' });
   }

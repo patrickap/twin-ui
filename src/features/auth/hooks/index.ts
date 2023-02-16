@@ -4,8 +4,7 @@ import {
   useQuery,
   UseQueryOptions,
 } from '@tanstack/react-query';
-import { signInMutation } from '../mutations';
-import { userQuery } from '../queries';
+import { signInMutation, userQuery } from '../factories';
 import { authStore } from '../stores';
 import { AccessToken, Credentials, User } from '../types';
 
