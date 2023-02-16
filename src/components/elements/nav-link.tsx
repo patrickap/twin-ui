@@ -1,4 +1,4 @@
-import { Button, Icon, IconButton } from '@chakra-ui/react';
+import { Button, Icon, IconButton, useBreakpointValue } from '@chakra-ui/react';
 import { ForwardRefExoticComponent, ReactNode } from 'react';
 import {
   NavLink as NavLinkBase,
@@ -7,11 +7,12 @@ import {
 
 type NavLinkProps = {
   icon?: ForwardRefExoticComponent<any>;
-  isIconOnly?: boolean;
   children?: ReactNode;
 } & NavLinkBaseProps;
 
-const NavLink = ({ icon, isIconOnly, children, ...props }: NavLinkProps) => {
+const NavLink = ({ icon, children, ...props }: NavLinkProps) => {
+  const isIconOnly = useBreakpointValue({ base: true, md: true, xl: false });
+
   return (
     <NavLinkBase {...props}>
       {({ isActive }) => (
