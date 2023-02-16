@@ -2,7 +2,7 @@ import { getUser } from '../api';
 import { AccessToken } from '../types';
 
 const userQuery = (token: AccessToken) => ({
-  queryKey: ['getUser', token.value],
+  queryKey: ['user', token.value],
   queryFn: () => getUser(token),
 });
 
