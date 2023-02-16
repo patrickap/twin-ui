@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { ReactNode } from 'react';
-import { userQuery } from '../../factories';
+import { getAccountQuery } from '../../queries';
+
 import { Role } from '../../types';
 
 type RoleGuardProps = {
@@ -11,11 +12,11 @@ type RoleGuardProps = {
 };
 
 const RoleGuard = ({ roles, onSuccess, onError, children }: RoleGuardProps) => {
-  const user = useQuery({ ...userQuery(), onSuccess, onError });
-  const role = user.data?.role;
+  const account = useQuery({ ...getAccountQuery(), onSuccess, onError });
+  const role = account.data?.role;
   const isAllowed = role ? roles.includes(role) : false;
 
-  if (user.isSuccess && isAllowed) {
+  if (account.isSuccess && isAllowed) {
     return <>{children}</>;
   } else {
     return null;

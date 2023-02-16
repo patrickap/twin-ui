@@ -1,5 +1,5 @@
 import { NavLink } from '@/components/elements';
-import { userQuery } from '@/features/account';
+import { getAccountQuery } from '@/features/account';
 import { List, ListItem, useBreakpointValue } from '@chakra-ui/react';
 import {
   CalendarDaysIcon,
@@ -14,7 +14,7 @@ import {
 import { useQuery } from '@tanstack/react-query';
 
 const Navigation = () => {
-  const user = useQuery(userQuery());
+  const account = useQuery(getAccountQuery());
   const isIconOnly = useBreakpointValue({ base: true, md: true, xl: false });
 
   const items = [
@@ -77,7 +77,7 @@ const Navigation = () => {
   return (
     <List spacing={2} textAlign='center' w='full'>
       {items
-        .filter((item) => user?.data?.role === item.role)
+        .filter((item) => account?.data?.role === item.role)
         .map(({ to, icon, label }, i) => {
           return (
             <ListItem key={to + i}>

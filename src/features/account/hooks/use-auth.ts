@@ -1,5 +1,6 @@
 import { useMutation, UseMutationOptions } from '@tanstack/react-query';
-import { signInMutation } from '../factories';
+import { signInMutation } from '../mutations';
+
 import { authStore } from '../stores';
 import { AccessToken, Credentials } from '../types';
 
