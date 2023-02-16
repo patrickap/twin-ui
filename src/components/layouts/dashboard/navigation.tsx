@@ -1,5 +1,5 @@
 import { NavLink } from '@/components/elements';
-import { userQuery } from '@/features/auth';
+import { userQuery } from '@/features/account';
 import { List, ListItem, useBreakpointValue } from '@chakra-ui/react';
 import {
   CalendarDaysIcon,
