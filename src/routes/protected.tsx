@@ -1,3 +1,5 @@
+import { getAccountQuery } from '@/features/account';
+import { queryClient } from '@/libs/react-query';
 import { Navigate, Outlet, RouteObject } from 'react-router-dom';
 
 const protectedRoutes: RouteObject[] = [
@@ -13,13 +15,13 @@ const protectedRoutes: RouteObject[] = [
       </Dashboard>
     )),
     // TODO: implement loaders where possible
-    // loader: async ({ params }) => {
-    //   const query = customQuery(params.id);
-    //   return (
-    //     queryClient.getQueryData(query.queryKey) ??
-    //     (await queryClient.fetchQuery(query))
-    //   );
-    // },
+    loader: async () => {
+      const query = getAccountQuery();
+      return (
+        queryClient.getQueryData(query.queryKey) ??
+        (await queryClient.fetchQuery(query))
+      );
+    },
     children: [
       // user routes
       {
