@@ -1,27 +1,28 @@
-import {
-  useMutation,
-  UseMutationOptions,
-  useQuery,
-  UseQueryOptions,
-} from '@tanstack/react-query';
-import { signInMutation, userQuery } from '../factories';
+import { useMutation, UseMutationOptions } from '@tanstack/react-query';
+import { signInMutation } from '../factories';
 import { authStore } from '../stores';
-import { AccessToken, Credentials, User } from '../types';
+import { AccessToken, Credentials } from '../types';
 
-const useSignIn = (
-  options?: UseMutationOptions<AccessToken, unknown, Credentials, unknown>,
-) => {
-  const signIn = useMutation({ ...options, ...signInMutation() });
-  return signIn;
-};
+const useAuth = (options?: {
+  signIn: UseMutationOptions<AccessToken, unknown, Credentials, unknown>;
+}) => {
+  const isAuthenticated = authStore.useState((s) => !!s.token);
 
-const useUser = (options?: UseQueryOptions<User, unknown, User, string[]>) => {
-  const token = authStore.useState((s) => s.token);
-  const user = useQuery({
+  const signIn = useMutation({
     ...options,
-    ...userQuery(token!),
+    ...signInMutation(),
+    onSuccess: (...args) => {
+      options?.signIn.onSuccess?.(...args);
+
+      const [token] = args;
+      authStore.update((s) => {
+        s.token = token;
+      });
+    },
   });
-  return user;
+
+  // TODO: add mutations like signUp, signOut, ...
+  return { isAuthenticated, signIn };
 };
 
-export { useSignIn, useUser };
+export { useAuth };

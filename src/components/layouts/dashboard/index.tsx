@@ -1,4 +1,4 @@
-import { User, useUser } from '@/features/auth';
+import { User, userQuery } from '@/features/auth';
 import {
   Box,
   Center,
@@ -28,6 +28,7 @@ import {
   UserIcon,
   UsersIcon,
 } from '@heroicons/react/24/outline';
+import { useQuery } from '@tanstack/react-query';
 import { ReactNode, useState } from 'react';
 import { Logo, NavLink } from '../../elements';
 
@@ -47,7 +48,7 @@ const Dashboard = ({ children }: DashboardProps) => {
 };
 
 const Side = () => {
-  const user = useUser();
+  const user = useQuery(userQuery());
   const iconOnly = useBreakpointValue({ base: true, md: true, xl: false });
 
   return (
@@ -83,7 +84,7 @@ const Main = ({ children }: Pick<DashboardProps, 'children'>) => {
 };
 
 const Header = () => {
-  const user = useUser();
+  const user = useQuery(userQuery());
   const [isOpen, setIsOpen] = useState(false);
 
   return (

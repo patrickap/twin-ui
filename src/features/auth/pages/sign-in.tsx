@@ -12,9 +12,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { useSignIn } from '../hooks';
+import { useAuth } from '../hooks';
 import { signInFormSchema } from '../schemas';
-import { authStore } from '../stores';
 import { SignInForm } from '../types';
 
 const SignIn = () => {
@@ -26,12 +25,11 @@ const SignIn = () => {
   });
   const navigate = useNavigate();
 
-  const signIn = useSignIn({
-    onSuccess: (token) => {
-      authStore.update((s) => {
-        s.token = token;
-      });
-      navigate('/dashboard');
+  const { signIn } = useAuth({
+    signIn: {
+      onSuccess: () => {
+        navigate('/dashboard');
+      },
     },
   });
 
