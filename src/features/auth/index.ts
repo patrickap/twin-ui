@@ -1,6 +1,5 @@
 export * from './api';
 export * from './components';
-export * from './factories';
 export * from './hooks';
 export * from './locales';
 export * from './pages';
