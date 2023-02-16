@@ -9,7 +9,7 @@ const useAuth = (options?: {
   const isAuthenticated = authStore.useState((s) => !!s.token);
 
   const signIn = useMutation({
-    ...options,
+    ...options?.signIn,
     ...signInMutation(),
     onSuccess: (...args) => {
       options?.signIn.onSuccess?.(...args);
