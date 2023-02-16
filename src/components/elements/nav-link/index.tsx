@@ -7,16 +7,16 @@ import {
 
 type NavLinkProps = {
   icon?: ForwardRefExoticComponent<any>;
-  iconOnly?: boolean;
+  isIconOnly?: boolean;
   children?: ReactNode;
 } & NavLinkBaseProps;
 
-const NavLink = ({ icon, iconOnly, children, ...props }: NavLinkProps) => {
+const NavLink = ({ icon, isIconOnly, children, ...props }: NavLinkProps) => {
   return (
     <NavLinkBase {...props}>
       {({ isActive }) => (
         <>
-          {iconOnly ? (
+          {isIconOnly ? (
             <IconButton
               colorScheme='gray'
               variant='ghost'

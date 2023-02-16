@@ -1,2 +1,2 @@
+export * from './center';
 export * from './dashboard';
-export * from './full-center';

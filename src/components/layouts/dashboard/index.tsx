@@ -49,7 +49,7 @@ const Dashboard = ({ children }: DashboardProps) => {
 
 const Side = () => {
   const user = useQuery(userQuery());
-  const iconOnly = useBreakpointValue({ base: true, md: true, xl: false });
+  const isIconOnly = useBreakpointValue({ base: true, md: true, xl: false });
 
   return (
     <Stack
@@ -63,7 +63,7 @@ const Side = () => {
       shadow='xs'
     >
       <Logo size={8} />
-      <NavItems user={user.data!} iconOnly={iconOnly} />
+      <NavItems user={user.data!} isIconOnly={isIconOnly} />
     </Stack>
   );
 };
@@ -127,10 +127,10 @@ const Header = () => {
 
 type NavItemsProps = {
   user: User;
-  iconOnly?: boolean;
+  isIconOnly?: boolean;
 };
 
-const NavItems = ({ user, iconOnly }: NavItemsProps) => {
+const NavItems = ({ user, isIconOnly }: NavItemsProps) => {
   const items = [
     {
       to: 'files',
@@ -195,7 +195,7 @@ const NavItems = ({ user, iconOnly }: NavItemsProps) => {
         .map(({ to, icon, label }, i) => {
           return (
             <ListItem key={to + i}>
-              <NavLink to={to} icon={icon} iconOnly={iconOnly}>
+              <NavLink to={to} icon={icon} isIconOnly={isIconOnly}>
                 {label}
               </NavLink>
             </ListItem>
