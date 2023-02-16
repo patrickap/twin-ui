@@ -7,11 +7,13 @@ const publicRoutes: RouteObject[] = [
   },
   {
     path: '/signin',
-    element: await import('@/components/layouts/center').then(({ Center }) => (
-      <Center type='screen'>
-        <Outlet />
-      </Center>
-    )),
+    element: await import('@/components/layouts/full-center').then(
+      ({ FullCenter }) => (
+        <FullCenter>
+          <Outlet />
+        </FullCenter>
+      ),
+    ),
     children: [
       {
         index: true,

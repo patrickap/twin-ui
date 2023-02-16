@@ -1,7 +1,7 @@
 import { getUser } from '../api';
 
 const userQuery = () => ({
-  queryKey: ['user', 'me'],
+  queryKey: ['getUser'],
   queryFn: getUser,
 });
 

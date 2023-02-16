@@ -1,4 +1,4 @@
-import { signIn } from '../api';
+import { signIn } from '../api/auth';
 
 const signInMutation = () => ({
   mutationKey: ['signIn'],

@@ -7,13 +7,11 @@ const protectedRoutes: RouteObject[] = [
   },
   {
     path: '/dashboard',
-    element: await import('@/components/layouts/dashboard').then(
-      ({ Dashboard }) => (
-        <Dashboard>
-          <Outlet />
-        </Dashboard>
-      ),
-    ),
+    element: await import('@/components/layouts').then(({ Dashboard }) => (
+      <Dashboard>
+        <Outlet />
+      </Dashboard>
+    )),
     // TODO: implement loaders where possible
     // loader: async ({ params }) => {
     //   const query = customQuery(params.id);
