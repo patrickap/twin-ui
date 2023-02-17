@@ -6,7 +6,7 @@ const getAccount = async () => {
   // TODO: remove mock, token is added automatically on requests using ky
   const { token } = authStore.getRawState();
 
-  await sleep(2000);
+  await sleep(500);
 
   if (token?.value === 'user-1234567890') {
     return Promise.resolve<Account>({
