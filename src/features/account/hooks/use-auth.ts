@@ -7,9 +7,6 @@ import { AccessToken, Credentials } from '../types';
 const useAuth = (options?: {
   signIn: UseMutationOptions<AccessToken, unknown, Credentials, unknown>;
 }) => {
-  // TODO: check also token expiration
-  const isAuthenticated = authStore.useState((s) => !!s.token);
-
   const signIn = useMutation({
     ...options?.signIn,
     ...signInMutation(),
@@ -23,8 +20,11 @@ const useAuth = (options?: {
     },
   });
 
+  // TODO: also check expiration time
+  const isTokenValid = authStore.useState((s) => !!s.token);
+
   // TODO: add mutations like signUp, signOut, ...
-  return { isAuthenticated, signIn };
+  return { signIn, isTokenValid };
 };
 
 export { useAuth };
