@@ -1,25 +1,29 @@
-import { useQuery } from '@tanstack/react-query';
 import { ReactNode } from 'react';
-import { getAccountQuery } from '../../queries';
+import { useAccount } from '../../hooks';
 
 import { Role } from '../../types';
 
 type RoleGuardProps = {
   roles: Role[];
-  onSuccess?: () => void;
-  onError?: () => void;
+  loadingElement?: ReactNode;
+  errorElement?: ReactNode;
   children?: ReactNode;
 };
 
-const RoleGuard = ({ roles, onSuccess, onError, children }: RoleGuardProps) => {
-  const account = useQuery({ ...getAccountQuery(), onSuccess, onError });
-  const role = account.data?.role;
-  const isAllowed = role ? roles.includes(role) : false;
+const RoleGuard = ({
+  roles,
+  loadingElement,
+  errorElement,
+  children,
+}: RoleGuardProps) => {
+  const { getAccount, isRole } = useAccount();
 
-  if (account.isSuccess && isAllowed) {
+  if (getAccount.isLoading) {
+    return <>{loadingElement}</>;
+  } else if (getAccount.isSuccess && isRole(...roles)) {
     return <>{children}</>;
   } else {
-    return null;
+    return <>{errorElement}</>;
   }
 };
 
