@@ -4,6 +4,7 @@ import { useRoutes } from 'react-router-dom';
 
 // TODO: setup husky, commitlint, semantic release with changelog, stylelint
 // TODO: add authguard and roleguard component
+// TODO: code splitting and lazy loading with @loadable/component library
 
 const App = () => {
   const { isAuthenticated } = useAuth();
