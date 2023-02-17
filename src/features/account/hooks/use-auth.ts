@@ -1,8 +1,9 @@
 import { useMutation, UseMutationOptions } from '@tanstack/react-query';
 import { signInMutation } from '../mutations';
-
 import { authStore } from '../stores';
 import { AccessToken, Credentials } from '../types';
+
+// TODO: FIXME: state is not shared using useMutation but useQuery does...
 
 const useAuth = (options?: {
   signIn: UseMutationOptions<AccessToken, unknown, Credentials, unknown>;
