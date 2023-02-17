@@ -7,6 +7,7 @@ import { AccessToken, Credentials } from '../types';
 const useAuth = (options?: {
   signIn: UseMutationOptions<AccessToken, unknown, Credentials, unknown>;
 }) => {
+  // TODO: check also token expiration
   const isAuthenticated = authStore.useState((s) => !!s.token);
 
   const signIn = useMutation({
