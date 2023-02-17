@@ -1,5 +1,5 @@
 import { useAuth } from '@/features/account';
-import { protectedRoutes, publicRoutes } from '@/routes';
+import { privateRoutes, publicRoutes } from '@/routes';
 import { useRoutes } from 'react-router-dom';
 
 // TODO: setup husky, commitlint, semantic release with changelog, stylelint
@@ -10,7 +10,7 @@ import { useRoutes } from 'react-router-dom';
 
 const App = () => {
   const { isAuthenticated } = useAuth();
-  const route = useRoutes(isAuthenticated ? protectedRoutes : publicRoutes);
+  const route = useRoutes(isAuthenticated ? privateRoutes : publicRoutes);
 
   return route;
 };

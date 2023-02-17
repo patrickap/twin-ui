@@ -2,7 +2,7 @@ import { getAccountQuery } from '@/features/account';
 import { queryClient } from '@/libs/react-query';
 import { Navigate, Outlet, RouteObject } from 'react-router-dom';
 
-const protectedRoutes: RouteObject[] = [
+const privateRoutes: RouteObject[] = [
   {
     path: '/',
     element: <Navigate to='/dashboard' />,
@@ -83,4 +83,4 @@ const protectedRoutes: RouteObject[] = [
   },
 ];
 
-export { protectedRoutes };
+export { privateRoutes };
