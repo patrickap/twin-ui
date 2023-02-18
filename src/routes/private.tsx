@@ -31,6 +31,17 @@ const privateRoutes: RouteObject[] = [
     // },
     children: [
       {
+        index: true,
+        element: (
+          <Dashboard.Main>
+            <Dashboard.Header>Home</Dashboard.Header>
+            <Dashboard.Content>
+              <>Nothing there</>
+            </Dashboard.Content>
+          </Dashboard.Main>
+        ),
+      },
+      {
         path: 'files',
         element: (
           <Dashboard.Main>
