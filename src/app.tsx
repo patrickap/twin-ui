@@ -9,8 +9,8 @@ import { useRoutes } from 'react-router-dom';
 // TODO: smart redirect to previous protected route if logged in successfully
 
 const App = () => {
-  const { isTokenValid } = useAuth();
-  const route = useRoutes(isTokenValid ? privateRoutes : publicRoutes);
+  const { signIn } = useAuth();
+  const route = useRoutes(signIn.isSuccess ? privateRoutes : publicRoutes);
 
   return route;
 };
