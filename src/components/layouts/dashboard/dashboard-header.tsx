@@ -9,7 +9,7 @@ type DashboardHeaderProps = {
 const DashboardHeader = ({ children }: DashboardHeaderProps) => {
   return (
     <>
-      <Flex p={4}>
+      <Flex py={4} h={20} align='center'>
         <Drawer>
           <Logo size={8} />
           <Navigation />
