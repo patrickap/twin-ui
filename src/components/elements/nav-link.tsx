@@ -20,6 +20,7 @@ const NavLink = ({ icon, isIconOnly, children, ...props }: NavLinkProps) => {
             <Tooltip
               py={1}
               px={3}
+              shadow='sm'
               rounded='lg'
               placement='right'
               fontSize={14}
