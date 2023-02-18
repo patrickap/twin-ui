@@ -1,4 +1,4 @@
-import { Header, Logo, Navigation } from '@/components/elements';
+import { Logo, Navigation } from '@/components/elements';
 import { Dashboard } from '@/components/layouts';
 import { FilesPage, SharesPage } from '@/features/user';
 import { Navigate, Outlet, RouteObject } from 'react-router-dom';
@@ -34,8 +34,10 @@ const privateRoutes: RouteObject[] = [
         path: 'files',
         element: (
           <Dashboard.Main>
-            <Header>Files</Header>
-            <FilesPage />
+            <Dashboard.Header>Files</Dashboard.Header>
+            <Dashboard.Content>
+              <FilesPage />
+            </Dashboard.Content>
           </Dashboard.Main>
         ),
       },
@@ -43,8 +45,10 @@ const privateRoutes: RouteObject[] = [
         path: 'shares',
         element: (
           <Dashboard.Main>
-            <Header>Shares</Header>
-            <SharesPage />
+            <Dashboard.Header>Shares</Dashboard.Header>
+            <Dashboard.Content>
+              <SharesPage />
+            </Dashboard.Content>
           </Dashboard.Main>
         ),
       },
