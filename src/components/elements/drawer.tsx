@@ -7,16 +7,17 @@ import {
   Icon,
   IconButton,
   Stack,
+  useDisclosure,
 } from '@chakra-ui/react';
 import { Bars3Icon } from '@heroicons/react/20/solid';
-import { ReactNode, useState } from 'react';
+import { ReactNode } from 'react';
 
 type DrawerProps = {
   children?: ReactNode;
 };
 
 const Drawer = ({ children }: DrawerProps) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
@@ -26,12 +27,12 @@ const Drawer = ({ children }: DrawerProps) => {
         colorScheme='gray'
         variant='ghost'
         aria-label='menu'
-        onClick={() => setIsOpen(true)}
+        onClick={onOpen}
       />
 
       <DrawerWrapper
         placement='left'
-        onClose={() => setIsOpen(false)}
+        onClose={onClose}
         isOpen={isOpen}
         size='xs'
       >
