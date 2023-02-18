@@ -1,5 +1,5 @@
 import {
-  Drawer,
+  Drawer as DrawerWrapper,
   DrawerBody,
   DrawerCloseButton,
   DrawerContent,
@@ -11,11 +11,11 @@ import {
 import { Bars3Icon } from '@heroicons/react/20/solid';
 import { ReactNode, useState } from 'react';
 
-type NavigationDrawerProps = {
+type DrawerProps = {
   children?: ReactNode;
 };
 
-const NavigationDrawer = ({ children }: NavigationDrawerProps) => {
+const Drawer = ({ children }: DrawerProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -29,7 +29,11 @@ const NavigationDrawer = ({ children }: NavigationDrawerProps) => {
         onClick={() => setIsOpen(true)}
       />
 
-      <Drawer placement='left' onClose={() => setIsOpen(false)} isOpen={isOpen}>
+      <DrawerWrapper
+        placement='left'
+        onClose={() => setIsOpen(false)}
+        isOpen={isOpen}
+      >
         <DrawerOverlay />
         <DrawerContent bg='bg-surface'>
           <DrawerCloseButton />
@@ -39,10 +43,10 @@ const NavigationDrawer = ({ children }: NavigationDrawerProps) => {
             </Stack>
           </DrawerBody>
         </DrawerContent>
-      </Drawer>
+      </DrawerWrapper>
     </>
   );
 };
 
-export { NavigationDrawer };
-export type { NavigationDrawerProps };
+export { Drawer };
+export type { DrawerProps };

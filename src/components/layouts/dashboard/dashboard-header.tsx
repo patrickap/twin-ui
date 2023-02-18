@@ -1,4 +1,4 @@
-import { Logo, Navigation, NavigationDrawer } from '@/components/elements';
+import { Drawer, Logo, Navigation } from '@/components/elements';
 import { Box, Center, Flex, Heading } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
@@ -10,10 +10,10 @@ const DashboardHeader = ({ children }: DashboardHeaderProps) => {
   return (
     <>
       <Flex p={4}>
-        <NavigationDrawer>
+        <Drawer>
           <Logo size={8} />
           <Navigation />
-        </NavigationDrawer>
+        </Drawer>
 
         <Center flex={1}>
           <Heading fontSize='xl' lineHeight={1}>
