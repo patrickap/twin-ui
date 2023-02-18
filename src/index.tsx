@@ -9,6 +9,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { I18nextProvider } from 'react-i18next';
 import { BrowserRouter } from 'react-router-dom';
 import { App } from './app';
+import { AuthenticationProvider } from './features/auth';
 import './index.css';
 
 i18n.init();
@@ -22,7 +23,9 @@ ReactDOM.createRoot(root).render(
         <ChakraProvider theme={chakraTheme}>
           <QueryClientProvider client={queryClient}>
             <BrowserRouter>
-              <App />
+              <AuthenticationProvider>
+                <App />
+              </AuthenticationProvider>
             </BrowserRouter>
           </QueryClientProvider>
         </ChakraProvider>
