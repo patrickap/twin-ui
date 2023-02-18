@@ -1,10 +1,12 @@
 import { NavLink } from '@/components/elements';
-import { List, ListItem, useBreakpointValue } from '@chakra-ui/react';
+import { List, ListItem } from '@chakra-ui/react';
 import { FolderIcon, ShareIcon } from '@heroicons/react/24/outline';
 
-const Navigation = () => {
-  const isIconOnly = useBreakpointValue({ base: true, md: true, xl: false });
+type NavigationProps = {
+  isIconOnly?: boolean;
+};
 
+const Navigation = ({ isIconOnly }: NavigationProps) => {
   return (
     <List spacing={2} textAlign='center' w='full'>
       <ListItem>

@@ -33,6 +33,7 @@ const Drawer = ({ children }: DrawerProps) => {
         placement='left'
         onClose={() => setIsOpen(false)}
         isOpen={isOpen}
+        size='xs'
       >
         <DrawerOverlay />
         <DrawerContent bg='bg-surface'>

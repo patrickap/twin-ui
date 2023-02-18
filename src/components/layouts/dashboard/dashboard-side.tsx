@@ -1,5 +1,5 @@
 import { Logo, Navigation } from '@/components/elements';
-import { Stack } from '@chakra-ui/react';
+import { Stack, useBreakpointValue } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
 type DashboardSideProps = {
@@ -7,6 +7,8 @@ type DashboardSideProps = {
 };
 
 const DashboardSide = ({ children }: DashboardSideProps) => {
+  const isIconOnly = useBreakpointValue({ base: true, md: true, xl: false });
+
   return (
     <Stack
       h='full'
@@ -19,7 +21,7 @@ const DashboardSide = ({ children }: DashboardSideProps) => {
       shadow='xs'
     >
       <Logo size={8} />
-      <Navigation />
+      <Navigation isIconOnly={isIconOnly} />
       {children}
     </Stack>
   );
