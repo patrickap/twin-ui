@@ -11,8 +11,12 @@ const DashboardHeader = ({ children }: DashboardHeaderProps) => {
     <>
       <Flex py={4} h={20} align='center'>
         <Drawer>
-          <Logo size={8} />
-          <Navigation />
+          {({ onClose }) => (
+            <>
+              <Logo size={8} />
+              <Navigation onNavigate={onClose} />
+            </>
+          )}
         </Drawer>
 
         <Center flex={1}>

@@ -1,3 +1,4 @@
+import { isFunction } from '@/utils';
 import {
   Drawer as DrawerWrapper,
   DrawerBody,
@@ -13,11 +14,14 @@ import { Bars3Icon } from '@heroicons/react/20/solid';
 import { ReactNode } from 'react';
 
 type DrawerProps = {
-  children?: ReactNode;
+  children?:
+    | ReactNode
+    | ((drawer: ReturnType<typeof useDisclosure>) => ReactNode);
 };
 
 const Drawer = ({ children }: DrawerProps) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const disclosure = useDisclosure();
+  const { isOpen, onOpen, onClose } = disclosure;
 
   return (
     <>
@@ -41,7 +45,7 @@ const Drawer = ({ children }: DrawerProps) => {
           <DrawerCloseButton />
           <DrawerBody px={4} py={8}>
             <Stack h='full' spacing={8}>
-              {children}
+              {isFunction(children) ? children(disclosure) : children}
             </Stack>
           </DrawerBody>
         </DrawerContent>

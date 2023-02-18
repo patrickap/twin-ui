@@ -4,11 +4,12 @@ import { FolderIcon, ShareIcon } from '@heroicons/react/24/outline';
 
 type NavigationProps = {
   isIconOnly?: boolean;
+  onNavigate?: () => void;
 };
 
-const Navigation = ({ isIconOnly }: NavigationProps) => {
+const Navigation = ({ isIconOnly, onNavigate }: NavigationProps) => {
   return (
-    <List spacing={2} textAlign='center' w='full'>
+    <List spacing={2} textAlign='center' w='full' onClick={onNavigate}>
       <ListItem>
         <NavLink
           to='/dashboard/files'
