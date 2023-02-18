@@ -1,5 +1,14 @@
 import { Drawer, Logo, Navigation } from '@/components/elements';
-import { Box, Center, chakra, Flex, Heading } from '@chakra-ui/react';
+import { Profile } from '@/features/user';
+import {
+  Box,
+  Center,
+  chakra,
+  Divider,
+  Flex,
+  Heading,
+  Spacer,
+} from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
 type DashboardHeaderProps = {
@@ -16,6 +25,9 @@ const DashboardHeader = ({ children }: DashboardHeaderProps) => {
               <>
                 <Logo size={8} />
                 <Navigation onNavigate={onClose} />
+                <Spacer />
+                <Divider />
+                <Profile />
               </>
             )}
           </Drawer>

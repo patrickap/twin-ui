@@ -1,5 +1,6 @@
 import { Logo, Navigation } from '@/components/elements';
-import { Stack, useBreakpointValue } from '@chakra-ui/react';
+import { Profile } from '@/features/user';
+import { Divider, Spacer, Stack, useBreakpointValue } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
 type DashboardSideProps = {
@@ -22,6 +23,9 @@ const DashboardSide = ({ children }: DashboardSideProps) => {
     >
       <Logo size={8} />
       <Navigation isIconOnly={isIconOnly} />
+      <Spacer />
+      <Divider />
+      <Profile isIconOnly={isIconOnly} />
       {children}
     </Stack>
   );
