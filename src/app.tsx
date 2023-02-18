@@ -1,4 +1,4 @@
-import { useAuth } from '@/features/account';
+import { useAuth } from '@/features/auth';
 import { privateRoutes, publicRoutes } from '@/routes';
 import { useRoutes } from 'react-router-dom';
 

@@ -25,16 +25,10 @@ const SignIn = () => {
   });
   const navigate = useNavigate();
 
-  const { signIn } = useAuth({
-    signIn: {
-      onSuccess: () => {
-        navigate('/dashboard');
-      },
-    },
-  });
+  const { signIn } = useAuth();
 
   const onSubmit = signInForm.handleSubmit((form) => {
-    signIn.mutate(form);
+    signIn.mutateAsync(form).then(() => navigate('/dashboard'));
   });
 
   return (

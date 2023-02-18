@@ -17,7 +17,7 @@ const publicRoutes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: await import('@/features/account/pages/sign-in').then(
+        element: await import('@/features/auth/pages/sign-in').then(
           ({ SignIn }) => <SignIn />,
         ),
       },

@@ -1,4 +1,4 @@
-import { authStore } from '@/features/account';
+import { authStore } from '@/features/auth';
 import Ky from 'ky';
 
 const ky = Ky.extend({
