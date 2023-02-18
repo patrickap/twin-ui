@@ -26,7 +26,6 @@ const Drawer = ({ children }: DrawerProps) => {
   return (
     <>
       <IconButton
-        display={{ base: 'flex', md: 'none' }}
         icon={<Icon as={Bars3Icon} w={6} h={6} />}
         colorScheme='gray'
         variant='ghost'
