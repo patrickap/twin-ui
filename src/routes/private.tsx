@@ -1,4 +1,5 @@
-import { DashboardLayout } from '@/components/layouts';
+import { Header, Logo, Navigation } from '@/components/elements';
+import { Dashboard } from '@/components/layouts';
 import { FilesPage, SharesPage } from '@/features/user';
 import { Navigate, Outlet, RouteObject } from 'react-router-dom';
 
@@ -12,9 +13,13 @@ const privateRoutes: RouteObject[] = [
   {
     path: '/dashboard',
     element: (
-      <DashboardLayout>
+      <Dashboard.Layout>
+        <Dashboard.Side>
+          <Logo size={8} />
+          <Navigation />
+        </Dashboard.Side>
         <Outlet />
-      </DashboardLayout>
+      </Dashboard.Layout>
     ),
     // TODO: implement loaders where possible
     // loader: async () => {
@@ -27,11 +32,21 @@ const privateRoutes: RouteObject[] = [
     children: [
       {
         path: 'files',
-        element: <FilesPage />,
+        element: (
+          <Dashboard.Main>
+            <Header>Files</Header>
+            <FilesPage />
+          </Dashboard.Main>
+        ),
       },
       {
         path: 'shares',
-        element: <SharesPage />,
+        element: (
+          <Dashboard.Main>
+            <Header>Shares</Header>
+            <SharesPage />
+          </Dashboard.Main>
+        ),
       },
     ],
   },

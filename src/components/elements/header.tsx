@@ -14,11 +14,11 @@ import {
   Stack,
 } from '@chakra-ui/react';
 import { Bars3Icon } from '@heroicons/react/20/solid';
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { Navigation } from './navigation';
 
 type HeaderProps = {
-  children?: string;
+  children?: ReactNode;
 };
 
 const Header = ({ children }: HeaderProps) => {

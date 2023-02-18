@@ -1,11 +1,11 @@
 import { Stack } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
-type SideProps = {
+type DashboardSideProps = {
   children?: ReactNode;
 };
 
-const Side = ({ children }: SideProps) => {
+const DashboardSide = ({ children }: DashboardSideProps) => {
   return (
     <Stack
       h='full'
@@ -22,4 +22,5 @@ const Side = ({ children }: SideProps) => {
   );
 };
 
-export { Side };
+export { DashboardSide };
+export type { DashboardSideProps };

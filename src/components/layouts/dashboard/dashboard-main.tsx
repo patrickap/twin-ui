@@ -1,11 +1,11 @@
 import { Container, Stack } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
-type MainProps = {
+type DashboardMainProps = {
   children?: ReactNode;
 };
 
-const Main = ({ children }: MainProps) => {
+const DashboardMain = ({ children }: DashboardMainProps) => {
   return (
     <Stack flex={1} h='full'>
       <Container>{children}</Container>
@@ -13,5 +13,5 @@ const Main = ({ children }: MainProps) => {
   );
 };
 
-export { Main };
-export type { MainProps };
+export { DashboardMain };
+export type { DashboardMainProps };
