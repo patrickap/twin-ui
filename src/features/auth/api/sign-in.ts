@@ -6,7 +6,7 @@ const signIn = async (credentials: Credentials) => {
   // TODO: use ky.post(...)
   // TODO: remove mock
 
-  await sleep(2000);
+  await sleep(1000);
 
   return Promise.resolve<AccessToken>({
     value: '1234567890',

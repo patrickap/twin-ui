@@ -1,5 +1,5 @@
-import { Button, Icon, IconButton, useBreakpointValue } from '@chakra-ui/react';
-import { ForwardRefExoticComponent, ReactNode } from 'react';
+import { Button, Icon, IconButton, Tooltip } from '@chakra-ui/react';
+import { ForwardRefExoticComponent } from 'react';
 import {
   NavLink as NavLinkBase,
   NavLinkProps as NavLinkBaseProps,
@@ -7,32 +7,37 @@ import {
 
 type NavLinkProps = {
   icon?: ForwardRefExoticComponent<any>;
-  children?: ReactNode;
+  isIconOnly?: boolean;
+  children?: string;
 } & NavLinkBaseProps;
 
-const NavLink = ({ icon, children, ...props }: NavLinkProps) => {
-  const isIconOnly = useBreakpointValue({ base: true, md: true, xl: false });
-
+const NavLink = ({ icon, isIconOnly, children, ...props }: NavLinkProps) => {
   return (
     <NavLinkBase {...props}>
       {({ isActive }) => (
         <>
           {isIconOnly ? (
-            <IconButton
-              colorScheme='gray'
-              variant='ghost'
-              isActive={isActive}
-              icon={
-                icon ? (
-                  <Icon
-                    as={icon}
-                    w={{ base: 6, xl: 5 }}
-                    h={{ base: 6, xl: 5 }}
-                  />
-                ) : undefined
-              }
-              aria-label='nav-link'
-            />
+            <Tooltip
+              py={1}
+              px={3}
+              rounded='lg'
+              placement='right'
+              fontSize={14}
+              label={children}
+              aria-label={children ?? ''}
+            >
+              <IconButton
+                colorScheme='gray'
+                variant='ghost'
+                isActive={isActive}
+                icon={
+                  icon ? (
+                    <Icon as={icon} w={5} h={5} strokeWidth={2} />
+                  ) : undefined
+                }
+                aria-label={children ?? ''}
+              />
+            </Tooltip>
           ) : (
             <Button
               w='full'
@@ -41,14 +46,11 @@ const NavLink = ({ icon, children, ...props }: NavLinkProps) => {
               colorScheme='gray'
               variant='ghost'
               isActive={isActive}
-              fontWeight={isActive ? 'semibold' : 'medium'}
+              fontWeight='semibold'
+              gap={1}
               leftIcon={
                 icon ? (
-                  <Icon
-                    as={icon}
-                    w={{ base: 6, xl: 5 }}
-                    h={{ base: 6, xl: 5 }}
-                  />
+                  <Icon as={icon} w={5} h={5} strokeWidth={2} />
                 ) : undefined
               }
             >

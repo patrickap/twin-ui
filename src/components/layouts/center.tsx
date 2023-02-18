@@ -1,11 +1,11 @@
 import { Center, Container } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
-type FullCenterProps = {
+type CenterLayoutProps = {
   children?: ReactNode;
 };
 
-const FullCenter = ({ children }: FullCenterProps) => {
+const CenterLayout = ({ children }: CenterLayoutProps) => {
   return (
     <Container w='100vw' h='100vh'>
       <Center w='full' h='full'>
@@ -15,5 +15,5 @@ const FullCenter = ({ children }: FullCenterProps) => {
   );
 };
 
-export { FullCenter };
-export type { FullCenterProps };
+export { CenterLayout };
+export type { CenterLayoutProps };

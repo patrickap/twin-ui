@@ -1,8 +1,11 @@
-import { Logo } from '@/components/elements';
 import { Stack } from '@chakra-ui/react';
-import { Navigation } from './navigation';
+import { ReactNode } from 'react';
 
-const Side = () => {
+type SideProps = {
+  children?: ReactNode;
+};
+
+const Side = ({ children }: SideProps) => {
   return (
     <Stack
       h='full'
@@ -14,8 +17,7 @@ const Side = () => {
       bg='bg-surface'
       shadow='xs'
     >
-      <Logo size={8} />
-      <Navigation />
+      {children}
     </Stack>
   );
 };

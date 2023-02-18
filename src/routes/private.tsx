@@ -1,4 +1,8 @@
+import { DashboardLayout } from '@/components/layouts';
+import { FilesPage, SharesPage } from '@/features/user';
 import { Navigate, Outlet, RouteObject } from 'react-router-dom';
+
+// TODO: use lazy loading
 
 const privateRoutes: RouteObject[] = [
   {
@@ -7,11 +11,11 @@ const privateRoutes: RouteObject[] = [
   },
   {
     path: '/dashboard',
-    element: await import('@/components/layouts').then(({ Dashboard }) => (
-      <Dashboard>
+    element: (
+      <DashboardLayout>
         <Outlet />
-      </Dashboard>
-    )),
+      </DashboardLayout>
+    ),
     // TODO: implement loaders where possible
     // loader: async () => {
     //   const query = getUserQuery();
@@ -23,15 +27,11 @@ const privateRoutes: RouteObject[] = [
     children: [
       {
         path: 'files',
-        element: await import('@/features/user/pages/files').then(
-          ({ Files }) => <Files />,
-        ),
+        element: <FilesPage />,
       },
       {
         path: 'shares',
-        element: await import('@/features/user/pages/shares').then(
-          ({ Shares }) => <Shares />,
-        ),
+        element: <SharesPage />,
       },
     ],
   },

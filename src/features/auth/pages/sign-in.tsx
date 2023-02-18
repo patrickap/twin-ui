@@ -16,7 +16,7 @@ import { useAuth } from '../hooks';
 import { signInFormSchema } from '../schemas';
 import { SignInForm } from '../types';
 
-const SignIn = () => {
+const SignInPage = () => {
   // TODO: add and use translation
   const { t } = useTranslation();
 
@@ -122,4 +122,4 @@ const SignIn = () => {
   );
 };
 
-export { SignIn };
+export { SignInPage };

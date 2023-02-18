@@ -1,6 +1,5 @@
 import { Container, Stack } from '@chakra-ui/react';
 import { ReactNode } from 'react';
-import { Header } from './header';
 
 type MainProps = {
   children?: ReactNode;
@@ -9,14 +8,7 @@ type MainProps = {
 const Main = ({ children }: MainProps) => {
   return (
     <Stack flex={1} h='full'>
-      <Header />
-      <Container>
-        <div>
-          Main
-          <br />
-          {children}
-        </div>
-      </Container>
+      <Container>{children}</Container>
     </Stack>
   );
 };

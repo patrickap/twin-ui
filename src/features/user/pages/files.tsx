@@ -1,5 +1,5 @@
-const Files = () => {
+const FilesPage = () => {
   return <>User files</>;
 };
 
-export { Files };
+export { FilesPage };

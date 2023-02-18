@@ -1,5 +1,5 @@
-const Shares = () => {
+const SharesPage = () => {
   return <>User shared files</>;
 };
 
-export { Shares };
+export { SharesPage };

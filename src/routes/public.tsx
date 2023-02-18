@@ -1,3 +1,5 @@
+import { CenterLayout } from '@/components/layouts';
+import { SignInPage } from '@/features/auth';
 import { Navigate, Outlet, RouteObject } from 'react-router-dom';
 
 const publicRoutes: RouteObject[] = [
@@ -7,19 +9,15 @@ const publicRoutes: RouteObject[] = [
   },
   {
     path: '/signin',
-    element: await import('@/components/layouts/full-center').then(
-      ({ FullCenter }) => (
-        <FullCenter>
-          <Outlet />
-        </FullCenter>
-      ),
+    element: (
+      <CenterLayout>
+        <Outlet />
+      </CenterLayout>
     ),
     children: [
       {
         index: true,
-        element: await import('@/features/auth/pages/sign-in').then(
-          ({ SignIn }) => <SignIn />,
-        ),
+        element: <SignInPage />,
       },
     ],
   },

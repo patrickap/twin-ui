@@ -17,7 +17,11 @@ import { Bars3Icon } from '@heroicons/react/20/solid';
 import { useState } from 'react';
 import { Navigation } from './navigation';
 
-const Header = () => {
+type HeaderProps = {
+  children?: string;
+};
+
+const Header = ({ children }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -34,7 +38,7 @@ const Header = () => {
 
         <Center flex={1}>
           <Heading fontSize='xl' lineHeight={1}>
-            Page Title
+            {children}
           </Heading>
         </Center>
 
