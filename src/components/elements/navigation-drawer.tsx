@@ -1,4 +1,3 @@
-import { Logo } from '@/components/elements';
 import {
   Drawer,
   DrawerBody,
@@ -10,10 +9,13 @@ import {
   Stack,
 } from '@chakra-ui/react';
 import { Bars3Icon } from '@heroicons/react/20/solid';
-import { useState } from 'react';
-import { Navigation } from './navigation';
+import { ReactNode, useState } from 'react';
 
-const NavigationDrawer = () => {
+type NavigationDrawerProps = {
+  children?: ReactNode;
+};
+
+const NavigationDrawer = ({ children }: NavigationDrawerProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -33,8 +35,7 @@ const NavigationDrawer = () => {
           <DrawerCloseButton />
           <DrawerBody px={4} py={8}>
             <Stack h='full' spacing={8}>
-              <Logo size={8} />
-              <Navigation />
+              {children}
             </Stack>
           </DrawerBody>
         </DrawerContent>
@@ -44,3 +45,4 @@ const NavigationDrawer = () => {
 };
 
 export { NavigationDrawer };
+export type { NavigationDrawerProps };
