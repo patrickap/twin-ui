@@ -1,3 +1,4 @@
+import { Logo, Navigation } from '@/components/elements';
 import { Stack } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
@@ -17,6 +18,8 @@ const DashboardSide = ({ children }: DashboardSideProps) => {
       bg='bg-surface'
       shadow='xs'
     >
+      <Logo size={8} />
+      <Navigation />
       {children}
     </Stack>
   );

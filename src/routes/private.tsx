@@ -1,4 +1,3 @@
-import { Logo, Navigation } from '@/components/elements';
 import { Dashboard } from '@/components/layouts';
 import { FilesPage, SharesPage } from '@/features/user';
 import { Navigate, Outlet, RouteObject } from 'react-router-dom';
@@ -14,10 +13,7 @@ const privateRoutes: RouteObject[] = [
     path: '/dashboard',
     element: (
       <Dashboard.Layout>
-        <Dashboard.Side>
-          <Logo size={8} />
-          <Navigation />
-        </Dashboard.Side>
+        <Dashboard.Side />
         <Outlet />
       </Dashboard.Layout>
     ),
