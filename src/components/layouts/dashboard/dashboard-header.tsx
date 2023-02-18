@@ -16,7 +16,7 @@ const DashboardHeader = ({ children }: DashboardHeaderProps) => {
         </Drawer>
 
         <Center flex={1}>
-          <Heading fontSize='xl' lineHeight={1}>
+          <Heading fontSize={{ base: 'xl', md: '2xl' }} lineHeight={1}>
             {children}
           </Heading>
         </Center>
