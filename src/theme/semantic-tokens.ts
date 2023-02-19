@@ -1,20 +1,28 @@
 const semanticTokens = {
   colors: {
-    'text-default': {
+    'color-neutral': {
       default: 'gray.700',
       _dark: 'gray.300',
     },
-    'text-error': {
+    'color-warning': {
+      default: 'yellow.400',
+      _dark: 'yellow.300',
+    },
+    'color-error': {
       default: 'red.500',
       _dark: 'red.400',
     },
-    'text-success': {
+    'color-success': {
       default: 'green.500',
       _dark: 'green.300',
     },
-    'text-info': {
+    'color-info': {
       default: 'blue.600',
       _dark: 'blue.300',
+    },
+    'bg-neutral': {
+      default: 'gray.100',
+      _dark: 'gray.900',
     },
   },
 };
