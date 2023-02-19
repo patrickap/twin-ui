@@ -1,29 +1,38 @@
+const colorTints = [
+  '50',
+  '100',
+  '200',
+  '300',
+  '400',
+  '500',
+  '600',
+  '700',
+  '800',
+  '900',
+];
+
+const tokenColorMap = {
+  primary: 'brand',
+  info: 'blue',
+  success: 'green',
+  warning: 'yellow',
+  error: 'red',
+  neutral: 'gray',
+};
+
+const colors = Object.entries(tokenColorMap).reduce((acc, [token, color]) => {
+  colorTints.forEach((tint, index) => {
+    acc[`${token}.${tint}`] = {
+      default: `${color}.${colorTints[colorTints.length - 1 - index]}`,
+      _dark: `${color}.${tint}`,
+    };
+  });
+  return acc;
+}, {} as Record<string, { default: string; _dark: string }>);
+
 const semanticTokens = {
   colors: {
-    'color-neutral': {
-      default: 'gray.700',
-      _dark: 'gray.300',
-    },
-    'color-warning': {
-      default: 'yellow.400',
-      _dark: 'yellow.300',
-    },
-    'color-error': {
-      default: 'red.500',
-      _dark: 'red.400',
-    },
-    'color-success': {
-      default: 'green.500',
-      _dark: 'green.300',
-    },
-    'color-info': {
-      default: 'blue.600',
-      _dark: 'blue.300',
-    },
-    'bg-neutral': {
-      default: 'gray.100',
-      _dark: 'gray.900',
-    },
+    ...colors,
   },
 };
 
