@@ -1,6 +1,6 @@
 import { Logo, Navigation } from '@/components/elements';
 import { Profile } from '@/features/user';
-import { Divider, Spacer, Stack, useBreakpointValue } from '@chakra-ui/react';
+import { Divider, Spacer, useBreakpointValue } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
 type DashboardSideProps = {
@@ -11,23 +11,14 @@ const DashboardSide = ({ children }: DashboardSideProps) => {
   const isIconOnly = useBreakpointValue({ base: true, md: true, xl: false });
 
   return (
-    <Stack
-      h='full'
-      w={{ base: 0, md: 76, xl: 256 }}
-      display={{ base: 'none', md: 'flex' }}
-      px={4}
-      py={8}
-      spacing={8}
-      bg='bg-surface'
-      shadow='xs'
-    >
+    <div className='flex h-full w-64 flex-col gap-4 border border-r border-slate-200 bg-slate-100 px-4 py-6'>
       <Logo size={8} />
       <Navigation isIconOnly={isIconOnly} />
       <Spacer />
       <Divider />
       <Profile isIconOnly={isIconOnly} />
       {children}
-    </Stack>
+    </div>
   );
 };
 

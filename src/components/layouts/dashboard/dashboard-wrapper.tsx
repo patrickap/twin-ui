@@ -1,4 +1,3 @@
-import { Flex } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
 type DashboardWrapperProps = {
@@ -6,7 +5,7 @@ type DashboardWrapperProps = {
 };
 
 const DashboardWrapper = ({ children }: DashboardWrapperProps) => {
-  return <Flex h='100vh'>{children}</Flex>;
+  return <div className='flex h-screen'>{children}</div>;
 };
 
 export { DashboardWrapper };

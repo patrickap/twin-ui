@@ -1,5 +1,5 @@
-import { Center, Container } from '@chakra-ui/react';
 import { ReactNode } from 'react';
+import { ContainerLayout } from './container';
 
 type CenterLayoutProps = {
   children?: ReactNode;
@@ -7,11 +7,11 @@ type CenterLayoutProps = {
 
 const CenterLayout = ({ children }: CenterLayoutProps) => {
   return (
-    <Container w='100vw' h='100vh'>
-      <Center w='full' h='full'>
+    <ContainerLayout>
+      <div className='flex h-screen items-center justify-center'>
         {children}
-      </Center>
-    </Container>
+      </div>
+    </ContainerLayout>
   );
 };
 
