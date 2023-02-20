@@ -43,7 +43,7 @@ const Input = forwardRef(
 
     return (
       <div>
-        <Label htmlFor={id}>{label}</Label>
+        {label ? <Label htmlFor={id}>{label}</Label> : null}
         <div className='relative'>
           {icon?.left ? (
             <div className='absolute inset-y-0 left-0 flex items-center pl-3'>

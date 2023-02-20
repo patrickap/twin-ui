@@ -49,7 +49,7 @@ const Checkbox = forwardRef(
             isError && !isDisabled && '!border-red-500',
           )}
         />
-        <Label htmlFor={id}>{label}</Label>
+        {label ? <Label htmlFor={id}>{label}</Label> : null}
       </div>
     );
   },
