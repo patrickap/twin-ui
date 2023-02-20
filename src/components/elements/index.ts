@@ -1,6 +1,5 @@
 export * from './button';
 export * from './checkbox';
-export * from './color-toggle';
 export * from './drawer';
 export * from './input';
 export * from './input-password';
