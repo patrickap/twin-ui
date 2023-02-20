@@ -4,6 +4,7 @@ import {
   FocusEventHandler,
   forwardRef,
   LegacyRef,
+  useId,
 } from 'react';
 
 import { Label } from './label';
@@ -29,27 +30,27 @@ const Checkbox = forwardRef(
     }: CheckboxProps = {},
     ref,
   ) => {
-    return (
-      <Label>
-        <div className='flex items-center gap-2'>
-          <input
-            ref={ref as LegacyRef<any>}
-            type='checkbox'
-            disabled={isDisabled}
-            checked={isChecked}
-            onChange={onChange}
-            onBlur={onBlur}
-            className={clsx(
-              'h-4 w-4 cursor-pointer rounded border border-slate-300 text-brand-500 focus:ring-brand-400',
-              isDisabled &&
-                'disabled:cursor-not-allowed disabled:border-slate-200 disabled:bg-slate-100  disabled:hover:border-slate-200 disabled:hover:bg-slate-100',
-              isError && '!border-red-500',
-            )}
-          />
+    const id = useId();
 
-          {label}
-        </div>
-      </Label>
+    return (
+      <div className='flex items-center gap-2'>
+        <input
+          id={id}
+          ref={ref as LegacyRef<HTMLInputElement>}
+          type='checkbox'
+          checked={isChecked}
+          disabled={isDisabled}
+          onChange={onChange}
+          onBlur={onBlur}
+          className={clsx(
+            'h-4 w-4 cursor-pointer rounded border border-slate-300 text-brand-500 focus:ring-brand-400',
+            isDisabled &&
+              '!cursor-not-allowed  !border-slate-200 !bg-slate-100',
+            isError && !isDisabled && '!border-red-500',
+          )}
+        />
+        <Label htmlFor={id}>{label}</Label>
+      </div>
     );
   },
 );
