@@ -3,6 +3,7 @@ import {
   ChangeEventHandler,
   FocusEventHandler,
   forwardRef,
+  InputHTMLAttributes,
   LegacyRef,
   ReactNode,
   useId,
@@ -11,6 +12,7 @@ import {
 import { Label } from './label';
 
 type InputProps = {
+  type?: InputHTMLAttributes<HTMLInputElement>['type'];
   label?: string;
   icon?: { left?: ReactNode; right?: ReactNode };
   placeholder?: string;
@@ -25,6 +27,7 @@ type InputProps = {
 const Input = forwardRef(
   (
     {
+      type = 'text',
       label,
       icon,
       placeholder,
@@ -51,7 +54,7 @@ const Input = forwardRef(
           <input
             id={id}
             ref={ref as LegacyRef<HTMLInputElement>}
-            type='text'
+            type={type}
             spellCheck={false}
             placeholder={placeholder}
             value={value}
