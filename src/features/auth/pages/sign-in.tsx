@@ -1,13 +1,14 @@
-import { InputPassword, InputText, Logo } from '@/components/elements';
 import {
-  Box,
   Button,
   Checkbox,
-  Heading,
-  HStack,
-  Stack,
+  Input,
+  InputPassword,
+  Link,
+  Logo,
   Text,
-} from '@chakra-ui/react';
+  Title,
+} from '@/components/elements';
+import { Box, HStack, Stack } from '@chakra-ui/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -34,16 +35,12 @@ const SignInPage = () => {
   return (
     <Stack spacing={8} maxW='md' flexGrow={1} py={{ base: 4, sm: 0 }}>
       <Stack spacing={6}>
-        <Logo size={12} />
+        <Logo size={3} />
         <Stack spacing={2} textAlign='center'>
-          <Heading size={{ base: 'xs', sm: 'sm' }}>
-            Sign in to your account
-          </Heading>
+          <Title size={2}>Sign in to your account</Title>
           <HStack spacing={1} justify='center'>
-            <Text color='muted'>Don't have an account?</Text>
-            <Button variant='link' colorScheme='brand'>
-              Sign up
-            </Button>
+            <Text>Don't have an account?</Text>
+            <Link>Sign up</Link>
           </HStack>
         </Stack>
       </Stack>
@@ -60,11 +57,11 @@ const SignInPage = () => {
               control={signInForm.control}
               name='username'
               render={({ field, fieldState }) => (
-                <InputText
+                <Input
                   ref={field.ref}
                   label='Username'
-                  defaultValue={field.value}
-                  isInvalid={!!fieldState.invalid}
+                  value={field.value}
+                  isError={!!fieldState.invalid}
                   error={fieldState.error?.message}
                   onChange={field.onChange}
                   onBlur={field.onBlur}
@@ -78,8 +75,8 @@ const SignInPage = () => {
                 <InputPassword
                   ref={field.ref}
                   label='Password'
-                  defaultValue={field.value}
-                  isInvalid={!!fieldState.invalid}
+                  value={field.value}
+                  isError={!!fieldState.invalid}
                   error={fieldState.error?.message}
                   onChange={field.onChange}
                   onBlur={field.onBlur}
@@ -94,22 +91,19 @@ const SignInPage = () => {
               render={({ field, fieldState }) => (
                 <Checkbox
                   ref={field.ref}
-                  defaultChecked={field.value}
-                  isInvalid={!!fieldState.invalid}
+                  label='Remember me'
+                  isChecked={field.value}
+                  isError={!!fieldState.invalid}
                   onChange={field.onChange}
                   onBlur={field.onBlur}
-                >
-                  Remember me
-                </Checkbox>
+                />
               )}
             />
-            <Button variant='link' colorScheme='brand' size='sm'>
-              Forgot password?
-            </Button>
+            <Link>Forgot password?</Link>
           </HStack>
           <Stack spacing={6}>
             <Button
-              variant='primary'
+              color='brand'
               onClick={onSubmit}
               isLoading={signIn.isLoading}
             >
