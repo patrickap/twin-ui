@@ -8,7 +8,6 @@ import {
   ReactNode,
   useId,
 } from 'react';
-
 import { Label } from './label';
 
 type InputProps = {
