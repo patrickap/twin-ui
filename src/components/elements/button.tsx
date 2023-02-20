@@ -36,7 +36,7 @@ const Button = ({
         color === 'success' &&
           'border-transparent bg-green-500 text-white hover:bg-green-600 focus:ring-green-400',
         isDisabled &&
-          '!hover:bg-slate-50 !cursor-not-allowed !border-slate-100 !bg-slate-50 !text-slate-200',
+          '!hover:bg-slate-100 !cursor-not-allowed !border-slate-200 !bg-slate-100 !text-slate-300',
         isLoading && !isDisabled && '!cursor-not-allowed',
       )}
       onClick={onClick}

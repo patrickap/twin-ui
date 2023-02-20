@@ -66,7 +66,7 @@ const Input = forwardRef(
               icon?.left && 'pl-9',
               icon?.right && 'pr-9',
               isDisabled &&
-                '!cursor-not-allowed !border-slate-200 !bg-slate-100',
+                '!cursor-not-allowed !border-slate-200 !bg-slate-100 !text-slate-300',
               isError &&
                 !isDisabled &&
                 '!border-red-500 !text-red-500 focus:!border-red-500 focus:!ring-red-500',

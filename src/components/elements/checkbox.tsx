@@ -44,8 +44,7 @@ const Checkbox = forwardRef(
           onBlur={onBlur}
           className={clsx(
             'h-4 w-4 cursor-pointer rounded border border-slate-300 text-brand-500 focus:ring-brand-400',
-            isDisabled &&
-              '!cursor-not-allowed  !border-slate-200 !bg-slate-100',
+            isDisabled && '!cursor-not-allowed !border-slate-200 !bg-slate-100',
             isError && !isDisabled && '!border-red-500',
           )}
         />
