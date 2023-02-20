@@ -3,6 +3,7 @@ export * from './checkbox';
 export * from './color-toggle';
 export * from './drawer';
 export * from './input';
+export * from './input-password';
 export * from './label';
 export * from './link';
 export * from './logo';
