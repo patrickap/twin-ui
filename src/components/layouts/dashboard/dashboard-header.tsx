@@ -14,7 +14,7 @@ const DashboardHeader = ({ children }: DashboardHeaderProps) => {
         <Drawer>
           {({ onClose }) => (
             <>
-              <Logo size={8} />
+              <Logo size={2} />
               <Navigation onNavigate={onClose} />
               <Spacer />
               <Divider />

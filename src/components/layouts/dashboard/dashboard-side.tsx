@@ -12,7 +12,7 @@ const DashboardSide = ({ children }: DashboardSideProps) => {
 
   return (
     <div className='flex h-full w-64 flex-col gap-4 border border-r border-slate-200 bg-slate-100 px-4 py-6'>
-      <Logo size={8} />
+      <Logo size={2} />
       <Navigation isIconOnly={isIconOnly} />
       <Spacer />
       <Divider />

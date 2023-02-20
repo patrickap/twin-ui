@@ -1,5 +1,3 @@
-import { Center } from '@chakra-ui/layout';
-import { Icon, useColorModeValue } from '@chakra-ui/react';
 import { RocketLaunchIcon } from '@heroicons/react/20/solid';
 
 type LogoProps = {
@@ -7,11 +5,12 @@ type LogoProps = {
 };
 
 export const Logo = ({ size = 12 }: LogoProps = {}) => {
-  const color = useColorModeValue('brand.500', 'brand.200');
-
   return (
-    <Center>
-      <Icon as={RocketLaunchIcon} color={color} w={size} h={size} />
-    </Center>
+    <div className='flex h-full w-full items-center justify-center'>
+      <RocketLaunchIcon
+        className='text-brand-500'
+        style={{ width: size + 'rem', height: size + 'rem' }}
+      />
+    </div>
   );
 };
