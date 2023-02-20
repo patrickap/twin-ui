@@ -10,3 +10,4 @@ export * from './nav-link';
 export * from './navigation';
 export * from './spinner';
 export * from './text';
+export * from './title';
