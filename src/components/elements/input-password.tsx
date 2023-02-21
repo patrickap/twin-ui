@@ -32,7 +32,7 @@ const InputPassword = forwardRef(
           type={isVisible ? 'text' : 'password'}
           className={clsx('pr-9', label && 'mt-1')}
         >
-          <Input.Icon align='right' onClick={toggleVisibility}>
+          <Input.Icon onClick={toggleVisibility} className='right-0 pr-3'>
             {isVisible ? <EyeIcon /> : <EyeSlashIcon />}
           </Input.Icon>
         </Input.Field>
