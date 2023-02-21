@@ -19,25 +19,23 @@ const InputPassword = forwardRef(
     const { label, isDisabled, isError, error } = props;
     const [isVisible, setIsVisible] = useState(false);
 
+    const toggleVisibility = () => setIsVisible(!isVisible);
+
     return (
       <Input.Root>
         {label ? <Input.Label htmlFor={id}>{label}</Input.Label> : null}
 
-        <div className='relative'>
-          <Input.Icon
-            className='right-0 pr-3'
-            onClick={() => setIsVisible(!isVisible)}
-          >
+        <Input.Field
+          {...props}
+          id={id}
+          ref={ref}
+          type={isVisible ? 'text' : 'password'}
+          className={clsx('pr-9', label && 'mt-1')}
+        >
+          <Input.Icon align='right' onClick={toggleVisibility}>
             {isVisible ? <EyeIcon /> : <EyeSlashIcon />}
           </Input.Icon>
-          <Input.Field
-            {...props}
-            id={id}
-            ref={ref}
-            type={isVisible ? 'text' : 'password'}
-            className={clsx('pr-9', label && 'mt-1')}
-          />
-        </div>
+        </Input.Field>
 
         {isError && !isDisabled && error ? (
           <Input.Error className='mt-1'>{error}</Input.Error>

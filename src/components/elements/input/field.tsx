@@ -5,6 +5,7 @@ import {
   forwardRef,
   InputHTMLAttributes,
   LegacyRef,
+  ReactNode,
 } from 'react';
 
 type InputFieldProps = {
@@ -17,6 +18,7 @@ type InputFieldProps = {
   onChange?: ChangeEventHandler<HTMLInputElement>;
   onBlur?: FocusEventHandler<HTMLInputElement>;
   className?: string;
+  children?: ReactNode;
 };
 
 const InputField = forwardRef(
@@ -31,30 +33,34 @@ const InputField = forwardRef(
       onChange,
       onBlur,
       className,
+      children,
     }: InputFieldProps,
     ref: LegacyRef<HTMLInputElement>,
   ) => {
     return (
-      <input
-        id={id}
-        ref={ref}
-        type={type}
-        spellCheck={false}
-        placeholder={placeholder}
-        value={value}
-        disabled={isDisabled}
-        onChange={onChange}
-        onBlur={onBlur}
-        className={clsx(
-          'block w-full rounded-md border border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm',
-          isDisabled &&
-            '!cursor-not-allowed !border-slate-200 !bg-slate-100 !text-slate-300',
-          isError &&
-            !isDisabled &&
-            '!border-red-500 !text-red-500 focus:!border-red-500 focus:!ring-red-500',
-          className,
-        )}
-      />
+      <div className='relative'>
+        <input
+          id={id}
+          ref={ref}
+          type={type}
+          spellCheck={false}
+          placeholder={placeholder}
+          value={value}
+          disabled={isDisabled}
+          onChange={onChange}
+          onBlur={onBlur}
+          className={clsx(
+            'block w-full rounded-md border border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm',
+            isDisabled &&
+              '!cursor-not-allowed !border-slate-200 !bg-slate-100 !text-slate-300',
+            isError &&
+              !isDisabled &&
+              '!border-red-500 !text-red-500 focus:!border-red-500 focus:!ring-red-500',
+            className,
+          )}
+        />
+        {children}
+      </div>
     );
   },
 );
