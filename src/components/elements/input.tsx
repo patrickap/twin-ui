@@ -61,7 +61,7 @@ const Input = forwardRef(
             onChange={onChange}
             onBlur={onBlur}
             className={clsx(
-              'block w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm',
+              'block w-full rounded-md border border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm',
               label && 'mt-1',
               icon?.left && 'pl-9',
               icon?.right && 'pr-9',
