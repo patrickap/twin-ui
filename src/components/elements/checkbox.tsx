@@ -6,7 +6,7 @@ import {
   LegacyRef,
   useId,
 } from 'react';
-import { Input } from './input';
+import { Label } from '.';
 
 type CheckboxProps = {
   label?: string;
@@ -49,8 +49,7 @@ const Checkbox = forwardRef(
               '!border-red-500 focus:!border-red-500 focus:!ring-red-500',
           )}
         />
-        {/* TODO: change to separate label */}
-        {label ? <Input.Label htmlFor={id}>{label}</Input.Label> : null}
+        <Label htmlFor={id}>{label}</Label>
       </div>
     );
   },

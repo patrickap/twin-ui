@@ -4,6 +4,7 @@ export * from './drawer';
 export * from './input';
 export * from './input-password';
 export * from './input-text';
+export * from './label';
 export * from './link';
 export * from './logo';
 export * from './nav-link';
