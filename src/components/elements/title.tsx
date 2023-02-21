@@ -7,7 +7,7 @@ type TitleProps = {
   children?: ReactNode;
 };
 
-const Title = ({ size = 4, isCenter, children }: TitleProps = {}) => {
+const Title = ({ size = 4, isCenter, children }: TitleProps) => {
   return (
     <span
       className={clsx(

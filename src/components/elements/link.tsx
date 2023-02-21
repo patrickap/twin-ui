@@ -6,7 +6,7 @@ type LinkProps = {
   children?: ReactNode;
 };
 
-const Link = ({ to = {}, children }: LinkProps = {}) => {
+const Link = ({ to = {}, children }: LinkProps) => {
   return (
     <RouterLink
       to={to}

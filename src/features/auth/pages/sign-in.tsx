@@ -1,8 +1,8 @@
 import {
   Button,
   Checkbox,
-  Input,
   InputPassword,
+  InputText,
   Link,
   Logo,
   Text,
@@ -57,7 +57,7 @@ const SignInPage = () => {
               control={signInForm.control}
               name='username'
               render={({ field, fieldState }) => (
-                <Input
+                <InputText
                   ref={field.ref}
                   label='Username'
                   value={field.value}

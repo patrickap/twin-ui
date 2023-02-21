@@ -16,7 +16,7 @@ const Button = ({
   isLoading = false,
   onClick,
   children,
-}: ButtonProps = {}) => {
+}: ButtonProps) => {
   return (
     <button
       type='button'

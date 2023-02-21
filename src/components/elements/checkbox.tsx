@@ -6,8 +6,7 @@ import {
   LegacyRef,
   useId,
 } from 'react';
-
-import { Label } from './label';
+import { Input } from './input';
 
 type CheckboxProps = {
   label?: string;
@@ -27,8 +26,8 @@ const Checkbox = forwardRef(
       isError = false,
       onChange,
       onBlur,
-    }: CheckboxProps = {},
-    ref,
+    }: CheckboxProps,
+    ref: LegacyRef<HTMLInputElement>,
   ) => {
     const id = useId();
 
@@ -36,7 +35,7 @@ const Checkbox = forwardRef(
       <div className='flex items-center gap-2'>
         <input
           id={id}
-          ref={ref as LegacyRef<HTMLInputElement>}
+          ref={ref}
           type='checkbox'
           checked={isChecked}
           disabled={isDisabled}
@@ -50,7 +49,8 @@ const Checkbox = forwardRef(
               '!border-red-500 focus:!border-red-500 focus:!ring-red-500',
           )}
         />
-        {label ? <Label htmlFor={id}>{label}</Label> : null}
+        {/* TODO: change to separate label */}
+        {label ? <Input.Label htmlFor={id}>{label}</Input.Label> : null}
       </div>
     );
   },
