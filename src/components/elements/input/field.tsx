@@ -1,12 +1,16 @@
 import clsx from 'clsx';
 import {
   ChangeEventHandler,
+  Children,
   FocusEventHandler,
   forwardRef,
   InputHTMLAttributes,
+  isValidElement,
   LegacyRef,
+  ReactElement,
   ReactNode,
 } from 'react';
+import { Input, InputIconProps } from '.';
 
 type InputFieldProps = {
   id?: string;
@@ -17,7 +21,6 @@ type InputFieldProps = {
   isError?: boolean;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   onBlur?: FocusEventHandler<HTMLInputElement>;
-  className?: string;
   children?: ReactNode;
 };
 
@@ -32,11 +35,18 @@ const InputField = forwardRef(
       isError = false,
       onChange,
       onBlur,
-      className,
       children,
     }: InputFieldProps,
     ref: LegacyRef<HTMLInputElement>,
   ) => {
+    const icons = Children.toArray(children).filter(
+      (child) => isValidElement(child) && child.type === Input.Icon,
+    ) as ReactElement<InputIconProps>[];
+
+    const isLeftIcon = icons.some((icon) => icon.props.align === 'left');
+
+    const isRightIcon = icons.some((icon) => icon.props.align === 'right');
+
     return (
       <div className='relative'>
         <input
@@ -56,7 +66,8 @@ const InputField = forwardRef(
             isError &&
               !isDisabled &&
               '!border-red-500 !text-red-500 focus:!border-red-500 focus:!ring-red-500',
-            className,
+            isLeftIcon && 'pl-9',
+            isRightIcon && 'pr-9',
           )}
         />
         {children}

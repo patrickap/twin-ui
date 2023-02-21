@@ -5,7 +5,7 @@ type InputRootProps = {
 };
 
 const InputRoot = ({ children }: InputRootProps) => {
-  return <div className='relative'>{children}</div>;
+  return <div className='relative flex flex-col gap-1'>{children}</div>;
 };
 
 export { InputRoot };
