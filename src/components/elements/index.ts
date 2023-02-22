@@ -7,7 +7,7 @@ export * from './input-text';
 export * from './label';
 export * from './link';
 export * from './logo';
-export * from './nav-link';
+export * from './nav-item';
 export * from './navigation';
 export * from './spinner';
 export * from './text';
