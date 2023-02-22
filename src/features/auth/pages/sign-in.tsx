@@ -8,7 +8,6 @@ import {
   Text,
   Title,
 } from '@/components/elements';
-import { Box, HStack, Stack } from '@chakra-ui/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -33,58 +32,49 @@ const SignInPage = () => {
   });
 
   return (
-    <Stack spacing={8} maxW='md' flexGrow={1} py={{ base: 4, sm: 0 }}>
-      <Stack spacing={6}>
+    <div className='flex w-full max-w-md flex-col gap-8'>
+      <div className='flex flex-col gap-6'>
         <Logo size={3} />
-        <Stack spacing={2} textAlign='center'>
+        <div className='flex flex-col gap-2 text-center'>
           <Title size={2}>Sign in to your account</Title>
-          <HStack spacing={1} justify='center'>
-            <Text>Don't have an account?</Text>
-            <Link>Sign up</Link>
-          </HStack>
-        </Stack>
-      </Stack>
-      <Box
-        py={{ base: 0, sm: 8 }}
-        px={{ base: 0, sm: 8 }}
-        bg={{ base: 'transparent', sm: 'bg-surface' }}
-        boxShadow={{ base: 'none', sm: 'sm' }}
-        borderRadius={{ base: 'none', sm: 'md' }}
-      >
-        <Stack spacing={6}>
-          <Stack spacing={6}>
-            <Controller
-              control={signInForm.control}
-              name='username'
-              render={({ field, fieldState }) => (
-                <InputText
-                  ref={field.ref}
-                  label='Username'
-                  value={field.value}
-                  isError={!!fieldState.invalid}
-                  error={fieldState.error?.message}
-                  onChange={field.onChange}
-                  onBlur={field.onBlur}
-                />
-              )}
-            />
-            <Controller
-              control={signInForm.control}
-              name='password'
-              render={({ field, fieldState }) => (
-                <InputPassword
-                  ref={field.ref}
-                  label='Password'
-                  value={field.value}
-                  isError={!!fieldState.invalid}
-                  error={fieldState.error?.message}
-                  onChange={field.onChange}
-                  onBlur={field.onBlur}
-                />
-              )}
-            />
-          </Stack>
-          <HStack justify='space-between'>
+          <Text>
+            Don't have an account? <Link>Sign up</Link>
+          </Text>
+        </div>
+      </div>
+      <div className='bg-transparent p-0 shadow-none sm:rounded-lg sm:bg-white sm:p-8 sm:shadow-md'>
+        <div className='flex flex-col gap-6'>
+          <Controller
+            control={signInForm.control}
+            name='username'
+            render={({ field, fieldState }) => (
+              <InputText
+                ref={field.ref}
+                label='Username'
+                value={field.value}
+                isError={!!fieldState.invalid}
+                error={fieldState.error?.message}
+                onChange={field.onChange}
+                onBlur={field.onBlur}
+              />
+            )}
+          />
+          <Controller
+            control={signInForm.control}
+            name='password'
+            render={({ field, fieldState }) => (
+              <InputPassword
+                ref={field.ref}
+                label='Password'
+                value={field.value}
+                isError={!!fieldState.invalid}
+                error={fieldState.error?.message}
+                onChange={field.onChange}
+                onBlur={field.onBlur}
+              />
+            )}
+          />
+          <div className='flex justify-between'>
             <Controller
               control={signInForm.control}
               name='remember'
@@ -100,19 +90,13 @@ const SignInPage = () => {
               )}
             />
             <Link>Forgot password?</Link>
-          </HStack>
-          <Stack spacing={6}>
-            <Button
-              color='brand'
-              onClick={onSubmit}
-              isLoading={signIn.isLoading}
-            >
-              Sign in
-            </Button>
-          </Stack>
-        </Stack>
-      </Box>
-    </Stack>
+          </div>
+          <Button color='brand' onClick={onSubmit} isLoading={signIn.isLoading}>
+            Sign in
+          </Button>
+        </div>
+      </div>
+    </div>
   );
 };
 
