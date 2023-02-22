@@ -1,6 +1,7 @@
-import { Logo, Navigation } from '@/components/elements';
+import { Logo, Nav, NavItem } from '@/components/elements';
 import { Profile } from '@/features/user';
 import { Divider, Spacer, useBreakpointValue } from '@chakra-ui/react';
+import { FolderIcon, ShareIcon } from '@heroicons/react/24/outline';
 import { ReactNode } from 'react';
 
 type DashboardSideProps = {
@@ -13,7 +14,14 @@ const DashboardSide = ({ children }: DashboardSideProps) => {
   return (
     <div className='flex h-full w-64 flex-col gap-4 border border-r border-slate-200 bg-white px-4 py-6'>
       <Logo size={2} />
-      <Navigation isIconOnly={isIconOnly} />
+      <Nav>
+        <NavItem to='/dashboard/files' icon={<FolderIcon />}>
+          Files
+        </NavItem>
+        <NavItem to='/dashboard/shares' icon={<ShareIcon />}>
+          Shares
+        </NavItem>
+      </Nav>
       <Spacer />
       <Divider />
       <Profile isIconOnly={isIconOnly} />
