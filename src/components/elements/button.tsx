@@ -41,9 +41,8 @@ const Button = ({
       )}
       onClick={onClick}
     >
-      {/* TODO: FIXME: spinner is changing button height */}
       {isLoading && !isDisabled ? (
-        <span className='flex h-6 w-6 items-center justify-center'>
+        <span className='flex items-center justify-center'>
           <Spinner mode={color === 'default' ? 'light' : 'dark'} />
         </span>
       ) : (
