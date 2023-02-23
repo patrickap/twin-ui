@@ -17,6 +17,7 @@ const Button = ({
   onClick,
   children,
 }: ButtonProps) => {
+  // TODO: FIXME: button height spinner on mobile
   return (
     <button
       type='button'
