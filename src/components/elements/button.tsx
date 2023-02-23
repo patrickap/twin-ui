@@ -17,7 +17,6 @@ const Button = ({
   onClick,
   children,
 }: ButtonProps) => {
-  // TODO: FIXME: button height spinner on mobile
   return (
     <button
       type='button'
@@ -43,7 +42,7 @@ const Button = ({
       onClick={onClick}
     >
       {isLoading && !isDisabled ? (
-        <span className='flex items-center justify-center'>
+        <span className='flex h-6 items-center justify-center sm:h-5'>
           <Spinner mode={color === 'default' ? 'light' : 'dark'} />
         </span>
       ) : (
