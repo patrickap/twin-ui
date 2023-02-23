@@ -1,5 +1,9 @@
-import { Logo, Nav, NavItem } from '@/components/elements';
-import { FolderIcon, ShareIcon } from '@heroicons/react/24/outline';
+import { Input, Nav, NavItem } from '@/components/elements';
+import {
+  FolderIcon,
+  MagnifyingGlassIcon,
+  ShareIcon,
+} from '@heroicons/react/24/outline';
 import { ReactNode } from 'react';
 import { ContainerLayout } from './container';
 
@@ -10,8 +14,8 @@ type DashboardProps = {
 const Dashboard = ({ children }: DashboardProps) => {
   return (
     <div className='flex h-screen'>
-      <aside className='flex h-full w-64 flex-col gap-4 border border-r border-slate-200 bg-white px-4 py-6'>
-        <Logo size={2} />
+      <aside className='flex h-full w-64 flex-col gap-8 border border-r border-slate-200 bg-white px-4 py-10'>
+        <Input icon={{ left: <MagnifyingGlassIcon /> }} placeholder='Search' />
         <Nav>
           <NavItem to='/dashboard/files' icon={<FolderIcon />}>
             Files
@@ -21,7 +25,7 @@ const Dashboard = ({ children }: DashboardProps) => {
           </NavItem>
         </Nav>
       </aside>
-      <main>
+      <main className='h-full'>
         <ContainerLayout>{children}</ContainerLayout>
       </main>
     </div>

@@ -22,7 +22,7 @@ const Button = ({
       type='button'
       disabled={isDisabled || isLoading}
       className={clsx(
-        'inline-flex w-full justify-center rounded-md border px-4 py-2 text-base font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 sm:w-auto sm:text-sm',
+        'inline-flex w-full justify-center rounded-lg border px-4 py-2 text-base font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 sm:w-auto sm:text-sm',
         color === 'default' &&
           'border-slate-300 bg-white text-slate-700 hover:bg-slate-50 focus:ring-brand-500',
         color === 'brand' &&
