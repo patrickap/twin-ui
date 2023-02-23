@@ -19,11 +19,7 @@ const NavItem = ({ to = {}, icon, onClick, children }: NavItemProps) => {
             isActive && '!bg-slate-100',
           )}
         >
-          {icon ? (
-            <span className='h-5 w-5 text-slate-700 [&>*]:stroke-2'>
-              {icon}
-            </span>
-          ) : null}
+          {icon ? <span className='h-5 w-5 text-slate-700'>{icon}</span> : null}
           <span className='text-base font-semibold text-slate-700 sm:text-sm'>
             {children}
           </span>

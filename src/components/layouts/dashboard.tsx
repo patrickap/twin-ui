@@ -15,12 +15,15 @@ const Dashboard = ({ children }: DashboardProps) => {
   return (
     <div className='flex h-screen'>
       <aside className='flex h-full w-64 flex-col gap-8 border border-r border-slate-200 bg-white px-4 py-10'>
-        <Input icon={{ left: <MagnifyingGlassIcon /> }} placeholder='Search' />
+        <Input
+          icon={{ left: <MagnifyingGlassIcon strokeWidth={2} /> }}
+          placeholder='Search'
+        />
         <Nav>
-          <NavItem to='/dashboard/files' icon={<FolderIcon />}>
+          <NavItem to='/dashboard/files' icon={<FolderIcon strokeWidth={2} />}>
             Files
           </NavItem>
-          <NavItem to='/dashboard/shares' icon={<ShareIcon />}>
+          <NavItem to='/dashboard/shares' icon={<ShareIcon strokeWidth={2} />}>
             Shares
           </NavItem>
         </Nav>
