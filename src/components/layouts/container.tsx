@@ -6,7 +6,7 @@ type ContainerLayoutProps = {
 
 const ContainerLayout = ({ children }: ContainerLayoutProps) => {
   return (
-    <div className='flex h-full w-full flex-col px-4 sm:px-6'>{children}</div>
+    <div className='flex h-full w-full flex-col px-6 sm:px-10'>{children}</div>
   );
 };
 

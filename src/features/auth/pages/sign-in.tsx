@@ -42,7 +42,7 @@ const SignInPage = () => {
           </Text>
         </div>
       </div>
-      <div className='bg-transparent p-0 shadow-none sm:rounded-lg sm:bg-white sm:p-8 sm:shadow-md'>
+      <div className='bg-transparent p-0 shadow-none sm:rounded-lg sm:bg-white sm:p-10 sm:shadow-md'>
         <div className='flex flex-col gap-6'>
           <Controller
             control={signInForm.control}
