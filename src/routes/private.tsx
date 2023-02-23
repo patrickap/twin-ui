@@ -1,3 +1,4 @@
+import { Title } from '@/components/elements';
 import { Dashboard } from '@/components/layouts';
 import { FilesPage, SharesPage } from '@/features/user';
 import { Navigate, Outlet, RouteObject } from 'react-router-dom';
@@ -27,7 +28,7 @@ const privateRoutes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: <>Nothing there</>,
+        element: <Title size={2}>Nothing here</Title>,
       },
       {
         path: 'files',
