@@ -12,7 +12,7 @@ const App = () => {
   const { signIn } = useAuth();
   const route = useRoutes(signIn.isSuccess ? privateRoutes : publicRoutes);
 
-  return route;
+  return <div className='bg-slate-50'>{route}</div>;
 };
 
 export { App };
