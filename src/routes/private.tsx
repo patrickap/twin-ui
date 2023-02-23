@@ -12,10 +12,9 @@ const privateRoutes: RouteObject[] = [
   {
     path: '/dashboard',
     element: (
-      <Dashboard.Layout>
-        <Dashboard.Side />
+      <Dashboard>
         <Outlet />
-      </Dashboard.Layout>
+      </Dashboard>
     ),
     // TODO: implement loaders where possible
     // loader: async () => {
@@ -28,36 +27,15 @@ const privateRoutes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: (
-          <Dashboard.Main>
-            <Dashboard.Header>Home</Dashboard.Header>
-            <Dashboard.Content>
-              <>Nothing there</>
-            </Dashboard.Content>
-          </Dashboard.Main>
-        ),
+        element: <>Nothing there</>,
       },
       {
         path: 'files',
-        element: (
-          <Dashboard.Main>
-            <Dashboard.Header>Files</Dashboard.Header>
-            <Dashboard.Content>
-              <FilesPage />
-            </Dashboard.Content>
-          </Dashboard.Main>
-        ),
+        element: <FilesPage />,
       },
       {
         path: 'shares',
-        element: (
-          <Dashboard.Main>
-            <Dashboard.Header>Shares</Dashboard.Header>
-            <Dashboard.Content>
-              <SharesPage />
-            </Dashboard.Content>
-          </Dashboard.Main>
-        ),
+        element: <SharesPage />,
       },
     ],
   },
