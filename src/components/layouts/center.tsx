@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import { ContainerLayout } from './container';
 
 type CenterLayoutProps = {
   children?: ReactNode;
@@ -7,11 +6,9 @@ type CenterLayoutProps = {
 
 const CenterLayout = ({ children }: CenterLayoutProps) => {
   return (
-    <ContainerLayout>
-      <div className='flex h-screen items-center justify-center'>
-        {children}
-      </div>
-    </ContainerLayout>
+    <div className='flex h-screen w-full flex-col items-center justify-center px-6 sm:px-10'>
+      {children}
+    </div>
   );
 };
 
