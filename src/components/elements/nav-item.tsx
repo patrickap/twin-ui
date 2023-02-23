@@ -20,7 +20,7 @@ const NavItem = ({ to = {}, icon, onClick, children }: NavItemProps) => {
           )}
         >
           {icon ? <span className='h-5 w-5 text-slate-700'>{icon}</span> : null}
-          <span className='text-base font-semibold text-slate-700 sm:text-sm'>
+          <span className='text-base font-medium text-slate-700 sm:text-sm'>
             {children}
           </span>
         </div>
