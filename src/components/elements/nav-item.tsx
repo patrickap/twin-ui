@@ -17,12 +17,15 @@ const NavItem = ({ to = {}, icon, onClick, children }: NavItemProps) => {
           className={clsx(
             'flex items-center gap-2.5 rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-brand-500',
             isActive && '!bg-slate-100',
+            !children && '!inline-flex !justify-center',
           )}
         >
           {icon ? <span className='h-5 w-5 text-slate-700'>{icon}</span> : null}
-          <span className='text-base font-medium text-slate-700 sm:text-sm'>
-            {children}
-          </span>
+          {children ? (
+            <span className='text-base font-medium text-slate-700 sm:text-sm'>
+              {children}
+            </span>
+          ) : null}
         </div>
       )}
     </NavLink>
