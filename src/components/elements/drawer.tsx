@@ -37,16 +37,14 @@ const Drawer = ({ isOpen = false, onClose, children }: DrawerProps) => {
           leaveFrom='translate-x-0'
           leaveTo='-translate-x-full'
         >
-          <div className='fixed left-0 top-0 h-screen w-full max-w-xs'>
-            <Popover.Panel className='flex h-full flex-col overflow-hidden bg-white shadow-lg'>
-              <div className='flex justify-end p-4'>
-                <ButtonIcon onClick={() => onClose?.(false)}>
-                  <XMarkIcon className='h-5 w-5' />
-                </ButtonIcon>
-              </div>
-              <div>{children}</div>
-            </Popover.Panel>
-          </div>
+          <Popover.Panel className='fixed left-0 top-0 flex h-full w-full max-w-xs flex-col overflow-hidden bg-white shadow-lg'>
+            <div className='flex justify-end p-4'>
+              <ButtonIcon onClick={() => onClose?.(false)}>
+                <XMarkIcon className='h-5 w-5' />
+              </ButtonIcon>
+            </div>
+            <div>{children}</div>
+          </Popover.Panel>
         </Transition.Child>
       </Popover>
     </Transition>
