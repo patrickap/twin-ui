@@ -6,7 +6,7 @@ type CenterLayoutProps = {
 
 const CenterLayout = ({ children }: CenterLayoutProps) => {
   return (
-    <div className='flex h-screen w-full flex-col items-center justify-center px-6 sm:px-10'>
+    <div className='flex h-screen w-full flex-col items-center justify-center px-4'>
       {children}
     </div>
   );

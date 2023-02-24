@@ -1,0 +1,65 @@
+import { Dialog, Transition } from '@headlessui/react';
+import { Bars2Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Fragment, ReactNode } from 'react';
+import { ButtonIcon } from './button-icon';
+
+type DrawerProps = {
+  isOpen?: boolean;
+  onOpen?: (value: boolean) => void;
+  onClose?: (value: boolean) => void;
+  children?: ReactNode;
+};
+
+const Drawer = ({ isOpen = false, onOpen, onClose, children }: DrawerProps) => {
+  return (
+    <>
+      <ButtonIcon onClick={() => onOpen?.(true)}>
+        <Bars2Icon className='h-5 w-5' />
+      </ButtonIcon>
+
+      <Transition appear show={isOpen} as={Fragment}>
+        <Dialog
+          as='div'
+          unmount={false}
+          onClose={() => onClose?.(false)}
+          className='relative z-10'
+        >
+          <Transition.Child
+            as={Fragment}
+            enter='ease-out duration-300'
+            enterFrom='opacity-0'
+            enterTo='opacity-100'
+            leave='ease-in duration-200'
+            leaveFrom='opacity-100'
+            leaveTo='opacity-0'
+          >
+            <Dialog.Overlay className='fixed inset-0 bg-slate-500/25' />
+          </Transition.Child>
+
+          <Transition.Child
+            as={Fragment}
+            enter='ease-out duration-300'
+            enterFrom='-translate-x-full'
+            enterTo='translate-x-0'
+            leave='ease-in duration-200'
+            leaveFrom='translate-x-0'
+            leaveTo='-translate-x-full'
+          >
+            <div className='fixed left-0 top-0 h-screen w-full max-w-xs'>
+              <Dialog.Panel className='flex h-full flex-col overflow-hidden bg-white shadow-lg'>
+                <div className='flex justify-end p-4'>
+                  <ButtonIcon onClick={() => onClose?.(false)}>
+                    <XMarkIcon className='h-5 w-5' />
+                  </ButtonIcon>
+                </div>
+                <div>{children}</div>
+              </Dialog.Panel>
+            </div>
+          </Transition.Child>
+        </Dialog>
+      </Transition>
+    </>
+  );
+};
+
+export { Drawer };
