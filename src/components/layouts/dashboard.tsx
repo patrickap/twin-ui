@@ -1,4 +1,4 @@
-import { Input, Nav, NavItem } from '@/components/elements';
+import { ButtonIcon, Input, Nav, NavItem } from '@/components/elements';
 import {
   Bars3Icon,
   FolderIcon,
@@ -31,7 +31,11 @@ const Dashboard = ({ children }: DashboardProps) => {
       <main className='flex h-full w-full flex-col gap-2 p-6 md:w-auto md:py-10 md:px-8'>
         <div className='flex items-center justify-between gap-2'>
           <span className='text-sm text-slate-500'>bread / crumbs / here</span>
-          <Bars3Icon className='h-6 w-6 cursor-pointer md:hidden' />
+          <div className='md:hidden'>
+            <ButtonIcon>
+              <Bars3Icon className='h-6 w-6' />
+            </ButtonIcon>
+          </div>
         </div>
         {children}
       </main>
