@@ -11,7 +11,7 @@ type DrawerProps = {
 
 const Drawer = ({ isOpen = false, onClose, children }: DrawerProps) => {
   return (
-    <Transition appear show={isOpen} as={Fragment}>
+    <Transition show={isOpen} as={Fragment}>
       <Popover as='div' className='relative z-10'>
         <Transition.Child
           as={Fragment}
@@ -52,3 +52,4 @@ const Drawer = ({ isOpen = false, onClose, children }: DrawerProps) => {
 };
 
 export { Drawer };
+export type { DrawerProps };

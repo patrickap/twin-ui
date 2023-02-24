@@ -2,6 +2,8 @@ export * from './button';
 export * from './button-icon';
 export * from './checkbox';
 export * from './drawer';
+export * from './dropdown';
+export * from './dropdown-item';
 export * from './input';
 export * from './input-password';
 export * from './input-text';

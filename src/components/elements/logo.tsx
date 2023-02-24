@@ -4,7 +4,7 @@ type LogoProps = {
   size?: number;
 };
 
-export const Logo = ({ size = 12 }: LogoProps) => {
+const Logo = ({ size = 12 }: LogoProps) => {
   return (
     <div className='flex w-full items-center justify-center'>
       <RocketLaunchIcon
@@ -14,3 +14,6 @@ export const Logo = ({ size = 12 }: LogoProps) => {
     </div>
   );
 };
+
+export { Logo };
+export type { LogoProps };
