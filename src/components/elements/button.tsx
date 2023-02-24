@@ -22,7 +22,7 @@ const Button = ({
       type='button'
       disabled={isDisabled || isLoading}
       className={clsx(
-        'inline-flex w-full justify-center rounded-lg border px-4 py-2 text-base font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 sm:w-auto sm:text-sm',
+        'inline-flex w-full items-center justify-center rounded-lg border px-4 py-2 text-base font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 sm:w-auto sm:text-sm',
         color === 'default' &&
           'border-slate-300 bg-white text-slate-700 hover:bg-slate-50 focus:ring-brand-500',
         color === 'brand' &&
@@ -41,13 +41,14 @@ const Button = ({
       )}
       onClick={onClick}
     >
+      <span className={clsx(isLoading && !isDisabled && 'opacity-0')}>
+        {children}
+      </span>
       {isLoading && !isDisabled ? (
-        <span className='flex h-6 items-center justify-center sm:h-5'>
+        <span className='absolute'>
           <Spinner mode={color === 'default' ? 'light' : 'dark'} />
         </span>
-      ) : (
-        <>{children}</>
-      )}
+      ) : null}
     </button>
   );
 };
