@@ -15,7 +15,7 @@ const NavItem = ({ to = {}, icon, onClick, children }: NavItemProps) => {
       {({ isActive }) => (
         <div
           className={clsx(
-            'flex items-center gap-2.5 rounded-lg p-2.5 focus:ring-2 focus:ring-brand-500',
+            'flex items-center gap-2.5 rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-brand-500',
             isActive && '!bg-slate-100',
           )}
         >
