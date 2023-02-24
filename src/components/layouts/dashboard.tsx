@@ -1,5 +1,6 @@
-import { Drawer, Input, Nav, NavItem } from '@/components/elements';
+import { ButtonIcon, Drawer, Input, Nav, NavItem } from '@/components/elements';
 import {
+  Bars2Icon,
   FolderIcon,
   MagnifyingGlassIcon,
   ShareIcon,
@@ -16,6 +17,7 @@ const Navigation = () => {
       <Input
         icon={{ left: <MagnifyingGlassIcon strokeWidth={1.75} /> }}
         placeholder='Search'
+        onChange={() => void 0}
       />
       <Nav>
         <NavItem to='/dashboard/files' icon={<FolderIcon strokeWidth={1.75} />}>
@@ -43,7 +45,10 @@ const Dashboard = ({ children }: DashboardProps) => {
         <div className='flex items-center justify-between'>
           <span className='text-sm text-slate-500'>bread / crumbs / here</span>
           <div className='md:hidden'>
-            <Drawer isOpen={isOpen} onOpen={setIsOpen} onClose={setIsOpen}>
+            <ButtonIcon onClick={() => setIsOpen(true)}>
+              <Bars2Icon className='h-5 w-5' />
+            </ButtonIcon>
+            <Drawer isOpen={isOpen} onClose={() => setIsOpen(false)}>
               <div className='flex flex-col gap-8 p-4'>
                 <Navigation />
               </div>
