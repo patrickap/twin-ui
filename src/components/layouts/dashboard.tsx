@@ -15,15 +15,15 @@ const Navigation = () => {
   return (
     <>
       <Input
-        icon={{ left: <MagnifyingGlassIcon strokeWidth={1.75} /> }}
+        icon={{ left: <MagnifyingGlassIcon strokeWidth={2} /> }}
         placeholder='Search'
         onChange={() => void 0}
       />
       <Nav>
-        <NavItem to='/dashboard/files' icon={<FolderIcon strokeWidth={1.75} />}>
+        <NavItem to='/dashboard/files' icon={<FolderIcon strokeWidth={2} />}>
           Files
         </NavItem>
-        <NavItem to='/dashboard/shares' icon={<ShareIcon strokeWidth={1.75} />}>
+        <NavItem to='/dashboard/shares' icon={<ShareIcon strokeWidth={2} />}>
           Shares
         </NavItem>
       </Nav>
