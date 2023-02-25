@@ -1,8 +1,15 @@
-import { Dropdown, DropdownItem, Title } from '@/components/elements';
 import {
-  ChevronDoubleRightIcon,
+  Dropdown,
+  DropdownDivider,
+  DropdownItem,
+  Title,
+} from '@/components/elements';
+import {
+  CloudArrowDownIcon,
+  CursorArrowRippleIcon,
+  DocumentDuplicateIcon,
+  PaperClipIcon,
   PencilSquareIcon,
-  ShareIcon,
   TrashIcon,
   ViewfinderCircleIcon,
 } from '@heroicons/react/24/outline';
@@ -12,10 +19,14 @@ const FilesPage = () => {
     <>
       <Title size={2}>Files</Title>
       <Dropdown>
-        <DropdownItem icon={<ViewfinderCircleIcon />}>Preview</DropdownItem>
-        <DropdownItem icon={<ShareIcon />}>Share</DropdownItem>
-        <DropdownItem icon={<ChevronDoubleRightIcon />}>Move</DropdownItem>
+        <DropdownItem icon={<ViewfinderCircleIcon />}>View</DropdownItem>
+        <DropdownItem icon={<PaperClipIcon />}>Share</DropdownItem>
+        <DropdownDivider />
+        <DropdownItem icon={<CursorArrowRippleIcon />}>Move</DropdownItem>
         <DropdownItem icon={<PencilSquareIcon />}>Rename</DropdownItem>
+        <DropdownItem icon={<DocumentDuplicateIcon />}>Duplicate</DropdownItem>
+        <DropdownDivider />
+        <DropdownItem icon={<CloudArrowDownIcon />}>Download</DropdownItem>
         <DropdownItem icon={<TrashIcon className='text-red-500' />}>
           Delete
         </DropdownItem>

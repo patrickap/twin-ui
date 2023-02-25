@@ -1,5 +1,8 @@
 import { Drawer, Nav, NavItem } from '@/components/elements';
-import { FolderIcon, ShareIcon } from '@heroicons/react/24/outline';
+import {
+  DocumentDuplicateIcon,
+  PaperClipIcon,
+} from '@heroicons/react/24/outline';
 import { ReactNode } from 'react';
 
 type DashboardProps = {
@@ -38,12 +41,12 @@ const Navigation = () => {
     {
       path: '/dashboard/files',
       name: 'Files',
-      icon: <FolderIcon />,
+      icon: <DocumentDuplicateIcon />,
     },
     {
       path: '/dashboard/shares',
       name: 'Shares',
-      icon: <ShareIcon />,
+      icon: <PaperClipIcon />,
     },
   ];
 

@@ -3,6 +3,7 @@ export * from './button-icon';
 export * from './checkbox';
 export * from './drawer';
 export * from './dropdown';
+export * from './dropdown-divider';
 export * from './dropdown-item';
 export * from './input';
 export * from './input-password';
