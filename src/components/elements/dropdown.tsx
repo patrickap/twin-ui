@@ -16,7 +16,7 @@ const Dropdown = ({ trigger, children }: DropdownProps) => {
   const [triggerRef, setTriggerRef] = useState<HTMLDivElement | null>();
   const [panelRef, setPanelRef] = useState<HTMLDivElement | null>();
   const { styles } = usePopper(triggerRef as any, panelRef as any, {
-    placement: 'bottom-end',
+    placement: 'bottom-start',
   });
 
   return (
