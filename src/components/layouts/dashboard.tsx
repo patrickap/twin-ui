@@ -38,12 +38,12 @@ const Navigation = () => {
     {
       path: '/dashboard/files',
       name: 'Files',
-      icon: <FolderIcon strokeWidth={2} />,
+      icon: <FolderIcon strokeWidth={1.75} />,
     },
     {
       path: '/dashboard/shares',
       name: 'Shares',
-      icon: <ShareIcon strokeWidth={2} />,
+      icon: <ShareIcon strokeWidth={1.75} />,
     },
   ];
 
