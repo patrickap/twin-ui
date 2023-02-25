@@ -1,14 +1,12 @@
-import { ButtonIcon, Drawer, Nav, NavItem } from '@/components/elements';
-import { Bars2Icon, FolderIcon, ShareIcon } from '@heroicons/react/24/outline';
-import { ReactNode, useState } from 'react';
+import { Drawer, Nav, NavItem } from '@/components/elements';
+import { FolderIcon, ShareIcon } from '@heroicons/react/24/outline';
+import { ReactNode } from 'react';
 
 type DashboardProps = {
   children?: ReactNode;
 };
 
 const Dashboard = ({ children }: DashboardProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <div className='flex h-screen w-full'>
       <aside className='hidden w-20 border border-r border-slate-200 bg-white md:block lg:w-64'>
@@ -20,13 +18,12 @@ const Dashboard = ({ children }: DashboardProps) => {
         <div className='flex items-center justify-between'>
           <span className='text-sm text-slate-500'>bread / crumbs / here</span>
           <div className='md:hidden'>
-            <ButtonIcon onClick={() => setIsOpen(true)}>
-              <Bars2Icon className='h-5 w-5' />
-            </ButtonIcon>
-            <Drawer isOpen={isOpen} onClose={() => setIsOpen(false)}>
-              <div className='p-4 pt-0' onClick={() => setIsOpen(false)}>
-                <Navigation />
-              </div>
+            <Drawer>
+              {({ close }) => (
+                <div className='p-4 pt-0' onClick={close}>
+                  <Navigation />
+                </div>
+              )}
             </Drawer>
           </div>
         </div>
