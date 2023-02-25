@@ -25,7 +25,7 @@ const Dropdown = ({ isOpen, onClose, children }: DropdownProps) => {
           leaveFrom='opacity-100 scale-100'
           leaveTo='opacity-0 scale-95'
         >
-          <Popover.Panel className='absolute right-0 mt-2 w-56 origin-top-right divide-slate-100 rounded-lg bg-white p-2 shadow-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2'>
+          <Popover.Panel className='absolute right-0 mt-2 w-56 origin-top-right divide-slate-100 rounded-lg bg-white p-2 shadow-lg'>
             {children}
           </Popover.Panel>
         </Transition.Child>
