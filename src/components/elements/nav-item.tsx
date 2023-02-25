@@ -20,7 +20,11 @@ const NavItem = ({ to = {}, icon, onClick, children }: NavItemProps) => {
             !children && '!inline-flex !justify-center',
           )}
         >
-          {icon ? <span className='h-5 w-5 text-slate-700'>{icon}</span> : null}
+          {icon ? (
+            <span className='h-5 w-5 text-slate-700 [&>*]:stroke-[1.75]'>
+              {icon}
+            </span>
+          ) : null}
           {children ? (
             <span className='text-base font-medium text-slate-700 sm:text-sm'>
               {children}
