@@ -58,7 +58,7 @@ const Dropdown = ({ trigger, children }: DropdownProps) => {
         <Popover.Panel
           ref={setPanelRef}
           style={isSm ? styles.popper : {}}
-          className='absolute inset-x-0 bottom-0 z-10 w-full divide-slate-100 rounded-lg bg-white p-2 shadow-lg sm:inset-x-auto sm:bottom-auto sm:w-56'
+          className='absolute inset-x-0 bottom-0 z-10 w-full divide-slate-100 rounded-t-lg rounded-b-none bg-white p-2 shadow-lg sm:inset-x-auto sm:bottom-auto sm:w-56 sm:rounded-lg'
         >
           {({ open: isOpen, close }) => (
             <>{isFunction(children) ? children({ isOpen, close }) : children}</>
