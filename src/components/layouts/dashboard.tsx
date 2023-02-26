@@ -1,4 +1,5 @@
 import { Drawer, Nav, NavItem } from '@/components/elements';
+import { useTailwindBreakpoint } from '@/hooks';
 import {
   DocumentDuplicateIcon,
   PaperClipIcon,
@@ -10,17 +11,20 @@ type DashboardProps = {
 };
 
 const Dashboard = ({ children }: DashboardProps) => {
+  const { isMd } = useTailwindBreakpoint();
   return (
     <div className='flex h-screen w-full'>
-      <aside className='hidden w-20 border border-r border-slate-200 bg-white md:block lg:w-64'>
-        <div className='px-4 py-8'>
-          <Navigation />
-        </div>
-      </aside>
+      {isMd ? (
+        <aside className='w-20 border border-r border-slate-200 bg-white md:block lg:w-64'>
+          <div className='px-4 py-8'>
+            <Navigation />
+          </div>
+        </aside>
+      ) : null}
       <main className='flex flex-grow flex-col gap-1 p-4 md:p-8'>
         <div className='flex items-center justify-between'>
           <span className='text-sm text-slate-500'>bread / crumbs / here</span>
-          <div className='md:hidden'>
+          {!isMd ? (
             <Drawer>
               {({ close }) => (
                 <div className='p-4 pt-0' onClick={close}>
@@ -28,7 +32,7 @@ const Dashboard = ({ children }: DashboardProps) => {
                 </div>
               )}
             </Drawer>
-          </div>
+          ) : null}
         </div>
         <div>{children}</div>
       </main>
@@ -37,6 +41,7 @@ const Dashboard = ({ children }: DashboardProps) => {
 };
 
 const Navigation = () => {
+  const { isMd, isLg } = useTailwindBreakpoint();
   const items = [
     {
       path: '/dashboard/files',
@@ -54,12 +59,9 @@ const Navigation = () => {
     <Nav>
       {items.map((item, i) => (
         <div key={i}>
-          <span className='hidden justify-center md:flex lg:hidden'>
-            <NavItem to={item.path} icon={item.icon} />
-          </span>
-          <span className='w-full md:hidden lg:inline-block'>
+          <span className='md:flex md:justify-center lg:inline-block lg:w-full'>
             <NavItem to={item.path} icon={item.icon}>
-              {item.name}
+              {!isMd || isLg ? item.name : null}
             </NavItem>
           </span>
         </div>
