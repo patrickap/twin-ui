@@ -1,4 +1,4 @@
-import { useTailwindBreakpoint } from '@/hooks';
+import { useBreakpoint } from '@/hooks';
 import { isFunction } from '@/utils';
 import { Popover, Transition } from '@headlessui/react';
 import { EllipsisVerticalIcon } from '@heroicons/react/24/outline';
@@ -14,7 +14,7 @@ type DropdownProps = {
 };
 
 const Dropdown = ({ trigger, children }: DropdownProps) => {
-  const { isSm } = useTailwindBreakpoint();
+  const { sm } = useBreakpoint();
   const [triggerRef, setTriggerRef] = useState<HTMLDivElement | null>();
   const [panelRef, setPanelRef] = useState<HTMLDivElement | null>();
   const { styles } = usePopper(triggerRef, panelRef, {
@@ -57,7 +57,7 @@ const Dropdown = ({ trigger, children }: DropdownProps) => {
       >
         <Popover.Panel
           ref={setPanelRef}
-          style={isSm ? styles.popper : {}}
+          style={sm ? styles.popper : {}}
           className='absolute inset-x-0 bottom-0 z-10 w-full divide-slate-100 rounded-t-lg rounded-b-none bg-white p-2 shadow-lg sm:inset-x-auto sm:bottom-auto sm:w-56 sm:rounded-lg'
         >
           {({ open: isOpen, close }) => (

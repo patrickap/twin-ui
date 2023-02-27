@@ -1,5 +1,5 @@
 import { Drawer, Nav, NavItem } from '@/components/elements';
-import { useTailwindBreakpoint } from '@/hooks';
+import { useBreakpoint } from '@/hooks';
 import {
   DocumentDuplicateIcon,
   PaperClipIcon,
@@ -11,10 +11,10 @@ type DashboardProps = {
 };
 
 const Dashboard = ({ children }: DashboardProps) => {
-  const { isMd } = useTailwindBreakpoint();
+  const { md } = useBreakpoint();
   return (
     <div className='flex h-screen w-full'>
-      {isMd ? (
+      {md ? (
         <aside className='w-20 border border-r border-slate-200 bg-white md:block lg:w-64'>
           <div className='px-4 py-8'>
             <Navigation />
@@ -24,7 +24,7 @@ const Dashboard = ({ children }: DashboardProps) => {
       <main className='flex flex-grow flex-col gap-1 p-4 md:p-8'>
         <div className='flex items-center justify-between'>
           <span className='text-sm text-slate-500'>bread / crumbs / here</span>
-          {!isMd ? (
+          {!md ? (
             <Drawer>
               {({ close }) => (
                 <div className='p-4 pt-0' onClick={close}>
@@ -41,7 +41,7 @@ const Dashboard = ({ children }: DashboardProps) => {
 };
 
 const Navigation = () => {
-  const { isMd, isLg } = useTailwindBreakpoint();
+  const { md, lg } = useBreakpoint();
   const items = [
     {
       path: '/dashboard/files',
@@ -61,7 +61,7 @@ const Navigation = () => {
         <div key={i}>
           <span className='md:flex md:justify-center lg:inline-block lg:w-full'>
             <NavItem to={item.path} icon={item.icon}>
-              {!isMd || isLg ? item.name : null}
+              {!md || lg ? item.name : null}
             </NavItem>
           </span>
         </div>

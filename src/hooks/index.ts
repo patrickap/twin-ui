@@ -1,1 +1,1 @@
-export * from './use-tailwind-breakpoint';
+export * from './use-breakpoint';
