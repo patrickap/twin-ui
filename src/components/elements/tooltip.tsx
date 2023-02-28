@@ -21,8 +21,6 @@ const Tooltip = ({ label, placement = 'top', children }: TooltipProps) => {
     modifiers: [{ name: 'offset', options: { offset: [0, 8] } }],
   });
 
-  console.log(styles);
-
   return (
     <Popover className='relative'>
       <div
