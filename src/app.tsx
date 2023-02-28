@@ -7,6 +7,7 @@ import { useRoutes } from 'react-router-dom';
 // TODO: code splitting and lazy loading with @loadable/component library
 // TODO: useAccount hook with isRole(...) helper
 // TODO: smart redirect to previous protected route if logged in successfully
+// TODO: robot.txt
 
 const App = () => {
   const { signIn } = useAuth();

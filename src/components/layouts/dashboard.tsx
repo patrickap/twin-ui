@@ -1,4 +1,4 @@
-import { Drawer, Nav, NavItem } from '@/components/elements';
+import { Drawer, Nav, NavItem, Tooltip } from '@/components/elements';
 import { useBreakpoint } from '@/hooks';
 import {
   DocumentDuplicateIcon,
@@ -60,9 +60,15 @@ const Navigation = () => {
       {items.map((item, i) => (
         <div key={i}>
           <span className='md:flex md:justify-center lg:inline-block lg:w-full'>
-            <NavItem to={item.path} icon={item.icon}>
-              {!md || lg ? item.name : null}
-            </NavItem>
+            {!md || lg ? (
+              <NavItem to={item.path} icon={item.icon}>
+                {item.name}
+              </NavItem>
+            ) : (
+              <Tooltip label={item.name} placement='right'>
+                <NavItem to={item.path} icon={item.icon}></NavItem>
+              </Tooltip>
+            )}
           </span>
         </div>
       ))}
