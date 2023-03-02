@@ -1,4 +1,4 @@
-import * as RadixTooltip from '@radix-ui/react-tooltip';
+import * as tooltip from '@radix-ui/react-tooltip';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ReactNode, useState } from 'react';
 
@@ -12,13 +12,13 @@ const Tooltip = ({ placement, content, children }: TooltipProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <RadixTooltip.Provider delayDuration={0}>
-      <RadixTooltip.Root open={isOpen} onOpenChange={setIsOpen}>
-        <RadixTooltip.Trigger>{children}</RadixTooltip.Trigger>
+    <tooltip.Provider delayDuration={0}>
+      <tooltip.Root open={isOpen} onOpenChange={setIsOpen}>
+        <tooltip.Trigger>{children}</tooltip.Trigger>
         <AnimatePresence>
           {isOpen ? (
-            <RadixTooltip.Portal forceMount>
-              <RadixTooltip.Content
+            <tooltip.Portal forceMount>
+              <tooltip.Content
                 asChild
                 sideOffset={8}
                 side={placement}
@@ -33,14 +33,14 @@ const Tooltip = ({ placement, content, children }: TooltipProps) => {
                   }}
                 >
                   {content}
-                  <RadixTooltip.Arrow className='fill-slate-900/75 backdrop-blur-sm' />
+                  <tooltip.Arrow className='fill-slate-900/75 backdrop-blur-sm' />
                 </motion.div>
-              </RadixTooltip.Content>
-            </RadixTooltip.Portal>
+              </tooltip.Content>
+            </tooltip.Portal>
           ) : null}
         </AnimatePresence>
-      </RadixTooltip.Root>
-    </RadixTooltip.Provider>
+      </tooltip.Root>
+    </tooltip.Provider>
   );
 };
 
