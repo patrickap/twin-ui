@@ -26,11 +26,9 @@ const Dashboard = ({ children }: DashboardProps) => {
           <span className='text-sm text-slate-500'>bread / crumbs / here</span>
           {!md ? (
             <Drawer>
-              {({ close }) => (
-                <div className='p-4 pt-0' onClick={close}>
-                  <Navigation />
-                </div>
-              )}
+              <div className='p-4 pt-0'>
+                <Navigation />
+              </div>
             </Drawer>
           ) : null}
         </div>
