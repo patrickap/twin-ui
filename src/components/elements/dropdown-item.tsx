@@ -1,24 +1,25 @@
-import { MouseEventHandler, ReactNode } from 'react';
+import * as dropdown from '@radix-ui/react-dropdown-menu';
+import { ReactNode } from 'react';
 
 type DropdownItemProps = {
   icon?: ReactNode;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
+  onSelect?: (event: Event) => void;
   children?: ReactNode;
 };
 
-const DropdownItem = ({ icon, onClick, children }: DropdownItemProps) => {
+const DropdownItem = ({ icon, onSelect, children }: DropdownItemProps) => {
   return (
-    <button
-      onClick={onClick}
-      className='group flex w-full items-center gap-2 rounded-lg bg-white p-2 text-base text-slate-700 hover:bg-brand-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 sm:text-sm'
+    <dropdown.Item
+      onSelect={onSelect}
+      className='group flex w-full cursor-pointer items-center gap-2 rounded-lg bg-white p-2 text-base text-slate-700 focus:outline-none data-[highlighted]:bg-brand-500 data-[highlighted]:text-white sm:text-sm'
     >
       {icon ? (
-        <span className='h-5 w-5 text-slate-700 group-hover:text-white group-hover:[&>*]:text-white'>
+        <span className='h-5 w-5 text-slate-700 group-data-[highlighted]:text-white group-data-[highlighted]:[&>*]:text-white'>
           {icon}
         </span>
       ) : null}
-      {children ? <span>{children}</span> : null}
-    </button>
+      {children ? <>{children}</> : null}
+    </dropdown.Item>
   );
 };
 

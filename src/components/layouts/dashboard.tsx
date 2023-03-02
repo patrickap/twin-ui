@@ -65,7 +65,7 @@ const Navigation = () => {
                 {item.name}
               </NavItem>
             ) : (
-              <Tooltip placement='right' content={item.name}>
+              <Tooltip side='right' content={item.name}>
                 <NavItem to={item.path} icon={item.icon}></NavItem>
               </Tooltip>
             )}

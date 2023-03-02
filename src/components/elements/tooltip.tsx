@@ -3,12 +3,12 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ReactNode, useState } from 'react';
 
 type TooltipProps = {
-  placement?: 'top' | 'bottom' | 'right' | 'left';
+  side?: 'top' | 'bottom' | 'right' | 'left';
   content?: ReactNode;
   children?: ReactNode;
 };
 
-const Tooltip = ({ placement, content, children }: TooltipProps) => {
+const Tooltip = ({ side, content, children }: TooltipProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -20,8 +20,8 @@ const Tooltip = ({ placement, content, children }: TooltipProps) => {
             <tooltip.Portal forceMount>
               <tooltip.Content
                 asChild
+                side={side}
                 sideOffset={8}
-                side={placement}
                 className='z-10 rounded-lg bg-slate-900/75 p-2 px-3 text-sm text-white backdrop-blur-sm'
               >
                 <motion.div

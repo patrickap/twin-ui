@@ -18,7 +18,7 @@ const FilesPage = () => {
   return (
     <>
       <Title size={2}>Files</Title>
-      <Dropdown>
+      <Dropdown align='start' side='bottom'>
         <DropdownItem icon={<ViewfinderCircleIcon />}>View</DropdownItem>
         <DropdownItem icon={<PaperClipIcon />}>Share</DropdownItem>
         <DropdownDivider />
