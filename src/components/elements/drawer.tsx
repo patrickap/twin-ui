@@ -4,6 +4,9 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ReactNode, useState } from 'react';
 import { ButtonIcon } from './button-icon';
 
+// TODO: add and pass all radix-ui props to make components
+// optionally controlled, do this for all components if it makes sense. 
+
 type DrawerProps = {
   children?: ReactNode;
 };
