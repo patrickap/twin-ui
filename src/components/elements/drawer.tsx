@@ -5,7 +5,7 @@ import { ReactNode, useState } from 'react';
 import { ButtonIcon } from './button-icon';
 
 // TODO: add and pass all radix-ui props to make components
-// optionally controlled, do this for all components if it makes sense. 
+// optionally controlled, do this for all components if it makes sense.
 
 type DrawerProps = {
   children?: ReactNode;
@@ -24,7 +24,16 @@ const Drawer = ({ children }: DrawerProps) => {
       <AnimatePresence>
         {isOpen ? (
           <dialog.Portal forceMount>
-            <dialog.Overlay className='fixed inset-0 z-10 bg-slate-500/25' />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{
+                duration: 0.3,
+              }}
+            >
+              <dialog.Overlay className='fixed inset-0 z-10 bg-slate-500/25' />
+            </motion.div>
             <dialog.Content
               asChild
               className='fixed top-0 left-0 z-10 flex h-full w-full max-w-xs flex-col overflow-hidden bg-white shadow-lg'
@@ -34,7 +43,7 @@ const Drawer = ({ children }: DrawerProps) => {
                 animate={{ translateX: 0 }}
                 exit={{ translateX: '-100%' }}
                 transition={{
-                  duration: 0.2,
+                  duration: 0.3,
                 }}
               >
                 <dialog.Close className='flex justify-end p-4'>
