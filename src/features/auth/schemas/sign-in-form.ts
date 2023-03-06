@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-// TODO: add schemas for all relevant models such as credentials, access token, user, ...
+// TODO: add schemas for all relevant server response models such as token, user, ...
 
 const signInForm = z.object({
   username: z.string().min(1, { message: 'Required' }),
