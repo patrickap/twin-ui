@@ -3,11 +3,11 @@ import { Center, Dashboard } from '@/components/layouts';
 import { AuthGuard } from '@/features/auth/components';
 import { SignInPage } from '@/features/auth/pages';
 import { FilesPage, SharesPage } from '@/features/user/pages';
-import { createBrowserRouter, Navigate, Outlet } from 'react-router-dom';
+import { Navigate, Outlet, RouteObject } from 'react-router-dom';
 
 // TODO: use lazy loading
 
-const router = createBrowserRouter([
+const routes: RouteObject[] = [
   {
     path: '/',
     element: <Navigate to='/dashboard' />,
@@ -78,6 +78,6 @@ const router = createBrowserRouter([
     path: '*',
     element: <Navigate to='/dashboard' />,
   },
-]);
+];
 
-export { router };
+export { routes };

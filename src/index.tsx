@@ -1,6 +1,7 @@
 import { AuthenticationProvider } from '@/features/auth/providers';
 import { i18n } from '@/libs/i18next';
 import { queryClient } from '@/libs/react-query';
+import { router } from '@/libs/react-router';
 import { QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -8,7 +9,6 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { I18nextProvider } from 'react-i18next';
 import { RouterProvider } from 'react-router-dom';
 import './index.css';
-import { router } from './routes';
 
 i18n.init();
 
