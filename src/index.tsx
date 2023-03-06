@@ -6,9 +6,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { ErrorBoundary } from 'react-error-boundary';
 import { I18nextProvider } from 'react-i18next';
-import { BrowserRouter } from 'react-router-dom';
-import { App } from './app';
+import { RouterProvider } from 'react-router-dom';
 import './index.css';
+import { router } from './routes';
 
 i18n.init();
 
@@ -19,11 +19,9 @@ ReactDOM.createRoot(root).render(
     <I18nextProvider i18n={i18n}>
       <ErrorBoundary FallbackComponent={() => <>Error</>}>
         <QueryClientProvider client={queryClient}>
-          <BrowserRouter>
-            <AuthenticationProvider>
-              <App />
-            </AuthenticationProvider>
-          </BrowserRouter>
+          <AuthenticationProvider>
+            <RouterProvider router={router} />
+          </AuthenticationProvider>
         </QueryClientProvider>
       </ErrorBoundary>
     </I18nextProvider>
