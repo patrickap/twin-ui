@@ -1,5 +1,5 @@
 import { Drawer, Nav, NavItem, Tooltip } from '@/components/elements';
-import { useBreakpoint, useRouteTitle } from '@/hooks';
+import { useBreakpoint } from '@/hooks';
 import {
   DocumentDuplicateIcon,
   PaperClipIcon,
@@ -11,8 +11,8 @@ type DashboardProps = {
 };
 
 const Dashboard = ({ children }: DashboardProps) => {
-  const { title } = useRouteTitle();
   const { md } = useBreakpoint();
+
   return (
     <div className='flex h-screen w-full'>
       {md ? (
@@ -23,8 +23,7 @@ const Dashboard = ({ children }: DashboardProps) => {
         </aside>
       ) : null}
       <main className='flex flex-grow flex-col gap-1 p-4 md:p-8'>
-        <div className='flex items-center justify-between'>
-          <span className='text-sm text-slate-500'>route title: {title}</span>
+        <div className='flex items-center justify-end'>
           {!md ? (
             <Drawer>
               <div className='p-4 pt-0'>
@@ -33,7 +32,7 @@ const Dashboard = ({ children }: DashboardProps) => {
             </Drawer>
           ) : null}
         </div>
-        <div>{children}</div>
+        <div className='-mt-10 md:mt-0'>{children}</div>
       </main>
     </div>
   );

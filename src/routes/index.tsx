@@ -40,23 +40,14 @@ const routes: RouteObject[] = [
       {
         index: true,
         element: <Title size={2}>Nothing here</Title>,
-        handle: {
-          title: <>Dashboard</>,
-        },
       },
       {
         path: 'files',
         element: <FilesPage />,
-        handle: {
-          title: <>Files</>,
-        },
       },
       {
         path: 'shares',
         element: <SharesPage />,
-        handle: {
-          title: <>Shares</>,
-        },
       },
     ],
   },
