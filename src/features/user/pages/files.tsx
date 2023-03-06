@@ -15,7 +15,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { useTranslation } from 'react-i18next';
 
-const FilesPage = () => {
+const Files = () => {
   const { t } = useTranslation('user');
 
   return (
@@ -50,4 +50,4 @@ const FilesPage = () => {
   );
 };
 
-export { FilesPage };
+export { Files };

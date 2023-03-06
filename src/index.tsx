@@ -5,9 +5,8 @@ import { router } from '@/libs/react-router';
 import { QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { ErrorBoundary } from 'react-error-boundary';
 import { I18nextProvider } from 'react-i18next';
-import { Navigate, RouterProvider } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
 import './index.css';
 
 i18n.init();
@@ -17,13 +16,11 @@ const root = document.getElementById('root') as HTMLElement;
 ReactDOM.createRoot(root).render(
   <React.StrictMode>
     <I18nextProvider i18n={i18n}>
-      <ErrorBoundary FallbackComponent={() => <Navigate to='/dashboard' />}>
-        <QueryClientProvider client={queryClient}>
-          <AuthenticationProvider>
-            <RouterProvider router={router} />
-          </AuthenticationProvider>
-        </QueryClientProvider>
-      </ErrorBoundary>
+      <QueryClientProvider client={queryClient}>
+        <AuthenticationProvider>
+          <RouterProvider router={router} />
+        </AuthenticationProvider>
+      </QueryClientProvider>
     </I18nextProvider>
   </React.StrictMode>,
 );

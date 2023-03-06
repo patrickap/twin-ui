@@ -1,3 +1,17 @@
 {
-  "common": {}
+  "common": {
+    "action": {
+      "reload_site": "Reload site"
+    },
+    "page": {
+      "error": {
+        "title": "Error",
+        "text": "An unknown error occurred"
+      },
+      "not_found": {
+        "title": "404",
+        "text": "Page not found"
+      }
+    }
+  }
 }

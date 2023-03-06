@@ -16,16 +16,14 @@ import { useAuth } from '../hooks';
 import { signInForm } from '../schemas';
 import { SignInForm } from '../types';
 
-const SignInPage = () => {
+const SignIn = () => {
   const { signIn } = useAuth();
   // TODO: use translation everywhere
   const { t } = useTranslation('auth');
   const navigate = useNavigate();
-  const { control, handleSubmit, formState } = useForm<SignInForm>({
+  const { control, handleSubmit } = useForm<SignInForm>({
     resolver: zodResolver(signInForm),
   });
-
-  console.log(formState);
 
   const onSubmit = handleSubmit((form) => {
     signIn.mutateAsync(form).then(() => navigate('/dashboard'));
@@ -100,4 +98,4 @@ const SignInPage = () => {
   );
 };
 
-export { SignInPage };
+export { SignIn };

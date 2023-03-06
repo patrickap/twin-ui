@@ -4,18 +4,16 @@ import { z } from 'zod';
 // TODO: add schemas for all relevant server response models such as token, user, ...
 
 const signInForm = z.object({
-  username: z
-    .string({
-      errorMap: () => ({
-        message: i18n.t('form.validation.required', { ns: 'auth' }),
-      }),
+  username: z.string({
+    errorMap: () => ({
+      message: i18n.t('form.validation.required', { ns: 'auth' }),
     }),
-  password: z
-    .string({
-      errorMap: () => ({
-        message: i18n.t('form.validation.required', { ns: 'auth' }),
-      }),
+  }),
+  password: z.string({
+    errorMap: () => ({
+      message: i18n.t('form.validation.required', { ns: 'auth' }),
     }),
+  }),
   remember: z.boolean().optional(),
 });
 

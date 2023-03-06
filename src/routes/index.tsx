@@ -1,8 +1,9 @@
 import { Spinner, Title } from '@/components/elements';
 import { Center, Dashboard } from '@/components/layouts';
 import { AuthGuard } from '@/features/auth/components';
-import { SignInPage } from '@/features/auth/pages';
-import { FilesPage, SharesPage } from '@/features/user/pages';
+import { SignIn } from '@/features/auth/pages';
+import { Files, Shares } from '@/features/user/pages';
+import { Error, NotFound } from '@/pages';
 import { Navigate, Outlet, RouteObject } from 'react-router-dom';
 
 // TODO: use lazy loading
@@ -43,11 +44,11 @@ const routes: RouteObject[] = [
       },
       {
         path: 'files',
-        element: <FilesPage />,
+        element: <Files />,
       },
       {
         path: 'shares',
-        element: <SharesPage />,
+        element: <Shares />,
       },
     ],
   },
@@ -55,20 +56,26 @@ const routes: RouteObject[] = [
     path: '/signin',
     element: (
       <Center>
-        <Outlet />
+        <SignIn />
       </Center>
     ),
-    children: [
-      {
-        index: true,
-        element: <SignInPage />,
-      },
-    ],
   },
   {
     path: '*',
-    element: <Navigate to='/dashboard' />,
+    element: (
+      <Center>
+        <NotFound />
+      </Center>
+    ),
   },
-];
+].map((route) => ({
+  ...route,
+  // add error element to every route
+  errorElement: (
+    <Center>
+      <Error />
+    </Center>
+  ),
+}));
 
 export { routes };
