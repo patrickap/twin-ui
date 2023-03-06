@@ -18,12 +18,14 @@ import { SignInForm } from '../types';
 
 const SignInPage = () => {
   const { signIn } = useAuth();
-  // TODO: add and use translation
-  const { t } = useTranslation();
+  // TODO: use translation everywhere
+  const { t } = useTranslation('auth');
   const navigate = useNavigate();
-  const { control, handleSubmit } = useForm<SignInForm>({
+  const { control, handleSubmit, formState } = useForm<SignInForm>({
     resolver: zodResolver(signInForm),
   });
+
+  console.log(formState);
 
   const onSubmit = handleSubmit((form) => {
     signIn.mutateAsync(form).then(() => navigate('/dashboard'));
@@ -34,9 +36,9 @@ const SignInPage = () => {
       <div className='flex flex-col gap-6'>
         <Logo size={3} />
         <div className='flex flex-col gap-2 text-center'>
-          <Title size={2}>Sign in to your account</Title>
+          <Title size={2}>{t('page.sign_in.title')}</Title>
           <Text>
-            Don't have an account? <Link>Sign up</Link>
+            {t('page.sign_in.text')} <Link>{t('action.sign_up')}</Link>
           </Text>
         </div>
       </div>
@@ -48,7 +50,7 @@ const SignInPage = () => {
             render={({ field, fieldState }) => (
               <InputText
                 ref={field.ref}
-                label='Username'
+                label={t('form.field.username')}
                 value={field.value}
                 isError={!!fieldState.invalid}
                 error={fieldState.error?.message}
@@ -63,7 +65,7 @@ const SignInPage = () => {
             render={({ field, fieldState }) => (
               <InputPassword
                 ref={field.ref}
-                label='Password'
+                label={t('form.field.password')}
                 value={field.value}
                 isError={!!fieldState.invalid}
                 error={fieldState.error?.message}
@@ -79,7 +81,7 @@ const SignInPage = () => {
               render={({ field, fieldState }) => (
                 <Checkbox
                   ref={field.ref}
-                  label='Remember me'
+                  label={t('form.field.remember_me')}
                   isChecked={field.value}
                   isError={!!fieldState.invalid}
                   onChange={field.onChange}
@@ -87,10 +89,10 @@ const SignInPage = () => {
                 />
               )}
             />
-            <Link>Forgot password?</Link>
+            <Link>{t('action.forgot_password')}</Link>
           </div>
           <Button color='brand' onClick={onSubmit} isLoading={signIn.isLoading}>
-            Sign in
+            {t('action.sign_in')}
           </Button>
         </div>
       </div>

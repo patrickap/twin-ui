@@ -1,0 +1,21 @@
+{
+  "user": {
+    "action": {
+      "delete": "Delete",
+      "download": "Download",
+      "duplicate": "Duplicate",
+      "move": "Move",
+      "rename": "Rename",
+      "share": "Share",
+      "view": "View"
+    },
+    "page": {
+      "files": {
+        "title": "Files"
+      },
+      "shares": {
+        "title": "Shares"
+      }
+    }
+  }
+}

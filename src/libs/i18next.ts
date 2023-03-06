@@ -1,4 +1,5 @@
 import { locales as authLocales } from '@/features/auth/locales';
+import { locales as userLocales } from '@/features/user/locales';
 import { locales as commonLocales } from '@/locales';
 import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -10,6 +11,7 @@ const resources = {
   en: {
     ...commonLocales.en,
     ...authLocales.en,
+    ...userLocales.en,
   },
 } as const;
 
