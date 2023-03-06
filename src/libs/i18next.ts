@@ -1,4 +1,4 @@
-import { locales as authLocales } from '@/features/auth';
+import { locales as authLocales } from '@/features/auth/locales';
 import { locales as commonLocales } from '@/locales';
 import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';

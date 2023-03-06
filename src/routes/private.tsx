@@ -1,6 +1,6 @@
 import { Title } from '@/components/elements';
 import { Dashboard } from '@/components/layouts';
-import { FilesPage, SharesPage } from '@/features/user';
+import { FilesPage, SharesPage } from '@/features/user/pages';
 import { Navigate, Outlet, RouteObject } from 'react-router-dom';
 
 // TODO: use lazy loading

@@ -13,21 +13,19 @@ import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks';
-import { signInFormSchema } from '../schemas';
+import { signInForm } from '../schemas';
 import { SignInForm } from '../types';
 
 const SignInPage = () => {
+  const { signIn } = useAuth();
   // TODO: add and use translation
   const { t } = useTranslation();
-
-  const signInForm = useForm<SignInForm>({
-    resolver: zodResolver(signInFormSchema),
-  });
   const navigate = useNavigate();
+  const { control, handleSubmit } = useForm<SignInForm>({
+    resolver: zodResolver(signInForm),
+  });
 
-  const { signIn } = useAuth();
-
-  const onSubmit = signInForm.handleSubmit((form) => {
+  const onSubmit = handleSubmit((form) => {
     signIn.mutateAsync(form).then(() => navigate('/dashboard'));
   });
 
@@ -45,7 +43,7 @@ const SignInPage = () => {
       <div className='bg-transparent p-0 shadow-none sm:rounded-lg sm:bg-white sm:px-10 sm:py-8 sm:shadow-md'>
         <div className='flex flex-col gap-6'>
           <Controller
-            control={signInForm.control}
+            control={control}
             name='username'
             render={({ field, fieldState }) => (
               <InputText
@@ -60,7 +58,7 @@ const SignInPage = () => {
             )}
           />
           <Controller
-            control={signInForm.control}
+            control={control}
             name='password'
             render={({ field, fieldState }) => (
               <InputPassword
@@ -76,7 +74,7 @@ const SignInPage = () => {
           />
           <div className='flex justify-between'>
             <Controller
-              control={signInForm.control}
+              control={control}
               name='remember'
               render={({ field, fieldState }) => (
                 <Checkbox

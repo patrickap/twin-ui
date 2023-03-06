@@ -3,7 +3,7 @@ import { AccessToken, Credentials } from '../types';
 
 const signIn = async (credentials: Credentials) => {
   // TODO: const url = urlcat(import.meta.env.VITE_API_BASE_URL, '/auth');
-  // TODO: use ky.post(...)
+  // TODO: ky.post(...)
   // TODO: remove mock
 
   await sleep(1000);

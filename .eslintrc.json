@@ -1,11 +1,3 @@
 {
-  "extends": ["react-app"],
-  "rules": {
-    "no-restricted-imports": [
-      "error",
-      {
-        "patterns": ["@/features/*/*", "**/features/*/*"]
-      }
-    ]
-  }
+  "extends": ["react-app"]
 }

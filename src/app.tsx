@@ -1,13 +1,12 @@
-import { useAuth } from '@/features/auth';
+import { useAuth } from '@/features/auth/hooks';
 import { privateRoutes, publicRoutes } from '@/routes';
 import { useRoutes } from 'react-router-dom';
 
 // TODO: setup husky, commitlint, semantic release with changelog, stylelint
-// TODO: add authguard and roleguard component
+// TODO: use authguard component
 // TODO: code splitting and lazy loading with @loadable/component library
-// TODO: useAccount hook with isRole(...) helper
 // TODO: smart redirect to previous protected route if logged in successfully
-// TODO: robot.txt
+// TODO: robots.txt
 
 const App = () => {
   const { signIn } = useAuth();

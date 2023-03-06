@@ -1,6 +1,6 @@
 import { z } from 'zod';
-import { signInFormSchema } from '../schemas';
+import { signInForm } from '../schemas';
 
-type SignInForm = z.infer<typeof signInFormSchema>;
+type SignInForm = z.infer<typeof signInForm>;
 
 export type { SignInForm };

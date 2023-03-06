@@ -1,5 +1,5 @@
 import { CenterLayout } from '@/components/layouts';
-import { SignInPage } from '@/features/auth';
+import { SignInPage } from '@/features/auth/pages';
 import { Navigate, Outlet, RouteObject } from 'react-router-dom';
 
 const publicRoutes: RouteObject[] = [
