@@ -1,9 +1,4 @@
-import {
-  Dropdown,
-  DropdownDivider,
-  DropdownItem,
-  Title,
-} from '@/components/elements';
+import { Dropdown, DropdownDivider, DropdownItem, Title } from '@/components';
 import {
   CloudArrowDownIcon,
   CursorArrowRippleIcon,
@@ -15,7 +10,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { useTranslation } from 'react-i18next';
 
-const Files = () => {
+const FilesPage = () => {
   const { t } = useTranslation('user');
 
   return (
@@ -50,4 +45,4 @@ const Files = () => {
   );
 };
 
-export { Files };
+export { FilesPage };

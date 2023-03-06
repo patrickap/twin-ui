@@ -1,4 +1,4 @@
-import { Drawer, Nav, NavItem, Tooltip } from '@/components/elements';
+import { Drawer, Nav, NavItem, Tooltip } from '@/components';
 import { useBreakpoint } from '@/hooks';
 import {
   DocumentDuplicateIcon,
@@ -6,11 +6,11 @@ import {
 } from '@heroicons/react/24/outline';
 import { ReactNode } from 'react';
 
-type DashboardProps = {
+type DashboardLayoutProps = {
   children?: ReactNode;
 };
 
-const Dashboard = ({ children }: DashboardProps) => {
+const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   const { md } = useBreakpoint();
 
   return (
@@ -83,5 +83,5 @@ const Navigation = ({ onNavigate }: NavigationProps) => {
   );
 };
 
-export { Dashboard };
-export type { DashboardProps };
+export { DashboardLayout };
+export type { DashboardLayoutProps };

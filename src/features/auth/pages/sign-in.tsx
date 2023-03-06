@@ -7,22 +7,22 @@ import {
   Logo,
   Text,
   Title,
-} from '@/components/elements';
+} from '@/components';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks';
-import { signInForm } from '../schemas';
+import { signInFormSchema } from '../schemas';
 import { SignInForm } from '../types';
 
-const SignIn = () => {
+const SignInPage = () => {
   const { signIn } = useAuth();
   // TODO: use translation everywhere
   const { t } = useTranslation('auth');
   const navigate = useNavigate();
   const { control, handleSubmit } = useForm<SignInForm>({
-    resolver: zodResolver(signInForm),
+    resolver: zodResolver(signInFormSchema),
   });
 
   const onSubmit = handleSubmit((form) => {
@@ -98,4 +98,4 @@ const SignIn = () => {
   );
 };
 
-export { SignIn };
+export { SignInPage };

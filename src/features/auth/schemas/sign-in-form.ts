@@ -3,7 +3,7 @@ import { z } from 'zod';
 
 // TODO: add schemas for all relevant server response models such as token, user, ...
 
-const signInForm = z.object({
+const signInFormSchema = z.object({
   username: z.string({
     errorMap: () => ({
       message: i18n.t('form.validation.required', { ns: 'auth' }),
@@ -17,4 +17,4 @@ const signInForm = z.object({
   remember: z.boolean().optional(),
 });
 
-export { signInForm };
+export { signInFormSchema };

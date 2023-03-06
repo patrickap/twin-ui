@@ -1,7 +1,7 @@
-import { Button, Text, Title } from '@/components/elements';
+import { Button, Text, Title } from '@/components';
 import { useTranslation } from 'react-i18next';
 
-const Error = () => {
+const ErrorPage = () => {
   const { t } = useTranslation('common');
 
   return (
@@ -18,4 +18,4 @@ const Error = () => {
   );
 };
 
-export { Error };
+export { ErrorPage };

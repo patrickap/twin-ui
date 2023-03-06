@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { useAuth } from '../../hooks';
+import { useAuth } from '../hooks';
 
 type AuthGuardProps = {
   loadingElement?: ReactNode;

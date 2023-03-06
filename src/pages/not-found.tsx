@@ -1,7 +1,7 @@
-import { Text, Title } from '@/components/elements';
+import { Text, Title } from '@/components';
 import { useTranslation } from 'react-i18next';
 
-const NotFound = () => {
+const NotFoundPage = () => {
   const { t } = useTranslation('common');
 
   return (
@@ -12,4 +12,4 @@ const NotFound = () => {
   );
 };
 
-export { NotFound };
+export { NotFoundPage };

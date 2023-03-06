@@ -1,9 +1,9 @@
-import { Spinner, Title } from '@/components/elements';
-import { Center, Dashboard } from '@/components/layouts';
-import { AuthGuard } from '@/features/auth/components';
-import { SignIn } from '@/features/auth/pages';
-import { Files, Shares } from '@/features/user/pages';
-import { Error, NotFound } from '@/pages';
+import { Spinner, Title } from '@/components';
+import { AuthGuard } from '@/features/auth/guards';
+import { SignInPage } from '@/features/auth/pages';
+import { FilesPage, SharesPage } from '@/features/user/pages';
+import { CenterLayout, DashboardLayout } from '@/layouts';
+import { ErrorPage, NotFoundPage } from '@/pages';
 import { Navigate, Outlet, RouteObject } from 'react-router-dom';
 
 // TODO: use lazy loading
@@ -18,15 +18,15 @@ const routes: RouteObject[] = [
     element: (
       <AuthGuard
         loadingElement={
-          <Center>
+          <CenterLayout>
             <Spinner />
-          </Center>
+          </CenterLayout>
         }
         errorElement={<Navigate to='/signin' />}
       >
-        <Dashboard>
+        <DashboardLayout>
           <Outlet />
-        </Dashboard>
+        </DashboardLayout>
       </AuthGuard>
     ),
     // TODO: implement loaders where possible
@@ -44,37 +44,37 @@ const routes: RouteObject[] = [
       },
       {
         path: 'files',
-        element: <Files />,
+        element: <FilesPage />,
       },
       {
         path: 'shares',
-        element: <Shares />,
+        element: <SharesPage />,
       },
     ],
   },
   {
     path: '/signin',
     element: (
-      <Center>
-        <SignIn />
-      </Center>
+      <CenterLayout>
+        <SignInPage />
+      </CenterLayout>
     ),
   },
   {
     path: '*',
     element: (
-      <Center>
-        <NotFound />
-      </Center>
+      <CenterLayout>
+        <NotFoundPage />
+      </CenterLayout>
     ),
   },
 ].map((route) => ({
   ...route,
   // add error element to every route
   errorElement: (
-    <Center>
-      <Error />
-    </Center>
+    <CenterLayout>
+      <ErrorPage />
+    </CenterLayout>
   ),
 }));
 
