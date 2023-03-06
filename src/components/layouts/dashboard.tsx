@@ -23,12 +23,14 @@ const Dashboard = ({ children }: DashboardProps) => {
         </aside>
       ) : null}
       <main className='flex flex-grow flex-col gap-1 p-4 md:p-8'>
-        <div className='flex items-center justify-end'>
+        <div className='z-[0] flex items-center justify-end'>
           {!md ? (
             <Drawer>
-              <div className='p-4 pt-0'>
-                <Navigation />
-              </div>
+              {({ close }) => (
+                <div className='p-4 pt-0'>
+                  <Navigation onNavigate={close} />
+                </div>
+              )}
             </Drawer>
           ) : null}
         </div>
@@ -38,7 +40,11 @@ const Dashboard = ({ children }: DashboardProps) => {
   );
 };
 
-const Navigation = () => {
+type NavigationProps = {
+  onNavigate?: (path: string) => void;
+};
+
+const Navigation = ({ onNavigate }: NavigationProps) => {
   const { md, lg } = useBreakpoint();
   const items = [
     {
@@ -57,7 +63,10 @@ const Navigation = () => {
     <Nav>
       {items.map((item, i) => (
         <div key={i}>
-          <span className='md:flex md:justify-center lg:inline-block lg:w-full'>
+          <span
+            className='md:flex md:justify-center lg:inline-block lg:w-full'
+            onClick={() => onNavigate?.(item.path)}
+          >
             {!md || lg ? (
               <NavItem to={item.path} icon={item.icon}>
                 {item.name}

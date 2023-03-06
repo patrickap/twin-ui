@@ -1,14 +1,12 @@
+import { isFunction } from '@/utils';
 import { Bars2Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import * as dialog from '@radix-ui/react-dialog';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ReactNode, useState } from 'react';
 import { ButtonIcon } from './button-icon';
 
-// TODO: add and pass all radix-ui props to make components
-// optionally controlled, do this for all components if it makes sense.
-
 type DrawerProps = {
-  children?: ReactNode;
+  children?: ReactNode | ((props: { close: () => void }) => ReactNode);
 };
 
 const Drawer = ({ children }: DrawerProps) => {
@@ -51,7 +49,11 @@ const Drawer = ({ children }: DrawerProps) => {
                     <XMarkIcon className='h-5 w-5' />
                   </ButtonIcon>
                 </dialog.Close>
-                <div>{children}</div>
+                <div>
+                  {isFunction(children)
+                    ? children({ close: () => setIsOpen(false) })
+                    : children}
+                </div>
               </motion.div>
             </dialog.Content>
           </dialog.Portal>
