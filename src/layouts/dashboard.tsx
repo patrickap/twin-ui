@@ -6,7 +6,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { ReactNode } from 'react';
 
-// TODO: move Navigation in subfolder /dashboard/components
+// TODO: move Navigation in subfolder /dashboard/components -> same for pages and e.g. specific dropdown component
 
 type DashboardLayoutProps = {
   children?: ReactNode;
