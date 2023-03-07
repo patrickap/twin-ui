@@ -16,4 +16,5 @@ export * from './nav-item';
 export * from './spinner';
 export * from './text';
 export * from './title';
+export * from './toast';
 export * from './tooltip';

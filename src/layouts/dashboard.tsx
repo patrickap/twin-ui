@@ -18,7 +18,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   return (
     <div className='flex h-screen w-full'>
       {md ? (
-        <aside className='w-20 border-r border-slate-200 bg-white md:block lg:w-64'>
+        <aside className='w-20 border-r border-slate-100 bg-white md:block lg:w-64'>
           <div className='px-4 py-8'>
             <Navigation />
           </div>
