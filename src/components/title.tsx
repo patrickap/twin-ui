@@ -2,12 +2,12 @@ import clsx from 'clsx';
 import { ReactNode } from 'react';
 
 type TitleProps = {
-  size?: 1 | 2 | 3 | 4;
+  size?: 1 | 2 | 3 | 4 | 5;
   isCenter?: boolean;
   children?: ReactNode;
 };
 
-const Title = ({ size = 4, isCenter, children }: TitleProps) => {
+const Title = ({ size = 5, isCenter, children }: TitleProps) => {
   return (
     <span
       className={clsx(
@@ -16,6 +16,7 @@ const Title = ({ size = 4, isCenter, children }: TitleProps) => {
         size === 2 && 'text-3xl font-bold',
         size === 3 && 'text-xl font-semibold',
         size === 4 && 'text-lg font-medium',
+        size === 5 && 'font-medium',
         isCenter && 'text-center',
       )}
     >
