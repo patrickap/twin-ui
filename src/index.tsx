@@ -9,8 +9,6 @@ import { I18nextProvider } from 'react-i18next';
 import { RouterProvider } from 'react-router-dom';
 import './index.css';
 
-// TODO: remove empty src/folders with .gitkeep
-
 i18n.init();
 
 const root = document.getElementById('root') as HTMLElement;
