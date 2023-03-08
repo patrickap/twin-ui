@@ -1,3 +1,4 @@
+import { Toasts } from '@/components';
 import { AuthenticationProvider } from '@/features/auth/providers';
 import { i18n } from '@/libs/i18next';
 import { queryClient } from '@/libs/react-query';
@@ -7,7 +8,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { I18nextProvider } from 'react-i18next';
 import { RouterProvider } from 'react-router-dom';
-import { Toasts } from './components';
 import './index.css';
 
 i18n.init();

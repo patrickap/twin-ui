@@ -8,7 +8,8 @@ import {
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import * as toast from '@radix-ui/react-toast';
 import clsx from 'clsx';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 import { ButtonIcon } from './button-icon';
 import { Spinner } from './spinner';
 import { Text } from './text';
@@ -22,36 +23,6 @@ type ToastProps = {
   duration?: number;
 };
 
-// TODO: separate toast proverder and toasts and add useToast hook
-
-const Toasts = () => {
-  const { toasts, add } = useToast();
-
-  (window as any).add = (id: string) => {
-    return add({
-      title: 'as' + id,
-      type: 'error',
-      description: 'sdgsdgsd sd sdvsd',
-      duration: 3000,
-    });
-  };
-
-  (window as any).gett = () => {
-    return toasts;
-  };
-
-  return (
-    <toast.Provider>
-      <AnimatePresence>
-        {toasts?.map((props) => (
-          <Toast {...props} key={props.id} />
-        ))}
-      </AnimatePresence>
-      <toast.Viewport className='fixed top-4 right-4 z-10 flex flex-col gap-4' />
-    </toast.Provider>
-  );
-};
-
 const Toast = ({
   id,
   type = 'default',
@@ -60,6 +31,22 @@ const Toast = ({
   duration = 5000,
 }: ToastProps) => {
   const { remove } = useToast();
+
+  useEffect(() => {
+    if (!id || !duration) {
+      return;
+    }
+
+    const timeoutId = setTimeout(() => {
+      remove(id);
+      clearTimeout(timeoutId);
+    }, duration);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <toast.Root asChild forceMount>
@@ -118,5 +105,5 @@ const Toast = ({
   );
 };
 
-export { Toast, Toasts };
+export { Toast };
 export type { ToastProps };

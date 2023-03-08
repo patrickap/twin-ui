@@ -17,4 +17,5 @@ export * from './spinner';
 export * from './text';
 export * from './title';
 export * from './toast';
+export * from './toasts';
 export * from './tooltip';
