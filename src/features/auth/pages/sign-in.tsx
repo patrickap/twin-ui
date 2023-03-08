@@ -41,7 +41,7 @@ const SignInPage = () => {
         </div>
       </div>
       <div className='bg-transparent p-0 shadow-none sm:rounded-lg sm:border sm:border-slate-100 sm:bg-white sm:px-10 sm:py-8 sm:shadow-lg'>
-        <div className='flex flex-col gap-6'>
+        <form className='flex flex-col gap-6'>
           <Controller
             control={control}
             name='username'
@@ -89,10 +89,15 @@ const SignInPage = () => {
             />
             <Link>{t('action.forgot_password')}</Link>
           </div>
-          <Button color='brand' onClick={onSubmit} isLoading={signIn.isLoading}>
+          <Button
+            type='submit'
+            color='brand'
+            onClick={onSubmit}
+            isLoading={signIn.isLoading}
+          >
             {t('action.sign_in')}
           </Button>
-        </div>
+        </form>
       </div>
     </div>
   );

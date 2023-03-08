@@ -1,8 +1,9 @@
 import clsx from 'clsx';
-import { MouseEventHandler, ReactNode } from 'react';
+import { ButtonHTMLAttributes, MouseEventHandler, ReactNode } from 'react';
 import { Spinner } from './spinner';
 
 type ButtonProps = {
+  type?: ButtonHTMLAttributes<HTMLButtonElement>['type'];
   color?: 'default' | 'brand' | 'info' | 'warning' | 'error' | 'success';
   isDisabled?: boolean;
   isLoading?: boolean;
@@ -11,6 +12,7 @@ type ButtonProps = {
 };
 
 const Button = ({
+  type = 'button',
   color = 'default',
   isDisabled = false,
   isLoading = false,
@@ -19,7 +21,7 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      type='button'
+      type={type}
       disabled={isDisabled || isLoading}
       onClick={onClick}
       className={clsx(
