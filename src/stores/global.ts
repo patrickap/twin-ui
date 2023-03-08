@@ -1,11 +1,10 @@
 import { ToastProps } from '@/components';
 import { Store } from 'pullstate';
 
-// TODO: remove global store and replace with dialog store
-// for handling dialogs, modals, toasts, ...
+// TODO: add dialogs, ...
 
 type GlobalState = {
-  toasts: (ToastProps & { id: string })[];
+  toasts: ToastProps[];
 };
 
 const globalStore = new Store<GlobalState>({ toasts: [] });
