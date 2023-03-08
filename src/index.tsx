@@ -7,6 +7,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { I18nextProvider } from 'react-i18next';
 import { RouterProvider } from 'react-router-dom';
+import { Toasts } from './components';
 import './index.css';
 
 i18n.init();
@@ -19,6 +20,7 @@ ReactDOM.createRoot(root).render(
       <QueryClientProvider client={queryClient}>
         <AuthenticationProvider>
           <RouterProvider router={router} />
+          <Toasts />
         </AuthenticationProvider>
       </QueryClientProvider>
     </I18nextProvider>
