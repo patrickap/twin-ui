@@ -16,7 +16,7 @@ const Title = ({ size = 5, isCenter, children }: TitleProps) => {
         size === 2 && 'text-3xl font-bold',
         size === 3 && 'text-xl font-semibold',
         size === 4 && 'text-lg font-medium',
-        size === 5 && 'font-medium',
+        size === 5 && 'text-base font-medium',
         isCenter && 'text-center',
       )}
     >
