@@ -4,20 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import { Toast } from './toast';
 
 const Toasts = () => {
-  const { toasts, add } = useToast();
-
-  (window as any).add = (id: string) => {
-    return add({
-      title: 'as' + id,
-      type: 'error',
-      description: 'sdgsdgsd sd sdvsd',
-      duration: 3000,
-    });
-  };
-
-  (window as any).gett = () => {
-    return toasts;
-  };
+  const { toasts } = useToast();
 
   return (
     <toast.Provider>
@@ -26,7 +13,7 @@ const Toasts = () => {
           <Toast {...props} key={props.id} />
         ))}
       </AnimatePresence>
-      <toast.Viewport className='fixed top-4 right-4 z-10 flex flex-col gap-4' />
+      <toast.Viewport className='fixed top-0 right-0 z-10 flex w-full max-w-sm flex-col gap-4 p-4' />
     </toast.Provider>
   );
 };
