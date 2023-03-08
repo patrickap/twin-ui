@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { ReactNode } from 'react';
 
 type TitleProps = {
-  size?: 1 | 2 | 3 | 4 | 5;
+  size?: 1 | 2 | 3 | 4 | 5 | 6;
   isCenter?: boolean;
   children?: ReactNode;
 };
@@ -17,6 +17,7 @@ const Title = ({ size = 5, isCenter, children }: TitleProps) => {
         size === 3 && 'text-xl font-semibold',
         size === 4 && 'text-lg font-medium',
         size === 5 && 'text-base font-medium',
+        size === 6 && 'text-sm font-medium',
         isCenter && 'text-center',
       )}
     >
