@@ -36,6 +36,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
             </Drawer>
           ) : null}
         </div>
+        {/* TODO: fix weird negative margin and correctly place drawer component */}
         <div className='-mt-10 md:mt-0'>{children}</div>
       </main>
     </div>
