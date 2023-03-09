@@ -10,7 +10,6 @@ import { I18nextProvider } from 'react-i18next';
 import { RouterProvider } from 'react-router-dom';
 import './index.css';
 
-// TODO: remove popperjs dependency
 // TODO: add id prop to all components which get rendered as list, onClick propagate id
 
 i18n.init();
