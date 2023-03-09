@@ -1,16 +1,17 @@
+import { ColorMode } from '@/configs';
 import clsx from 'clsx';
 
 type SpinnerProps = {
-  mode?: 'dark' | 'light';
+  mode?: ColorMode;
 };
 
-const Spinner = ({ mode = 'light' }: SpinnerProps) => {
+const Spinner = ({ mode = ColorMode.LIGHT }: SpinnerProps) => {
   return (
     <div
       className={clsx(
         'h-5 w-5 animate-spin rounded-full border-4',
-        mode === 'light' && 'border-slate-700/20 border-t-slate-700',
-        mode === 'dark' && 'border-white/20 border-t-white',
+        mode === ColorMode.LIGHT && 'border-slate-700/20 border-t-slate-700',
+        mode === ColorMode.DARK && 'border-white/20 border-t-white',
       )}
     ></div>
   );

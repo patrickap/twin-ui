@@ -2,7 +2,7 @@ import { EllipsisVerticalIcon } from '@heroicons/react/24/outline';
 import * as dropdown from '@radix-ui/react-dropdown-menu';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ReactNode, useState } from 'react';
-import { ButtonIcon } from './button-icon';
+import { ButtonIcon } from '.';
 
 type DropdownProps = {
   align?: 'start' | 'center' | 'end';

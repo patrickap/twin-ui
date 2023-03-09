@@ -1,7 +1,7 @@
 import { useToast } from '@/hooks';
 import * as toast from '@radix-ui/react-toast';
 import { AnimatePresence } from 'framer-motion';
-import { Toast } from './toast';
+import { Toast } from '.';
 
 const Toasts = () => {
   const { toasts } = useToast();
