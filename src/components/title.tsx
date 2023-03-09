@@ -11,7 +11,7 @@ const Title = ({ size = 5, isCenter, children }: TitleProps) => {
   return (
     <span
       className={clsx(
-        'tracking-tight text-slate-700',
+        'block tracking-tight text-slate-700',
         size === 1 && 'text-4xl font-bold',
         size === 2 && 'text-3xl font-bold',
         size === 3 && 'text-xl font-semibold',

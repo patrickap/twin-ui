@@ -8,9 +8,9 @@ type TextProps = {
 
 const Text = ({ color = 'default', children }: TextProps) => {
   return (
-    <div
+    <span
       className={clsx(
-        'text-sm',
+        'block text-sm',
         color === 'default' && 'text-slate-600',
         color === 'brand' && 'text-brand-500',
         color === 'info' && 'text-blue-500',
@@ -20,7 +20,7 @@ const Text = ({ color = 'default', children }: TextProps) => {
       )}
     >
       {children}
-    </div>
+    </span>
   );
 };
 
