@@ -40,7 +40,7 @@ const SignInPage = () => {
           </Text>
         </div>
       </div>
-      <div className='bg-transparent p-0 shadow-none sm:rounded-lg sm:border sm:border-slate-100 sm:bg-white sm:px-10 sm:py-8 sm:shadow-lg'>
+      <div className='bg-transparent p-0 shadow-none sm:rounded-lg sm:bg-white sm:px-10 sm:py-8 sm:shadow-lg'>
         <form className='flex flex-col gap-6'>
           <Controller
             control={control}

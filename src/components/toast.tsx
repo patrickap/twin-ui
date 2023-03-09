@@ -59,7 +59,7 @@ const Toast = ({
         transition={{
           duration: 0.3,
         }}
-        className='relative flex max-w-sm gap-4 rounded-lg border border-slate-100 bg-white p-4 text-sm shadow-lg'
+        className='relative flex max-w-sm gap-4 rounded-lg bg-white p-4 text-sm shadow-lg'
       >
         <div>
           {type !== 'default' ? (
