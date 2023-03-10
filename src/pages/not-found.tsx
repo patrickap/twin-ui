@@ -6,7 +6,7 @@ const NotFoundPage = () => {
 
   return (
     <>
-      <Title size={1}>{t('page.not_found.title')}</Title>
+      <Title order={1}>{t('page.not_found.title')}</Title>
       <Text>{t('page.not_found.text')}</Text>
     </>
   );

@@ -6,7 +6,7 @@ const ErrorPage = () => {
 
   return (
     <>
-      <Title size={1}>{t('page.error.title')}</Title>
+      <Title order={1}>{t('page.error.title')}</Title>
       <Text>{t('page.error.text')}</Text>
 
       <div className='mt-4'>

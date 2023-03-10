@@ -15,8 +15,8 @@ const FilesPage = () => {
 
   return (
     <>
-      <Title size={2}>{t('page.files.title')}</Title>
-      <Dropdown align='start' side='bottom'>
+      <Title order={2}>{t('page.files.title')}</Title>
+      <Dropdown align='start' position='bottom'>
         <DropdownItem icon={<ViewfinderCircleIcon />}>
           {t('action.view')}
         </DropdownItem>

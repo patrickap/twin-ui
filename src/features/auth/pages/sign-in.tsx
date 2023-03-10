@@ -1,7 +1,6 @@
 import {
   Button,
   Checkbox,
-  Dialog,
   InputPassword,
   InputText,
   Link,
@@ -32,7 +31,7 @@ const SignInPage = () => {
 
   return (
     <div className='flex w-full max-w-md flex-col gap-8'>
-      <Dialog
+      {/* <Dialog
         title='This is a title'
         description='This is a very long description about what is going on...'
         onConfirm={{
@@ -44,7 +43,7 @@ const SignInPage = () => {
           handle: () => console.log('continue'),
         }}
         color='error'
-      />
+      /> */}
       <div className='flex flex-col gap-6'>
         <Logo size={3} />
         <div className='flex flex-col gap-2 text-center'>

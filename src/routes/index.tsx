@@ -40,7 +40,7 @@ const routes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: <Title size={2}>Nothing here</Title>,
+        element: <Title order={2}>Nothing here</Title>,
       },
       {
         path: 'files',
