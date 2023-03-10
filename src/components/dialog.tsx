@@ -1,4 +1,5 @@
-import { ColorScheme } from '@/configs';
+import { Color } from '@/configs';
+import { ValueOf } from '@/types';
 import { isFunction } from '@/utils';
 import { ExclamationTriangleIcon } from '@heroicons/react/20/solid';
 import * as dialog from '@radix-ui/react-dialog';
@@ -7,7 +8,7 @@ import { Button, Text, Title } from '.';
 
 type DialogProps = {
   id?: string;
-  scheme?: ColorScheme;
+  color?: ValueOf<typeof Color>;
   title?: string;
   description?: string;
   onConfirm?: (() => void) | { label?: string; handle: () => void };
@@ -20,7 +21,7 @@ type DialogProps = {
 
 const Dialog = ({
   id,
-  scheme = ColorScheme.DEFAULT,
+  color = 'neutral',
   title,
   description,
   onConfirm,
@@ -38,23 +39,20 @@ const Dialog = ({
                 <div
                   className={clsx(
                     'flex h-10 w-10 shrink-0 items-center justify-center rounded-full',
-                    scheme === ColorScheme.DEFAULT &&
-                      'bg-slate-100 text-slate-500',
-                    scheme === ColorScheme.BRAND &&
-                      'bg-brand-100 text-brand-500',
-                    scheme === ColorScheme.INFO && 'bg-blue-100 text-blue-500',
-                    scheme === ColorScheme.WARNING &&
-                      'bg-yellow-100 text-yellow-500',
-                    scheme === ColorScheme.ERROR && 'bg-red-100 text-red-500',
-                    scheme === ColorScheme.SUCCESS &&
-                      'bg-green-100 text-green-500',
+                    color === Color.NEUTRAL && 'bg-slate-100 text-slate-500',
+                    color === Color.PRIMARY &&
+                      'bg-primary-100 text-primary-500',
+                    color === Color.INFO && 'bg-blue-100 text-blue-500',
+                    color === Color.WARNING && 'bg-yellow-100 text-yellow-500',
+                    color === Color.ERROR && 'bg-red-100 text-red-500',
+                    color === Color.SUCCESS && 'bg-green-100 text-green-500',
                   )}
                 >
                   <ExclamationTriangleIcon className='h-6 w-6' />
                 </div>
                 <div className='flex flex-col gap-2 text-center sm:text-start'>
                   <dialog.Title>
-                    <Title size={5}>{title}</Title>
+                    <Title order={5}>{title}</Title>
                   </dialog.Title>
                   <dialog.Description>
                     <Text>{description}</Text>
@@ -81,7 +79,7 @@ const Dialog = ({
 
               {onConfirm ? (
                 <Button
-                  scheme={scheme}
+                  color={color}
                   onClick={
                     isFunction(onConfirm) ? onConfirm : onConfirm?.handle
                   }

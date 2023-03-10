@@ -1,5 +1,5 @@
-const breakpoints = require('./src/configs/breakpoints.json');
-const colors = require('tailwindcss/colors');
+const Breakpoint = require('./src/configs/breakpoint.json');
+const Color = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -7,11 +7,14 @@ module.exports = {
   darkMode: 'media',
   theme: {
     screens: {
-      ...breakpoints,
+      sm: Breakpoint.SM,
+      md: Breakpoint.MD,
+      lg: Breakpoint.LG,
+      xl: Breakpoint.XL,
     },
     extend: {
       colors: {
-        brand: colors.indigo,
+        primary: Color.indigo,
       },
     },
   },

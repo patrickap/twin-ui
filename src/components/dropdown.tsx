@@ -1,3 +1,5 @@
+import { Alignment, Direction } from '@/configs';
+import { ValueOf } from '@/types';
 import { EllipsisVerticalIcon } from '@heroicons/react/24/outline';
 import * as dropdown from '@radix-ui/react-dropdown-menu';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -5,12 +7,12 @@ import { ReactNode, useState } from 'react';
 import { ButtonIcon } from '.';
 
 type DropdownProps = {
-  align?: 'start' | 'center' | 'end';
-  side?: 'top' | 'bottom' | 'right' | 'left';
+  align?: ValueOf<typeof Alignment>;
+  position?: ValueOf<typeof Direction>;
   children?: ReactNode;
 };
 
-const Dropdown = ({ align, side, children }: DropdownProps) => {
+const Dropdown = ({ align, position, children }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -26,7 +28,7 @@ const Dropdown = ({ align, side, children }: DropdownProps) => {
             <dropdown.Content
               asChild
               align={align}
-              side={side}
+              side={position}
               sideOffset={4}
               className='z-10 w-56 rounded-lg bg-white p-2 shadow-lg'
             >

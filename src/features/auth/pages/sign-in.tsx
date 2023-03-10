@@ -9,7 +9,6 @@ import {
   Text,
   Title,
 } from '@/components';
-import { ColorScheme } from '@/configs';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -44,12 +43,12 @@ const SignInPage = () => {
           label: 'Continue',
           handle: () => console.log('continue'),
         }}
-        scheme={ColorScheme.ERROR}
+        color='error'
       />
       <div className='flex flex-col gap-6'>
         <Logo size={3} />
         <div className='flex flex-col gap-2 text-center'>
-          <Title size={2}>{t('page.sign_in.title')}</Title>
+          <Title order={2}>{t('page.sign_in.title')}</Title>
           <Text>
             {t('page.sign_in.text')} <Link>{t('action.sign_up')}</Link>
           </Text>
@@ -106,7 +105,7 @@ const SignInPage = () => {
           </div>
           <Button
             type='submit'
-            scheme={ColorScheme.BRAND}
+            color='primary'
             onClick={onSubmit}
             isLoading={signIn.isLoading}
           >

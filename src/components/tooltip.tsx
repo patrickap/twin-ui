@@ -1,14 +1,16 @@
+import { Direction } from '@/configs';
+import { ValueOf } from '@/types';
 import * as tooltip from '@radix-ui/react-tooltip';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ReactNode, useState } from 'react';
 
 type TooltipProps = {
-  side?: 'top' | 'bottom' | 'right' | 'left';
+  position?: ValueOf<typeof Direction>;
   content?: ReactNode;
   children?: ReactNode;
 };
 
-const Tooltip = ({ side, content, children }: TooltipProps) => {
+const Tooltip = ({ position, content, children }: TooltipProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -20,7 +22,7 @@ const Tooltip = ({ side, content, children }: TooltipProps) => {
             <tooltip.Portal forceMount>
               <tooltip.Content
                 asChild
-                side={side}
+                side={position}
                 sideOffset={8}
                 className='z-10 rounded-lg bg-slate-900/75 p-2 px-3 text-sm text-white backdrop-blur-sm'
               >

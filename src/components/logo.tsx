@@ -9,7 +9,7 @@ const Logo = ({ size = 12 }: LogoProps) => {
     <div className='flex w-full items-center justify-center'>
       <RocketLaunchIcon
         style={{ width: size + 'rem', height: size + 'rem' }}
-        className='text-brand-500'
+        className='text-primary-500'
       />
     </div>
   );

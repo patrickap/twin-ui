@@ -1,23 +1,24 @@
-import { ColorScheme } from '@/configs';
+import { Color } from '@/configs';
+import { ValueOf } from '@/types';
 import clsx from 'clsx';
 import { ReactNode } from 'react';
 
 type TextProps = {
-  scheme?: ColorScheme;
+  color?: ValueOf<typeof Color>;
   children?: ReactNode;
 };
 
-const Text = ({ scheme = ColorScheme.DEFAULT, children }: TextProps) => {
+const Text = ({ color = 'neutral', children }: TextProps) => {
   return (
     <span
       className={clsx(
         'block text-sm',
-        scheme === ColorScheme.DEFAULT && 'text-slate-600',
-        scheme === ColorScheme.BRAND && 'text-brand-500',
-        scheme === ColorScheme.INFO && 'text-blue-500',
-        scheme === ColorScheme.WARNING && 'text-yellow-500',
-        scheme === ColorScheme.ERROR && 'text-red-500',
-        scheme === ColorScheme.SUCCESS && 'text-green-500',
+        color === Color.NEUTRAL && 'text-slate-600',
+        color === Color.PRIMARY && 'text-primary-500',
+        color === Color.INFO && 'text-blue-500',
+        color === Color.WARNING && 'text-yellow-500',
+        color === Color.ERROR && 'text-red-500',
+        color === Color.SUCCESS && 'text-green-500',
       )}
     >
       {children}

@@ -1,5 +1,8 @@
-import breakpoints from './breakpoints.json';
+// as json file to be compatible with tailwind config
+import Breakpoint from './breakpoint.json';
 
-export * from './color-mode';
-export * from './color-scheme';
-export { breakpoints };
+export * from './alignment';
+export * from './color';
+export * from './direction';
+export * from './theme';
+export { Breakpoint };

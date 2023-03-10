@@ -75,7 +75,7 @@ const Navigation = ({ onNavigate }: NavigationProps) => {
                 {item.name}
               </NavItem>
             ) : (
-              <Tooltip side='right' content={item.name}>
+              <Tooltip position='right' content={item.name}>
                 <NavItem to={item.path} icon={item.icon}></NavItem>
               </Tooltip>
             )}

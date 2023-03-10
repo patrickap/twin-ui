@@ -1,11 +1,11 @@
-import { breakpoints } from '@/configs';
+import { Breakpoint } from '@/configs';
 import { useMediaQuery } from 'react-responsive';
 
 const useBreakpoint = () => {
-  const sm = useMediaQuery({ query: `(min-width: ${breakpoints.sm})` });
-  const md = useMediaQuery({ query: `(min-width: ${breakpoints.md})` });
-  const lg = useMediaQuery({ query: `(min-width: ${breakpoints.lg})` });
-  const xl = useMediaQuery({ query: `(min-width: ${breakpoints.xl})` });
+  const sm = useMediaQuery({ query: `(min-width: ${Breakpoint.SM})` });
+  const md = useMediaQuery({ query: `(min-width: ${Breakpoint.MD})` });
+  const lg = useMediaQuery({ query: `(min-width: ${Breakpoint.LG})` });
+  const xl = useMediaQuery({ query: `(min-width: ${Breakpoint.XL})` });
 
   return { sm, md, lg, xl };
 };

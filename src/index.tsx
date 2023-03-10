@@ -11,6 +11,7 @@ import { RouterProvider } from 'react-router-dom';
 import './index.css';
 
 // TODO: add id prop to all components which get rendered as list, onClick propagate id
+// TODO: jsdoc method docunentation
 
 i18n.init();
 

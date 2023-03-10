@@ -12,7 +12,7 @@ const Link = ({ to = {}, onClick, children }: LinkProps) => {
     <RouterLink
       to={to}
       onClick={onClick}
-      className='text-sm font-medium text-brand-500 hover:text-brand-400'
+      className='text-sm font-medium text-primary-500 hover:text-primary-400'
     >
       {children}
     </RouterLink>
