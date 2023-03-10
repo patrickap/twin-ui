@@ -56,11 +56,11 @@ const Toast = ({
       <motion.div
         layout
         key={id}
-        initial={{ translateX: '100%' }}
-        animate={{ translateX: 0 }}
-        exit={{ translateX: '100%' }}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.95 }}
         transition={{
-          duration: 0.3,
+          duration: 0.2,
         }}
         className='relative flex max-w-sm gap-4 rounded-lg bg-white p-4 text-sm shadow-lg'
       >

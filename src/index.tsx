@@ -1,4 +1,4 @@
-import { Toasts } from '@/components';
+import { Dialogs, Toasts } from '@/components';
 import { AuthenticationProvider } from '@/features/auth/providers';
 import { i18n } from '@/libs/i18next';
 import { queryClient } from '@/libs/react-query';
@@ -24,6 +24,7 @@ ReactDOM.createRoot(root).render(
         <AuthenticationProvider>
           <RouterProvider router={router} />
           <Toasts />
+          <Dialogs />
         </AuthenticationProvider>
       </QueryClientProvider>
     </I18nextProvider>

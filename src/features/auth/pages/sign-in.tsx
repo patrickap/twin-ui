@@ -1,7 +1,6 @@
 import {
   Button,
   Checkbox,
-  Dialog,
   InputPassword,
   InputText,
   Link,
@@ -9,6 +8,7 @@ import {
   Text,
   Title,
 } from '@/components';
+import { useDialog, useToast } from '@/hooks';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -26,25 +26,15 @@ const SignInPage = () => {
     resolver: zodResolver(signInFormSchema),
   });
 
+  const dialog = useDialog();
+  const toast = useToast();
+
   const onSubmit = handleSubmit((form) => {
     signIn.mutateAsync(form).then(() => navigate('/dashboard'));
   });
 
   return (
     <div className='flex w-full max-w-md flex-col gap-8'>
-      <Dialog
-        title='This is a title'
-        description='This is a very long description about what is going on...'
-        onConfirm={{
-          label: 'Quit',
-          handle: () => console.log('quit'),
-        }}
-        onCancel={{
-          label: 'Continue',
-          handle: () => console.log('continue'),
-        }}
-        color='error'
-      />
       <div className='flex flex-col gap-6'>
         <Logo size={3} />
         <div className='flex flex-col gap-2 text-center'>
@@ -112,6 +102,32 @@ const SignInPage = () => {
             {t('action.sign_in')}
           </Button>
         </form>
+        <div
+          onClick={() =>
+            dialog.open({
+              title: 'asasasf',
+              description: 'ew weg weg weg we ',
+              color: 'primary',
+              onCancel() {
+                console.log();
+              },
+            })
+          }
+        >
+          dialog
+        </div>
+        <div
+          onClick={() =>
+            toast.add({
+              title: 'asasasf',
+              description: 'ew weg weg weg we ',
+              color: 'primary',
+              isLoading: true
+            })
+          }
+        >
+          toast
+        </div>
       </div>
     </div>
   );
