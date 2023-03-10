@@ -9,11 +9,12 @@ type ButtonIconProps = {
 
 const ButtonIcon = forwardRef(
   (
-    { size = 2, onClick, children }: ButtonIconProps,
+    { size = 2, onClick, children, ...props }: ButtonIconProps,
     ref: ForwardedRef<HTMLButtonElement>,
   ) => {
     return (
       <button
+        {...props}
         ref={ref}
         onClick={onClick}
         className={clsx(

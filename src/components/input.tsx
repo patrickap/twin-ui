@@ -36,6 +36,7 @@ const Input = forwardRef(
       isError = false,
       onChange,
       onBlur,
+      ...props
     }: InputProps,
     ref: ForwardedRef<HTMLInputElement>,
   ) => {
@@ -53,6 +54,7 @@ const Input = forwardRef(
           ) : null}
 
           <input
+            {...props}
             id={id}
             ref={ref}
             type={type}

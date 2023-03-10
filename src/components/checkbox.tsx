@@ -26,6 +26,7 @@ const Checkbox = forwardRef(
       isError = false,
       onChange,
       onBlur,
+      ...props
     }: CheckboxProps,
     ref: ForwardedRef<HTMLInputElement>,
   ) => {
@@ -34,6 +35,7 @@ const Checkbox = forwardRef(
     return (
       <div className='flex items-center gap-2'>
         <input
+          {...props}
           id={id}
           ref={ref}
           type='checkbox'

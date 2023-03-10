@@ -10,11 +10,12 @@ type TextProps = {
 
 const Text = forwardRef(
   (
-    { color = 'neutral', children }: TextProps,
+    { color = 'neutral', children, ...props }: TextProps,
     ref: ForwardedRef<HTMLParagraphElement>,
   ) => {
     return (
       <p
+        {...props}
         ref={ref}
         className={clsx(
           'text-sm',

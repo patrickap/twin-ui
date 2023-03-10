@@ -9,11 +9,12 @@ type TitleProps = {
 
 const Title = forwardRef(
   (
-    { order = 5, isCenter, children }: TitleProps,
+    { order = 5, isCenter, children, ...props }: TitleProps,
     ref: ForwardedRef<HTMLParagraphElement>,
   ) => {
     return (
       <p
+        {...props}
         ref={ref}
         className={clsx(
           'tracking-tight text-slate-700',

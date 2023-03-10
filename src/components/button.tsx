@@ -28,11 +28,13 @@ const Button = forwardRef(
       isLoading = false,
       onClick,
       children,
+      ...props
     }: ButtonProps,
     ref: ForwardedRef<HTMLButtonElement>,
   ) => {
     return (
       <button
+        {...props}
         ref={ref}
         type={type}
         disabled={isDisabled || isLoading}
