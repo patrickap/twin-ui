@@ -19,9 +19,7 @@ type DialogProps = {
   onCancel?: (() => void) | { label?: string; handle: () => void };
 };
 
-// TODO: i18n
-// TODO: color types
-// TODO: use id in motion.div
+// TODO: i18n labels etc.
 
 const Dialog = ({
   id,
