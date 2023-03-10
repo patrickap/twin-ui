@@ -14,8 +14,6 @@ import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import { ButtonIcon, Spinner, Text, Title } from '.';
 
-// TODO: maybe improve animation with scale / opacity instead of translateX?
-
 type ToastProps = {
   id?: string;
   color?: ValueOf<typeof Color>;

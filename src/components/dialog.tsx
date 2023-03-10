@@ -8,6 +8,8 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { Button, Text, Title } from '.';
 
+// TODO: FIXME: z-index animation issue if dialog opens and some toasts are rendered...
+
 type DialogProps = {
   id?: string;
   color?: ValueOf<typeof Color>;
