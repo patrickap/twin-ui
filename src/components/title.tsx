@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { ReactNode } from 'react';
+import { ForwardedRef, forwardRef, ReactNode } from 'react';
 
 type TitleProps = {
   order?: 1 | 2 | 3 | 4 | 5 | 6;
@@ -7,24 +7,30 @@ type TitleProps = {
   children?: ReactNode;
 };
 
-const Title = ({ order = 5, isCenter, children }: TitleProps) => {
-  return (
-    <span
-      className={clsx(
-        'block tracking-tight text-slate-700',
-        order === 1 && 'text-4xl font-bold',
-        order === 2 && 'text-3xl font-bold',
-        order === 3 && 'text-xl font-semibold',
-        order === 4 && 'text-lg font-medium',
-        order === 5 && 'text-base font-medium',
-        order === 6 && 'text-sm font-medium',
-        isCenter && 'text-center',
-      )}
-    >
-      {children}
-    </span>
-  );
-};
+const Title = forwardRef(
+  (
+    { order = 5, isCenter, children }: TitleProps,
+    ref: ForwardedRef<HTMLParagraphElement>,
+  ) => {
+    return (
+      <p
+        ref={ref}
+        className={clsx(
+          'tracking-tight text-slate-700',
+          order === 1 && 'text-4xl font-bold',
+          order === 2 && 'text-3xl font-bold',
+          order === 3 && 'text-xl font-semibold',
+          order === 4 && 'text-lg font-medium',
+          order === 5 && 'text-base font-medium',
+          order === 6 && 'text-sm font-medium',
+          isCenter && 'text-center',
+        )}
+      >
+        {children}
+      </p>
+    );
+  },
+);
 
 export { Title };
 export type { TitleProps };

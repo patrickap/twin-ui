@@ -14,7 +14,7 @@ const Drawer = ({ children }: DrawerProps) => {
 
   return (
     <dialog.Root open={isOpen} onOpenChange={setIsOpen}>
-      <dialog.Trigger>
+      <dialog.Trigger asChild>
         <ButtonIcon>
           <Bars2Icon className='h-5 w-5' />
         </ButtonIcon>
@@ -44,11 +44,13 @@ const Drawer = ({ children }: DrawerProps) => {
                   duration: 0.3,
                 }}
               >
-                <dialog.Close className='flex justify-end p-4'>
-                  <ButtonIcon>
-                    <XMarkIcon className='h-5 w-5' />
-                  </ButtonIcon>
-                </dialog.Close>
+                <div className='flex justify-end p-4'>
+                  <dialog.Close asChild>
+                    <ButtonIcon>
+                      <XMarkIcon className='h-5 w-5' />
+                    </ButtonIcon>
+                  </dialog.Close>
+                </div>
                 <div>
                   {isFunction(children)
                     ? children({ close: () => setIsOpen(false) })

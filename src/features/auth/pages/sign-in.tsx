@@ -106,7 +106,8 @@ const SignInPage = () => {
           onClick={() =>
             dialog.open({
               title: 'asasasf',
-              description: 'ew weg weg weg we ',
+              description:
+                'ew weg weg weg weew weg weg weg weew weg weg weg weew weg weg weg weew weg weg weg weew weg weg weg weew weg weg weg we ',
               color: 'primary',
               onCancel() {
                 console.log();
@@ -120,9 +121,10 @@ const SignInPage = () => {
           onClick={() =>
             toast.add({
               title: 'asasasf',
-              description: 'ew weg weg weg we ',
+              description:
+                'ew weg weg weg weew weg weg weg weew weg weg weg weew weg weg weg weew weg weg weg weew weg weg weg weew weg weg weg weew weg weg weg we ',
               color: 'primary',
-              isLoading: true
+              isLoading: true,
             })
           }
         >

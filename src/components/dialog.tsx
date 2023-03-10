@@ -75,10 +75,10 @@ const Dialog = ({
                     <ExclamationTriangleIcon className='h-6 w-6' />
                   </div>
                   <div className='flex flex-col gap-2 text-center sm:text-start'>
-                    <dialog.Title>
+                    <dialog.Title asChild>
                       <Title order={5}>{title}</Title>
                     </dialog.Title>
-                    <dialog.Description>
+                    <dialog.Description asChild>
                       <Text>{description}</Text>
                     </dialog.Description>
                   </div>
@@ -87,25 +87,23 @@ const Dialog = ({
               <div className='flex flex-col-reverse justify-end gap-3 border border-t-slate-100 bg-slate-50 py-4 px-6 empty:hidden sm:flex-row'>
                 {onCancel ? (
                   <dialog.Close asChild>
-                    <>
-                      <Button
-                        onClick={() => {
-                          if (isFunction(onCancel)) {
-                            onCancel();
-                          } else {
-                            onCancel?.handle();
-                          }
+                    <Button
+                      onClick={() => {
+                        if (isFunction(onCancel)) {
+                          onCancel();
+                        } else {
+                          onCancel?.handle();
+                        }
 
-                          if (id) {
-                            close(id);
-                          }
-                        }}
-                      >
-                        {!isFunction(onCancel) && onCancel?.label
-                          ? onCancel?.label
-                          : 'Cancel'}
-                      </Button>
-                    </>
+                        if (id) {
+                          close(id);
+                        }
+                      }}
+                    >
+                      {!isFunction(onCancel) && onCancel?.label
+                        ? onCancel?.label
+                        : 'Cancel'}
+                    </Button>
                   </dialog.Close>
                 ) : null}
 

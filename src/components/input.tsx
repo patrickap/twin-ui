@@ -2,9 +2,9 @@ import clsx from 'clsx';
 import {
   ChangeEventHandler,
   FocusEventHandler,
+  ForwardedRef,
   forwardRef,
   InputHTMLAttributes,
-  LegacyRef,
   ReactNode,
   useId,
 } from 'react';
@@ -37,7 +37,7 @@ const Input = forwardRef(
       onChange,
       onBlur,
     }: InputProps,
-    ref: LegacyRef<HTMLInputElement>,
+    ref: ForwardedRef<HTMLInputElement>,
   ) => {
     const id = useId();
 

@@ -2,8 +2,8 @@ import clsx from 'clsx';
 import {
   ChangeEventHandler,
   FocusEventHandler,
+  ForwardedRef,
   forwardRef,
-  LegacyRef,
   useId,
 } from 'react';
 import { Label } from '.';
@@ -27,7 +27,7 @@ const Checkbox = forwardRef(
       onChange,
       onBlur,
     }: CheckboxProps,
-    ref: LegacyRef<HTMLInputElement>,
+    ref: ForwardedRef<HTMLInputElement>,
   ) => {
     const id = useId();
 

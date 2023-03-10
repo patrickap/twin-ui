@@ -17,7 +17,7 @@ const Dropdown = ({ align, position, children }: DropdownProps) => {
 
   return (
     <dropdown.Root open={isOpen} onOpenChange={setIsOpen}>
-      <dropdown.Trigger>
+      <dropdown.Trigger asChild>
         <ButtonIcon>
           <EllipsisVerticalIcon className='h-5 w-5' />
         </ButtonIcon>

@@ -92,18 +92,20 @@ const Toast = ({
           </div>
         </div>
         <div className='flex flex-col gap-2'>
-          <toast.Title>
+          <toast.Title asChild>
             <Title order={6}>{title}</Title>
           </toast.Title>
-          <toast.Description>
+          <toast.Description asChild>
             <Text>{description}</Text>
           </toast.Description>
         </div>
-        <toast.Close className='absolute top-3 right-3'>
-          <ButtonIcon size={1} onClick={() => (id ? remove(id) : null)}>
-            <XMarkIcon className='h-5 w-5' />
-          </ButtonIcon>
-        </toast.Close>
+        <div className='absolute top-3 right-3'>
+          <toast.Close asChild>
+            <ButtonIcon size={1} onClick={() => (id ? remove(id) : null)}>
+              <XMarkIcon className='h-5 w-5' />
+            </ButtonIcon>
+          </toast.Close>
+        </div>
       </motion.div>
     </toast.Root>
   );
