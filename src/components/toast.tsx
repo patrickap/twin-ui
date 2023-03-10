@@ -1,4 +1,4 @@
-import { Color } from '@/configs';
+import { Color } from '@/constants';
 import { useToast } from '@/hooks';
 import { ValueOf } from '@/types';
 import {

@@ -1,4 +1,4 @@
-const Breakpoint = require('./src/configs/breakpoint.json');
+const Breakpoint = require('./src/constants/breakpoint.json');
 const Color = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */

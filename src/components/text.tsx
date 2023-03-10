@@ -1,4 +1,4 @@
-import { Color } from '@/configs';
+import { Color } from '@/constants';
 import { ValueOf } from '@/types';
 import clsx from 'clsx';
 import { ReactNode } from 'react';

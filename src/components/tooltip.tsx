@@ -1,4 +1,4 @@
-import { Direction } from '@/configs';
+import { Direction } from '@/constants';
 import { ValueOf } from '@/types';
 import * as tooltip from '@radix-ui/react-tooltip';
 import { AnimatePresence, motion } from 'framer-motion';

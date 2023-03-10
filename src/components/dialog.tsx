@@ -1,4 +1,4 @@
-import { Color } from '@/configs';
+import { Color } from '@/constants';
 import { ValueOf } from '@/types';
 import { isFunction } from '@/utils';
 import { ExclamationTriangleIcon } from '@heroicons/react/20/solid';

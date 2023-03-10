@@ -1,4 +1,4 @@
-import { Theme } from '@/configs';
+import { Theme } from '@/constants';
 import { ValueOf } from '@/types';
 import clsx from 'clsx';
 

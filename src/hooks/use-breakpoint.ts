@@ -1,4 +1,4 @@
-import { Breakpoint } from '@/configs';
+import { Breakpoint } from '@/constants';
 import { useMediaQuery } from 'react-responsive';
 
 const useBreakpoint = () => {

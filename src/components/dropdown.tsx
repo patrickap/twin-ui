@@ -1,4 +1,4 @@
-import { Alignment, Direction } from '@/configs';
+import { Alignment, Direction } from '@/constants';
 import { ValueOf } from '@/types';
 import { EllipsisVerticalIcon } from '@heroicons/react/24/outline';
 import * as dropdown from '@radix-ui/react-dropdown-menu';
