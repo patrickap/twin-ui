@@ -112,6 +112,9 @@ const SignInPage = () => {
               onCancel() {
                 console.log();
               },
+              onConfirm() {
+                console.log();
+              },
             })
           }
         >

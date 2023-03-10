@@ -3,7 +3,7 @@ import { useDialog } from '@/hooks';
 import { ValueOf } from '@/types';
 import { isFunction } from '@/utils';
 import { ExclamationTriangleIcon } from '@heroicons/react/20/solid';
-import * as dialog from '@radix-ui/react-dialog';
+import * as alertDialog from '@radix-ui/react-alert-dialog';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { Button, Text, Title } from '.';
@@ -32,8 +32,8 @@ const Dialog = ({
   const { close } = useDialog();
 
   return (
-    <dialog.Root>
-      <dialog.Portal forceMount className='relative z-10'>
+    <alertDialog.Root>
+      <alertDialog.Portal forceMount className='relative z-10'>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -42,7 +42,7 @@ const Dialog = ({
             duration: 0.3,
           }}
         >
-          <dialog.Overlay className='fixed inset-0 z-10 bg-slate-500/50'></dialog.Overlay>
+          <alertDialog.Overlay className='fixed inset-0 z-10 bg-slate-500/50'></alertDialog.Overlay>
         </motion.div>
 
         <div className='fixed inset-0 z-10 flex h-screen w-screen flex-col items-center justify-center p-4'>
@@ -56,7 +56,7 @@ const Dialog = ({
               duration: 0.2,
             }}
           >
-            <dialog.Content className='w-full max-w-lg overflow-hidden rounded-lg shadow-xl focus:outline-none'>
+            <alertDialog.Content className='w-full max-w-lg overflow-hidden rounded-lg shadow-xl focus:outline-none'>
               <div className='max-h-96 overflow-y-scroll rounded-t-lg bg-white p-6'>
                 <div className='flex flex-col items-center gap-4 sm:flex-row sm:items-start'>
                   <div
@@ -75,18 +75,18 @@ const Dialog = ({
                     <ExclamationTriangleIcon className='h-6 w-6' />
                   </div>
                   <div className='flex flex-col gap-2 text-center sm:text-start'>
-                    <dialog.Title asChild>
+                    <alertDialog.Title asChild>
                       <Title order={5}>{title}</Title>
-                    </dialog.Title>
-                    <dialog.Description asChild>
+                    </alertDialog.Title>
+                    <alertDialog.Description asChild>
                       <Text>{description}</Text>
-                    </dialog.Description>
+                    </alertDialog.Description>
                   </div>
                 </div>
               </div>
               <div className='flex flex-col-reverse justify-end gap-3 border border-t-slate-100 bg-slate-50 py-4 px-6 empty:hidden sm:flex-row'>
                 {onCancel ? (
-                  <dialog.Close asChild>
+                  <alertDialog.Cancel asChild>
                     <Button
                       onClick={() => {
                         if (isFunction(onCancel)) {
@@ -104,35 +104,37 @@ const Dialog = ({
                         ? onCancel?.label
                         : 'Cancel'}
                     </Button>
-                  </dialog.Close>
+                  </alertDialog.Cancel>
                 ) : null}
 
                 {onConfirm ? (
-                  <Button
-                    color={color}
-                    onClick={() => {
-                      if (isFunction(onConfirm)) {
-                        onConfirm();
-                      } else {
-                        onConfirm?.handle();
-                      }
+                  <alertDialog.Action asChild>
+                    <Button
+                      color={color}
+                      onClick={() => {
+                        if (isFunction(onConfirm)) {
+                          onConfirm();
+                        } else {
+                          onConfirm?.handle();
+                        }
 
-                      if (id) {
-                        close(id);
-                      }
-                    }}
-                  >
-                    {!isFunction(onConfirm) && onConfirm?.label
-                      ? onConfirm?.label
-                      : 'Confirm'}
-                  </Button>
+                        if (id) {
+                          close(id);
+                        }
+                      }}
+                    >
+                      {!isFunction(onConfirm) && onConfirm?.label
+                        ? onConfirm?.label
+                        : 'Confirm'}
+                    </Button>
+                  </alertDialog.Action>
                 ) : null}
               </div>
-            </dialog.Content>
+            </alertDialog.Content>
           </motion.div>
         </div>
-      </dialog.Portal>
-    </dialog.Root>
+      </alertDialog.Portal>
+    </alertDialog.Root>
   );
 };
 
