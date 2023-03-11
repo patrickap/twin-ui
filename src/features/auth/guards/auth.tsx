@@ -20,7 +20,7 @@ const AuthGuard = ({
 
   if (signIn.isLoading) {
     return loadingElement ? (
-      loadingElement
+      <>{loadingElement}</>
     ) : (
       <CenterLayout>
         <Spinner />
@@ -30,7 +30,7 @@ const AuthGuard = ({
     return <>{children}</>;
   } else {
     return errorElement ? (
-      errorElement
+      <>{errorElement}</>
     ) : (
       <Navigate to='/auth/signin' replace state={{ origin: location }} />
     );
