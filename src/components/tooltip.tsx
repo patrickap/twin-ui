@@ -16,7 +16,9 @@ const Tooltip = ({ position, content, children }: TooltipProps) => {
   return (
     <tooltip.Provider delayDuration={0}>
       <tooltip.Root open={isOpen} onOpenChange={setIsOpen}>
-        <tooltip.Trigger>{children}</tooltip.Trigger>
+        <tooltip.Trigger asChild>
+          <div tabIndex={-1}>{children}</div>
+        </tooltip.Trigger>
         <AnimatePresence>
           {isOpen ? (
             <tooltip.Portal forceMount>
