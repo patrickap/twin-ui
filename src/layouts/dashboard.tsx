@@ -26,7 +26,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
         </aside>
       ) : null}
       <main className='flex flex-grow flex-col gap-1 p-4 md:p-8'>
-        <div className='z-[0] flex items-center justify-end'>
+        <div className='flex items-center justify-end'>
           {!md ? (
             <div className='absolute top-4 right-4'>
               <Drawer
