@@ -19,28 +19,20 @@ const AuthGuard = ({
   const location = useLocation();
 
   if (signIn.isLoading) {
-    return (
-      <>
-        {loadingElement ? (
-          loadingElement
-        ) : (
-          <CenterLayout>
-            <Spinner />
-          </CenterLayout>
-        )}
-      </>
+    return loadingElement ? (
+      loadingElement
+    ) : (
+      <CenterLayout>
+        <Spinner />
+      </CenterLayout>
     );
   } else if (signIn.isSuccess && isTokenValid) {
     return <>{children}</>;
   } else {
-    return (
-      <>
-        {errorElement ? (
-          errorElement
-        ) : (
-          <Navigate to='/auth/signin' replace state={{ origin: location }} />
-        )}
-      </>
+    return errorElement ? (
+      errorElement
+    ) : (
+      <Navigate to='/auth/signin' replace state={{ origin: location }} />
     );
   }
 };
