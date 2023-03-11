@@ -6,6 +6,7 @@ import { ExclamationTriangleIcon } from '@heroicons/react/20/solid';
 import * as alertDialog from '@radix-ui/react-alert-dialog';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Button, Text, Title } from '.';
 
 // TODO: FIXME: z-index animation issue if dialog opens and some toasts are rendered...
@@ -19,8 +20,6 @@ type DialogProps = {
   onCancel?: (() => void) | { label?: string; handle: () => void };
 };
 
-// TODO: i18n labels etc.
-
 const Dialog = ({
   id,
   color = 'neutral',
@@ -30,6 +29,7 @@ const Dialog = ({
   onCancel,
 }: DialogProps) => {
   const { close } = useDialog();
+  const { t } = useTranslation('common');
 
   return (
     <alertDialog.Root>
@@ -102,7 +102,7 @@ const Dialog = ({
                     >
                       {!isFunction(onCancel) && onCancel?.label
                         ? onCancel?.label
-                        : 'Cancel'}
+                        : t('action.cancel')}
                     </Button>
                   </alertDialog.Cancel>
                 ) : null}
@@ -125,7 +125,7 @@ const Dialog = ({
                     >
                       {!isFunction(onConfirm) && onConfirm?.label
                         ? onConfirm?.label
-                        : 'Confirm'}
+                        : t('action.confirm')}
                     </Button>
                   </alertDialog.Action>
                 ) : null}

@@ -13,7 +13,7 @@ const Toasts = () => {
           <Toast {...props} key={props.id} />
         ))}
       </AnimatePresence>
-      <toast.Viewport className='fixed top-0 right-0 z-10 flex w-full max-w-sm flex-col gap-4 p-4' />
+      <toast.Viewport className='fixed top-0 right-0 z-10 flex w-full max-w-sm flex-col gap-4 p-4 outline-none' />
     </toast.Provider>
   );
 };
