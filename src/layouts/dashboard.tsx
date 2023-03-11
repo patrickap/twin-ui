@@ -54,12 +54,12 @@ const Navigation = ({ onNavigate }: NavigationProps) => {
   const { md, lg } = useBreakpoint();
   const items = [
     {
-      path: '/dashboard/files',
+      path: '/user/files',
       name: 'Files',
       icon: <DocumentDuplicateIcon />,
     },
     {
-      path: '/dashboard/shares',
+      path: '/user/shares',
       name: 'Shares',
       icon: <PaperClipIcon />,
     },

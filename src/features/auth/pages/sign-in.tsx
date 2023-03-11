@@ -26,7 +26,9 @@ const SignInPage = () => {
   });
 
   const onSubmit = handleSubmit((form) => {
-    signIn.mutateAsync(form).then(() => navigate('/dashboard'));
+    signIn.mutateAsync(form).then(() => {
+      navigate('/user');
+    });
   });
 
   return (

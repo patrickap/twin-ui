@@ -1,65 +1,26 @@
-import { Spinner, Title } from '@/components';
-import { AuthGuard } from '@/features/auth/guards';
-import { SignInPage } from '@/features/auth/pages';
-import { FilesPage, SharesPage } from '@/features/user/pages';
-import { CenterLayout, DashboardLayout } from '@/layouts';
+import { routes as authRoutes } from '@/features/auth/routes';
+import { routes as userRoutes } from '@/features/user/routes';
+import { CenterLayout } from '@/layouts';
 import { ErrorPage, NotFoundPage } from '@/pages';
-import { Navigate, Outlet, RouteObject } from 'react-router-dom';
+import { Navigate, RouteObject } from 'react-router-dom';
 
 // TODO: use lazy loading
+// TODO: implement loaders where possible
+// loader: async () => {
+//   const query = getUserQuery();
+//   return (
+//     queryClient.getQueryData(query.queryKey) ??
+//     (await queryClient.fetchQuery(query))
+//   );
+// },
 
 const routes: RouteObject[] = [
   {
     path: '/',
-    element: <Navigate to='/dashboard' />,
+    element: <Navigate to='/user' />,
   },
-  {
-    path: '/dashboard',
-    element: (
-      <AuthGuard
-        loadingElement={
-          <CenterLayout>
-            <Spinner />
-          </CenterLayout>
-        }
-        errorElement={<Navigate to='/signin' />}
-      >
-        <DashboardLayout>
-          <Outlet />
-        </DashboardLayout>
-      </AuthGuard>
-    ),
-    // TODO: implement loaders where possible
-    // loader: async () => {
-    //   const query = getUserQuery();
-    //   return (
-    //     queryClient.getQueryData(query.queryKey) ??
-    //     (await queryClient.fetchQuery(query))
-    //   );
-    // },
-    children: [
-      {
-        index: true,
-        element: <Title order={2}>Nothing here</Title>,
-      },
-      {
-        path: 'files',
-        element: <FilesPage />,
-      },
-      {
-        path: 'shares',
-        element: <SharesPage />,
-      },
-    ],
-  },
-  {
-    path: '/signin',
-    element: (
-      <CenterLayout>
-        <SignInPage />
-      </CenterLayout>
-    ),
-  },
+  ...authRoutes,
+  ...userRoutes,
   {
     path: '*',
     element: (
