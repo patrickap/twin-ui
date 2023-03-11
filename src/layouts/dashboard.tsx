@@ -35,11 +35,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
                 </ButtonIcon>
               }
             >
-              {({ close }) => (
-                <div className='p-4 pt-0'>
-                  <Navigation onNavigate={close} />
-                </div>
-              )}
+              {(props) => <Navigation onNavigate={props.close} />}
             </Drawer>
           ) : null}
         </div>

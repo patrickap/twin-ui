@@ -48,7 +48,7 @@ const Drawer = ({ trigger, children }: DrawerProps) => {
                     </ButtonIcon>
                   </dialog.Close>
                 </div>
-                <div>
+                <div className='p-4 pt-0'>
                   {isFunction(children)
                     ? children({ close: () => setIsOpen(false) })
                     : children}
