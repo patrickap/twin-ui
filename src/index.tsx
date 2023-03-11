@@ -10,8 +10,7 @@ import { I18nextProvider } from 'react-i18next';
 import { RouterProvider } from 'react-router-dom';
 import './index.css';
 
-// TODO: add id prop to all components which get rendered as list, onClick propagate id
-// TODO: jsdoc method docunentation
+// TODO: jsdoc method documentation everywhere
 
 i18n.init();
 

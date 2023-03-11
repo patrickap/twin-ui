@@ -18,7 +18,6 @@ import { SignInForm } from '../types';
 
 const SignInPage = () => {
   const { signIn } = useAuth();
-  // TODO: use translation everywhere
   const { t } = useTranslation('auth');
   const navigate = useNavigate();
   const location = useLocation();

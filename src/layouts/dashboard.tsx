@@ -7,7 +7,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { ReactNode } from 'react';
 
-// TODO: move Navigation in subfolder /dashboard/components -> same for pages + sub-components for example dropdown menu for file edit etc.
+// TODO: move Navigation in subfolder /dashboard/components -> same for pages and their sub-components for example /pages/files/components/files-actions (dropdown)
 
 type DashboardLayoutProps = {
   children?: ReactNode;
@@ -30,17 +30,18 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
           {!md ? (
             <Drawer
               trigger={
-                <ButtonIcon>
-                  <Bars2Icon className='h-5 w-5' />
-                </ButtonIcon>
+                <div className='absolute top-4 right-4'>
+                  <ButtonIcon>
+                    <Bars2Icon className='h-5 w-5' />
+                  </ButtonIcon>
+                </div>
               }
             >
               {(props) => <Navigation onNavigate={props.close} />}
             </Drawer>
           ) : null}
         </div>
-        {/* TODO: fix weird negative margin and correctly place drawer component */}
-        <div className='-mt-10 md:mt-0'>{children}</div>
+        <div>{children}</div>
       </main>
     </div>
   );
