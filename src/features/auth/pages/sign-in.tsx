@@ -102,36 +102,6 @@ const SignInPage = () => {
             {t('action.sign_in')}
           </Button>
         </form>
-        <div
-          onClick={() =>
-            dialog.open({
-              title: 'asasasf',
-              description:
-                'ew weg weg weg weew weg weg weg weew weg weg weg weew weg weg weg weew weg weg weg weew weg weg weg weew weg weg weg we ',
-              color: 'primary',
-              onCancel() {
-                console.log();
-              },
-              onConfirm() {
-                console.log();
-              },
-            })
-          }
-        >
-          dialog
-        </div>
-        <div
-          onClick={() =>
-            toast.add({
-              title: 'asasasf',
-              description:
-                'ew weg weg weg weew weg weg weg weew weg weg weg weew weg weg weg weew weg weg weg weew weg weg weg weew weg weg weg weew weg weg weg we ',
-              color: 'primary',
-            })
-          }
-        >
-          toast
-        </div>
       </div>
     </div>
   );
