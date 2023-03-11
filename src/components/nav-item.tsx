@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { MouseEventHandler, ReactNode } from 'react';
+import { MouseEventHandler, ReactNode, useRef } from 'react';
 import { NavLink, To, useNavigate } from 'react-router-dom';
 
 type NavItemProps = {
@@ -10,10 +10,11 @@ type NavItemProps = {
 };
 
 const NavItem = ({ to = {}, icon, onClick, children }: NavItemProps) => {
+  const linkRef = useRef<HTMLAnchorElement>(null);
   const navigate = useNavigate();
 
   return (
-    <NavLink tabIndex={-1} to={to} onClick={onClick}>
+    <NavLink ref={linkRef} tabIndex={-1} to={to} onClick={onClick}>
       {({ isActive }) => (
         <div
           tabIndex={1}
@@ -24,6 +25,7 @@ const NavItem = ({ to = {}, icon, onClick, children }: NavItemProps) => {
           )}
           onKeyUp={(e) => {
             if (e.key === 'Enter') {
+              linkRef.current?.click();
               navigate(to);
             }
           }}
