@@ -28,17 +28,17 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       <main className='flex flex-grow flex-col gap-1 p-4 md:p-8'>
         <div className='z-[0] flex items-center justify-end'>
           {!md ? (
-            <Drawer
-              trigger={
-                <div className='absolute top-4 right-4'>
+            <div className='absolute top-4 right-4'>
+              <Drawer
+                trigger={
                   <ButtonIcon>
                     <Bars2Icon className='h-5 w-5' />
                   </ButtonIcon>
-                </div>
-              }
-            >
-              {(props) => <Navigation onNavigate={props.close} />}
-            </Drawer>
+                }
+              >
+                {(props) => <Navigation onNavigate={props.close} />}
+              </Drawer>
+            </div>
           ) : null}
         </div>
         <div>{children}</div>
