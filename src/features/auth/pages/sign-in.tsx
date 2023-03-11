@@ -11,7 +11,7 @@ import {
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks';
 import { signInFormSchema } from '../schemas';
 import { SignInForm } from '../types';
@@ -21,13 +21,15 @@ const SignInPage = () => {
   // TODO: use translation everywhere
   const { t } = useTranslation('auth');
   const navigate = useNavigate();
+  const location = useLocation();
   const { control, handleSubmit } = useForm<SignInForm>({
     resolver: zodResolver(signInFormSchema),
   });
 
   const onSubmit = handleSubmit((form) => {
     signIn.mutateAsync(form).then(() => {
-      navigate('/user');
+      const origin = location.state?.origin?.pathname || '/user';
+      navigate(origin);
     });
   });
 
