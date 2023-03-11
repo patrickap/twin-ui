@@ -8,7 +8,6 @@ import {
   Text,
   Title,
 } from '@/components';
-import { useDialog, useToast } from '@/hooks';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -25,9 +24,6 @@ const SignInPage = () => {
   const { control, handleSubmit } = useForm<SignInForm>({
     resolver: zodResolver(signInFormSchema),
   });
-
-  const dialog = useDialog();
-  const toast = useToast();
 
   const onSubmit = handleSubmit((form) => {
     signIn.mutateAsync(form).then(() => navigate('/dashboard'));
