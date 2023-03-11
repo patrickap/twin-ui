@@ -6,8 +6,8 @@ type NavProps = {
 
 const Nav = ({ children }: NavProps) => {
   return (
-    <nav className='flex flex-col gap-0'>
-      <ul>
+    <nav>
+      <ul className='flex flex-col gap-1'>
         {Children.toArray(children).map((child, i) => (
           <li key={i}>{child}</li>
         ))}
