@@ -1,24 +1,21 @@
 import { isFunction } from '@/utils';
-import { Bars2Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 import * as dialog from '@radix-ui/react-dialog';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ReactNode, useState } from 'react';
 import { ButtonIcon } from '.';
 
 type DrawerProps = {
+  trigger?: ReactNode;
   children?: ReactNode | ((props: { close: () => void }) => ReactNode);
 };
 
-const Drawer = ({ children }: DrawerProps) => {
+const Drawer = ({ trigger, children }: DrawerProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <dialog.Root open={isOpen} onOpenChange={setIsOpen}>
-      <dialog.Trigger asChild>
-        <ButtonIcon>
-          <Bars2Icon className='h-5 w-5' />
-        </ButtonIcon>
-      </dialog.Trigger>
+      <dialog.Trigger asChild>{trigger}</dialog.Trigger>
       <AnimatePresence>
         {isOpen ? (
           <dialog.Portal forceMount>

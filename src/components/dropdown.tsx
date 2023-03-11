@@ -1,27 +1,22 @@
 import { Alignment, Direction } from '@/constants';
 import { ValueOf } from '@/types';
-import { EllipsisVerticalIcon } from '@heroicons/react/24/outline';
 import * as dropdown from '@radix-ui/react-dropdown-menu';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ReactNode, useState } from 'react';
-import { ButtonIcon } from '.';
 
 type DropdownProps = {
   align?: ValueOf<typeof Alignment>;
   position?: ValueOf<typeof Direction>;
+  trigger?: ReactNode;
   children?: ReactNode;
 };
 
-const Dropdown = ({ align, position, children }: DropdownProps) => {
+const Dropdown = ({ align, position, trigger, children }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <dropdown.Root open={isOpen} onOpenChange={setIsOpen}>
-      <dropdown.Trigger asChild>
-        <ButtonIcon>
-          <EllipsisVerticalIcon className='h-5 w-5' />
-        </ButtonIcon>
-      </dropdown.Trigger>
+      <dropdown.Trigger asChild>{trigger}</dropdown.Trigger>
       <AnimatePresence>
         {isOpen ? (
           <dropdown.Portal forceMount>

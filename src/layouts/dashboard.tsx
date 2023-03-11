@@ -1,6 +1,7 @@
-import { Drawer, Nav, NavItem, Tooltip } from '@/components';
+import { ButtonIcon, Drawer, Nav, NavItem, Tooltip } from '@/components';
 import { useBreakpoint } from '@/hooks';
 import {
+  Bars2Icon,
   DocumentDuplicateIcon,
   PaperClipIcon,
 } from '@heroicons/react/24/outline';
@@ -27,7 +28,13 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       <main className='flex flex-grow flex-col gap-1 p-4 md:p-8'>
         <div className='z-[0] flex items-center justify-end'>
           {!md ? (
-            <Drawer>
+            <Drawer
+              trigger={
+                <ButtonIcon>
+                  <Bars2Icon className='h-5 w-5' />
+                </ButtonIcon>
+              }
+            >
               {({ close }) => (
                 <div className='p-4 pt-0'>
                   <Navigation onNavigate={close} />

@@ -1,8 +1,15 @@
-import { Dropdown, DropdownDivider, DropdownItem, Title } from '@/components';
+import {
+  ButtonIcon,
+  Dropdown,
+  DropdownDivider,
+  DropdownItem,
+  Title,
+} from '@/components';
 import {
   CloudArrowDownIcon,
   CursorArrowRippleIcon,
   DocumentDuplicateIcon,
+  EllipsisVerticalIcon,
   PaperClipIcon,
   PencilSquareIcon,
   TrashIcon,
@@ -16,7 +23,15 @@ const FilesPage = () => {
   return (
     <>
       <Title order={2}>{t('page.files.title')}</Title>
-      <Dropdown align='start' position='bottom'>
+      <Dropdown
+        align='start'
+        position='bottom'
+        trigger={
+          <ButtonIcon>
+            <EllipsisVerticalIcon className='h-5 w-5' />
+          </ButtonIcon>
+        }
+      >
         <DropdownItem icon={<ViewfinderCircleIcon />}>
           {t('action.view')}
         </DropdownItem>
