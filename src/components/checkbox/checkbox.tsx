@@ -6,7 +6,7 @@ import {
   forwardRef,
   useId,
 } from 'react';
-import { Label } from '.';
+import { Label } from '..';
 
 type CheckboxProps = {
   label?: string;

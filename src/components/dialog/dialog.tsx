@@ -7,7 +7,7 @@ import * as alertDialog from '@radix-ui/react-alert-dialog';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { Button, Text, Title } from '.';
+import { Button, Text, Title } from '..';
 
 // TODO: FIXME: z-index animation issue if dialog opens and some toasts are rendered...
 

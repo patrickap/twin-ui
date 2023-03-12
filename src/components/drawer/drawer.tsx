@@ -3,7 +3,7 @@ import { XMarkIcon } from '@heroicons/react/24/outline';
 import * as dialog from '@radix-ui/react-dialog';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ReactNode, useState } from 'react';
-import { ButtonIcon } from '.';
+import { ButtonIcon } from '..';
 
 type DrawerProps = {
   trigger?: ReactNode;

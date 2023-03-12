@@ -8,7 +8,8 @@ import {
   ReactNode,
   useId,
 } from 'react';
-import { Label, Text } from '.';
+import { Label } from '../label';
+import { Text } from '../text';
 
 type InputProps = {
   type?: InputHTMLAttributes<HTMLInputElement>['type'];

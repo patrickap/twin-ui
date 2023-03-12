@@ -8,7 +8,7 @@ import {
   MouseEventHandler,
   ReactNode,
 } from 'react';
-import { Spinner } from '.';
+import { Spinner } from '../spinner';
 
 type ButtonProps = {
   type?: ButtonHTMLAttributes<HTMLButtonElement>['type'];

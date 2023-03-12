@@ -12,9 +12,9 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useAuth } from '../hooks';
-import { signInFormSchema } from '../schemas';
-import { SignInForm } from '../types';
+import { useAuth } from '../../hooks';
+import { signInFormSchema } from '../../schemas';
+import { SignInForm } from '../../types';
 
 const SignInPage = () => {
   const { signIn } = useAuth();

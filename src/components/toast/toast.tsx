@@ -12,7 +12,7 @@ import * as toast from '@radix-ui/react-toast';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
-import { ButtonIcon, Spinner, Text, Title } from '.';
+import { ButtonIcon, Spinner, Text, Title } from '..';
 
 type ToastProps = {
   id?: string;

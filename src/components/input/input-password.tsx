@@ -1,7 +1,7 @@
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import { ForwardedRef, forwardRef, useState } from 'react';
-import { Input, InputProps } from '.';
+import { Input, InputProps } from '..';
 
 type InputPasswordProps = InputProps;
 
