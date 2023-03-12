@@ -19,7 +19,7 @@ const NavItem = ({ to = {}, icon, onClick, children }: NavItemProps) => {
         <div
           tabIndex={1}
           className={clsx(
-            'flex items-center gap-2.5 rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2',
+            'flex items-center gap-2.5 rounded-lg p-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2',
             isActive && '!bg-slate-100',
             !children && '!inline-flex !justify-center',
           )}

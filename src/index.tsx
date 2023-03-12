@@ -11,7 +11,6 @@ import { RouterProvider } from 'react-router-dom';
 import './index.css';
 
 // TODO: jsdoc method documentation everywhere
-// TODO: need links and nav items focus ring? -> other style idea?
 
 i18n.init();
 
