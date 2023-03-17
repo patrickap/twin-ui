@@ -1,4 +1,3 @@
-import { isFunction } from '@/utils';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import * as dialog from '@radix-ui/react-dialog';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -7,7 +6,7 @@ import { ButtonIcon } from '..';
 
 type DrawerProps = {
   trigger?: ReactNode;
-  children?: ReactNode | ((props: { close: () => void }) => ReactNode);
+  children?: ReactNode;
 };
 
 const Drawer = ({ trigger, children }: DrawerProps) => {
@@ -48,11 +47,7 @@ const Drawer = ({ trigger, children }: DrawerProps) => {
                     </ButtonIcon>
                   </dialog.Close>
                 </div>
-                <div className='p-4 pt-0'>
-                  {isFunction(children)
-                    ? children({ close: () => setIsOpen(false) })
-                    : children}
-                </div>
+                <div className='p-4 pt-0'>{children}</div>
               </motion.div>
             </dialog.Content>
           </dialog.Portal>

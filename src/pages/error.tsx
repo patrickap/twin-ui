@@ -1,18 +1,13 @@
 import { Button, Text, Title } from '@/components';
-import { useTranslation } from 'react-i18next';
 
 const ErrorPage = () => {
-  const { t } = useTranslation('common');
-
   return (
     <>
-      <Title order={1}>{t('page.error.title')}</Title>
-      <Text>{t('page.error.text')}</Text>
+      <Title order={1}>Error</Title>
+      <Text>An unknown error occurred</Text>
 
       <div className='mt-4'>
-        <Button onClick={() => window.location.reload()}>
-          {t('action.reload_site')}
-        </Button>
+        <Button onClick={() => window.location.reload()}>Reload site</Button>
       </div>
     </>
   );

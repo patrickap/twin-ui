@@ -1,23 +1,19 @@
 import { Color } from '@/constants';
 import { useDialog } from '@/hooks';
 import { ValueOf } from '@/types';
-import { isFunction } from '@/utils';
 import { ExclamationTriangleIcon } from '@heroicons/react/20/solid';
 import * as alertDialog from '@radix-ui/react-alert-dialog';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
 import { Button, Text, Title } from '..';
-
-// TODO: FIXME: z-index animation issue if dialog opens and some toasts are rendered...
 
 type DialogProps = {
   id?: string;
   color?: ValueOf<typeof Color>;
   title?: string;
   description?: string;
-  onConfirm?: (() => void) | { label?: string; handle: () => void };
-  onCancel?: (() => void) | { label?: string; handle: () => void };
+  onConfirm?: () => void;
+  onCancel?: () => void;
 };
 
 const Dialog = ({
@@ -29,7 +25,6 @@ const Dialog = ({
   onCancel,
 }: DialogProps) => {
   const { close } = useDialog();
-  const { t } = useTranslation('common');
 
   return (
     <alertDialog.Root>
@@ -89,20 +84,14 @@ const Dialog = ({
                   <alertDialog.Cancel asChild>
                     <Button
                       onClick={() => {
-                        if (isFunction(onCancel)) {
-                          onCancel();
-                        } else {
-                          onCancel?.handle();
-                        }
+                        onCancel();
 
                         if (id) {
                           close(id);
                         }
                       }}
                     >
-                      {!isFunction(onCancel) && onCancel?.label
-                        ? onCancel?.label
-                        : t('action.cancel')}
+                      Cancel
                     </Button>
                   </alertDialog.Cancel>
                 ) : null}
@@ -112,20 +101,14 @@ const Dialog = ({
                     <Button
                       color={color}
                       onClick={() => {
-                        if (isFunction(onConfirm)) {
-                          onConfirm();
-                        } else {
-                          onConfirm?.handle();
-                        }
+                        onConfirm();
 
                         if (id) {
                           close(id);
                         }
                       }}
                     >
-                      {!isFunction(onConfirm) && onConfirm?.label
-                        ? onConfirm?.label
-                        : t('action.confirm')}
+                      Confirm
                     </Button>
                   </alertDialog.Action>
                 ) : null}

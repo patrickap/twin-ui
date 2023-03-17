@@ -17,7 +17,9 @@ const Tooltip = ({ position, content, children }: TooltipProps) => {
     <tooltip.Provider delayDuration={0}>
       <tooltip.Root open={isOpen} onOpenChange={setIsOpen}>
         <tooltip.Trigger asChild>
-          <div tabIndex={-1}>{children}</div>
+          <div tabIndex={-1} className='max-w-fit'>
+            {children}
+          </div>
         </tooltip.Trigger>
         <AnimatePresence>
           {isOpen ? (
