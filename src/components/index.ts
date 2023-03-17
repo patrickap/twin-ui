@@ -6,7 +6,6 @@ export * from './dropdown';
 export * from './input';
 export * from './label';
 export * from './link';
-export * from './logo';
 export * from './nav';
 export * from './spinner';
 export * from './text';

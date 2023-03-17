@@ -1,48 +1,45 @@
 import clsx from 'clsx';
-import { MouseEventHandler, ReactNode, useRef } from 'react';
-import { NavLink, To, useNavigate } from 'react-router-dom';
+import { AnchorHTMLAttributes, MouseEventHandler, ReactNode } from 'react';
 
 type NavItemProps = {
-  to?: To;
+  target?: AnchorHTMLAttributes<HTMLAnchorElement>['target'];
+  href?: string;
   icon?: ReactNode;
+  isActive?: boolean;
   onClick?: MouseEventHandler<HTMLAnchorElement>;
   children?: ReactNode;
 };
 
-const NavItem = ({ to = {}, icon, onClick, children }: NavItemProps) => {
-  const linkRef = useRef<HTMLAnchorElement>(null);
-  const navigate = useNavigate();
-
+const NavItem = ({
+  target,
+  href,
+  icon,
+  isActive,
+  onClick,
+  children,
+}: NavItemProps) => {
   return (
-    <NavLink ref={linkRef} tabIndex={-1} to={to} onClick={onClick}>
-      {({ isActive }) => (
-        <div
-          tabIndex={1}
-          className={clsx(
-            'flex items-center gap-2.5 rounded-lg p-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2',
-            isActive && '!bg-slate-100',
-            !children && '!inline-flex !justify-center',
-          )}
-          onKeyUp={(e) => {
-            if (e.key === 'Enter') {
-              linkRef.current?.click();
-              navigate(to);
-            }
-          }}
-        >
-          {icon ? (
-            <span className='h-5 w-5 text-slate-700 [&>*]:stroke-[1.75]'>
-              {icon}
-            </span>
-          ) : null}
-          {children ? (
-            <span className='text-base font-medium text-slate-700 sm:text-sm'>
-              {children}
-            </span>
-          ) : null}
-        </div>
+    <a
+      target={target}
+      href={href}
+      onClick={onClick}
+      className={clsx(
+        'flex cursor-pointer items-center gap-2.5 rounded-lg p-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2',
+        isActive && '!bg-slate-100',
+        !children && '!inline-flex !justify-center',
       )}
-    </NavLink>
+    >
+      {icon ? (
+        <span className='h-5 w-5 text-slate-700 [&>*]:stroke-[1.75]'>
+          {icon}
+        </span>
+      ) : null}
+      {children ? (
+        <span className='text-base font-medium text-slate-700 sm:text-sm'>
+          {children}
+        </span>
+      ) : null}
+    </a>
   );
 };
 
