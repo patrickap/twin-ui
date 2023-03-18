@@ -1,6 +1,6 @@
 module.exports = {
   ci: false,
-  branches: ['feature/storybook'],
+  branches: ['main'],
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
