@@ -32,7 +32,7 @@ const Component = () => (
 **Dialog**
 
 ```jsx
-import { Dialog, Dialogs, useDialog } from 'twin-ui';
+import { Dialogs, useDialog } from 'twin-ui';
 
 const Component = () => {
   const dialog = useDialog();
