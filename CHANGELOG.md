@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/patrickap/twin-ui/compare/v1.1.0...v1.2.0) (2023-03-18)
+
+
+### Features
+
+* added license and readme ([078a14e](https://github.com/patrickap/twin-ui/commit/078a14e69b24fcb69dc47dd3446fee68433efe94))
+
 # [1.1.0](https://github.com/patrickap/twin-ui/compare/v1.0.0...v1.1.0) (2023-03-18)
 
 
