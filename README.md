@@ -38,7 +38,7 @@ const Component = () => {
   const dialog = useDialog();
 
   return (
-    <Button color='primary' onClick={() => dialog.open({...}))}>
+    <Button onClick={() => dialog.open({...}))}>
       Click
     </Button>
   );
