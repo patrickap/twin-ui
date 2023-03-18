@@ -1,7 +1,10 @@
 {
   "name": "twin-ui",
-  "private": true,
   "version": "1.0.0",
+  "description": "component library for react",
+  "license": "MIT",
+  "author": "patrickap",
+  "repository": "https://github.com/patrickap/twin-ui.git",
   "type": "module",
   "main": "dist/twin-ui.cjs.js",
   "module": "dist/twin-ui.es.js",
