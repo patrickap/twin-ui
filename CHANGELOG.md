@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/patrickap/twin-ui/compare/v1.0.0...v1.1.0) (2023-03-18)
+
+
+### Features
+
+* updated package json, npm release ([46ac3e0](https://github.com/patrickap/twin-ui/commit/46ac3e0539325ca33405e5d1eb64e82de722e4f9))
+
 # 1.0.0 (2023-03-18)
 
 
