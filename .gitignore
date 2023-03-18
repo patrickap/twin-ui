@@ -13,6 +13,7 @@ dist-ssr
 *.local
 storybook-static
 index.min.css
+.env
 
 # Editor directories and files
 .vscode/*
