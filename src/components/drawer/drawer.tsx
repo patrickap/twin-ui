@@ -1,15 +1,19 @@
+import { Direction } from '@/constants';
+import { ValueOf } from '@/types';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import * as dialog from '@radix-ui/react-dialog';
+import clsx from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ReactNode, useState } from 'react';
 import { ButtonIcon } from '..';
 
 type DrawerProps = {
+  position?: ValueOf<Pick<typeof Direction, 'LEFT' | 'RIGHT'>>;
   trigger?: ReactNode;
   children?: ReactNode;
 };
 
-const Drawer = ({ trigger, children }: DrawerProps) => {
+const Drawer = ({ position = 'left', trigger, children }: DrawerProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -30,12 +34,19 @@ const Drawer = ({ trigger, children }: DrawerProps) => {
             </motion.div>
             <dialog.Content
               asChild
-              className='fixed top-0 left-0 z-10 flex h-full w-full max-w-xs flex-col overflow-hidden bg-white shadow-lg'
+              className={clsx(
+                'fixed top-0 z-10 flex h-full w-full max-w-xs flex-col overflow-hidden bg-white shadow-lg',
+                position === Direction.RIGHT ? 'right-0' : 'left-0',
+              )}
             >
               <motion.div
-                initial={{ translateX: '-100%' }}
+                initial={{
+                  translateX: position === Direction.RIGHT ? '100%' : '-100%',
+                }}
                 animate={{ translateX: 0 }}
-                exit={{ translateX: '-100%' }}
+                exit={{
+                  translateX: position === Direction.RIGHT ? '100%' : '-100%',
+                }}
                 transition={{
                   duration: 0.3,
                 }}

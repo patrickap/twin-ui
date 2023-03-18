@@ -12,3 +12,9 @@ const Template: ComponentStory<typeof Drawer> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const Left = Template.bind({});
+Left.args = { position: 'left' };
+
+export const Right = Template.bind({});
+Right.args = { position: 'right' };
