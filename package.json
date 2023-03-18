@@ -17,7 +17,7 @@
     "storybook:build:css": "tailwindcss -m -i ./src/index.css -o ./src/index.min.css",
     "package:build": "tsc && vite build && npm run package:build:css",
     "package:build:css": "tailwindcss -m -i ./src/index.css -o ./dist/index.css",
-    "relpackage:release": "npm run package:build && dotenv semantic-release",
+    "package:release": "npm run package:build && dotenv semantic-release",
     "package:release:dry": "dotenv semantic-release -- -d"
   },
   "dependencies": {
