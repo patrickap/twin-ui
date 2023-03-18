@@ -3,6 +3,7 @@ import path from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import eslint from 'vite-plugin-eslint';
+import { viteStaticCopy as copy } from 'vite-plugin-static-copy';
 import packageJson from './package.json';
 
 // https://vitejs.dev/config/
@@ -12,6 +13,14 @@ export default defineConfig({
     eslint(),
     dts({
       include: ['src'],
+    }),
+    copy({
+      targets: [
+        {
+          src: 'src/assets',
+          dest: '.',
+        },
+      ],
     }),
   ],
   build: {
