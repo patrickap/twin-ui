@@ -73,5 +73,15 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "keywords": [
+    "component",
+    "layout",
+    "library",
+    "react",
+    "typescript",
+    "accessible",
+    "interface",
+    "ui"
+  ]
 }
