@@ -3,7 +3,6 @@ import path from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import eslint from 'vite-plugin-eslint';
-import tsConfigPaths from 'vite-tsconfig-paths';
 import packageJson from './package.json';
 
 // https://vitejs.dev/config/
@@ -11,7 +10,6 @@ export default defineConfig({
   plugins: [
     react(),
     eslint(),
-    tsConfigPaths(),
     dts({
       include: ['src'],
     }),
@@ -26,5 +24,8 @@ export default defineConfig({
     rollupOptions: {
       external: [...Object.keys(packageJson.peerDependencies)],
     },
+  },
+  resolve: {
+    alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
   },
 });
