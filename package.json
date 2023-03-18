@@ -3,18 +3,20 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "main": "dist/react-component-library.cjs.js",
-  "module": "dist/react-component-library.es.js",
+  "main": "dist/twin-ui.cjs.js",
+  "module": "dist/twin-ui.es.js",
   "types": "dist/index.d.ts",
   "files": [
     "/dist",
-    "/dist/style.css"
+    "/dist/index.css"
   ],
   "scripts": {
-    "build": "tsc && vite build",
-    "vite:preview": "vite preview",
-    "storybook:start": "start-storybook -p 6006",
-    "storybook:build": "build-storybook"
+    "storybook:watch": "concurrently 'start-storybook -p 1234' 'npm run storybook:watch:css'",
+    "storybook:watch:css": "tailwindcss -w -m -i ./src/index.css -o ./src/index.min.css",
+    "storybook:build": "build-storybook && npm run storybook:build:css",
+    "storybook:build:css": "tailwindcss -m -i ./src/index.css -o ./src/index.min.css",
+    "package:build": "tsc && vite build && npm run package:build:css",
+    "package:build:css": "tailwindcss -m -i ./src/index.css -o ./dist/index.css"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.15",
@@ -46,6 +48,7 @@
     "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^8.3.0",
+    "concurrently": "^7.6.0",
     "eslint": "^8.34.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-storybook": "^0.6.11",
