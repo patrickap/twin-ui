@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/patrickap/twin-ui/compare/v1.2.0...v1.2.1) (2023-03-19)
+
+
+### Bug Fixes
+
+* copy assets to dist ([6f1a930](https://github.com/patrickap/twin-ui/commit/6f1a93087271343a4793b895c3ac4b1f7115bb30))
+
 # [1.2.0](https://github.com/patrickap/twin-ui/compare/v1.1.0...v1.2.0) (2023-03-18)
 
 
