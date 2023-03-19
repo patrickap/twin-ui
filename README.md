@@ -15,6 +15,18 @@ npm install twin-ui
 npm install twin-ui@x.x.x
 ```
 
+To import the necessary styles, you have two options: either in the `index.tsx` file or the `index.css` file.
+
+```typescript
+// index.tsx
+import 'twin-ui/dist/index.css';
+```
+
+```css
+/* index.css */
+@import 'twin-ui/dist/index.css';
+```
+
 ## Examples
 
 **Button**
