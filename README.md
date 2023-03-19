@@ -4,6 +4,35 @@ Accessible React components for creating beautiful UIs. Built with Tailwind CSS,
 
 Furthermore, it comes with pre-configured animations and offers pre-designed components, layouts, and pages, making it an ideal choice for getting your project up and running quickly.
 
+## Contents
+
+**Components**
+
+- Button
+- Checkbox
+- Dialog
+- Drawer
+- Dropdown
+- Input
+- Label
+- Link
+- Nav
+- Spinner
+- Text
+- Title
+- Toast
+- Tooltip
+
+**Layouts**
+
+- Center
+
+**Pages**
+
+- SignIn
+- NotFound
+- Error
+
 ## Installation
 
 To use `twin-ui`, install the package via npm.
