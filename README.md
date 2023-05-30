@@ -4,6 +4,20 @@ Accessible React components for creating beautiful UIs. Built with Tailwind CSS,
 
 Furthermore, it comes with pre-configured animations and offers pre-designed components, layouts, and pages, making it an ideal choice for getting your project up and running quickly.
 
+## Images
+
+<p align="center">
+<img width="200" alt="button-preview-1" src="docs/button-preview-1.png">
+<img width="200" alt="button-preview-2" src="docs/button-preview-2.png">
+<img width="200" alt="checkbox-preview-1" src="docs/checkbox-preview-1.png">
+<img width="200" alt="tooltip-preview-1" src="docs/tooltip-preview-1.png">
+<img width="400" alt="dialog-preview-1" src="docs/dialog-preview-1.png">
+<img width="400" alt="input-preview-1" src="docs/input-preview-1.png">
+<img width="400" alt="dropdown-preview-1" src="docs/dropdown-preview-1.png">
+<img width="400" alt="toasts-preview-1" src="docs/toasts-preview-1.png">
+<img width="800" alt="sign-in-preview-1" src="docs/sign-in-preview-1.png">
+</p>
+
 ## Contents
 
 **Components**
