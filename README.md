@@ -15,7 +15,7 @@ Furthermore, it comes with pre-configured animations and offers pre-designed com
 <img width="400" alt="sign-in-preview-1" src="docs/sign-in-preview-1.png">
 <img width="400" alt="toasts-preview-1" src="docs/toasts-preview-1.png">
 <img width="200" alt="dropdown-preview-1" src="docs/dropdown-preview-1.png">
-<img width="400" alt="dialog-preview-1" src="docs/dialog-preview-1.png">
+<img width="500" alt="dialog-preview-1" src="docs/dialog-preview-1.png">
 </p>
 
 ## Contents
