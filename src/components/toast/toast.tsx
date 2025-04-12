@@ -60,7 +60,7 @@ const Toast = ({
 				transition={{
 					duration: 0.2,
 				}}
-				className="relative flex max-w-sm gap-4 rounded-lg bg-white p-4 text-sm shadow-lg outline-none"
+				className="relative flex max-w-sm gap-4 rounded-lg bg-white p-4 text-sm shadow-lg outline-hidden"
 			>
 				<div
 					className={clsx(

@@ -28,7 +28,7 @@ const Tooltip = ({ position, content, children }: TooltipProps) => {
 								asChild
 								side={position}
 								sideOffset={8}
-								className="z-10 rounded-lg bg-slate-900/75 p-2 px-3 text-sm text-white backdrop-blur-sm"
+								className="z-10 rounded-lg bg-slate-900/75 p-2 px-3 text-sm text-white backdrop-blur-xs"
 							>
 								<motion.div
 									initial={{ opacity: 0, scale: 0.95 }}
@@ -39,7 +39,7 @@ const Tooltip = ({ position, content, children }: TooltipProps) => {
 									}}
 								>
 									{content}
-									<tooltip.Arrow className="fill-slate-900/75 backdrop-blur-sm" />
+									<tooltip.Arrow className="fill-slate-900/75 backdrop-blur-xs" />
 								</motion.div>
 							</tooltip.Content>
 						</tooltip.Portal>

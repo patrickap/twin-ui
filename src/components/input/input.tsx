@@ -65,14 +65,14 @@ const Input = forwardRef(
 						onChange={onChange}
 						onBlur={onBlur}
 						className={clsx(
-							"block w-full rounded-lg border border-slate-300 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-primary-500 sm:text-sm",
+							"block w-full rounded-lg border border-slate-300 shadow-xs focus:border-primary-500 focus:outline-hidden focus:ring-primary-500 sm:text-sm",
 							icon?.left && "pl-9",
 							icon?.right && "pr-9",
 							isDisabled &&
-								"!cursor-not-allowed !border-slate-200 !bg-slate-100 !text-slate-300",
+								"cursor-not-allowed! border-slate-200! bg-slate-100! text-slate-300!",
 							isError &&
 								!isDisabled &&
-								"!border-red-500 !text-red-500 focus:!border-red-500 focus:!ring-red-500",
+								"border-red-500! text-red-500! focus:border-red-500! focus:ring-red-500!",
 						)}
 					/>
 

@@ -53,7 +53,7 @@ const Dialog = ({
 							duration: 0.2,
 						}}
 					>
-						<dialog.Content className="w-full max-w-lg overflow-hidden rounded-lg shadow-xl focus:outline-none">
+						<dialog.Content className="w-full max-w-lg overflow-hidden rounded-lg shadow-xl focus:outline-hidden">
 							<div className="max-h-96 overflow-y-scroll rounded-t-lg bg-white p-6">
 								<div className="flex flex-col items-center gap-4 sm:flex-row sm:items-start">
 									<div
