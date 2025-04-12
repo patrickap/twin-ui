@@ -1,4 +1,4 @@
-import * as dropdown from "@radix-ui/react-dropdown-menu";
+import { DropdownMenu as dropdown } from "radix-ui";
 import type { ReactNode } from "react";
 
 type DropdownItemProps = {

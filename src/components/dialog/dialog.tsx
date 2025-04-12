@@ -1,11 +1,11 @@
 import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import { AlertDialog } from "radix-ui";
+import { AlertDialog as dialog } from "radix-ui";
+import { Button, Text, Title } from "~/components";
 import { Color } from "~/constants";
 import { useDialog } from "~/hooks";
 import type { ValueOf } from "~/types";
-import { Button, Text, Title } from "..";
 
 type DialogProps = {
 	id?: string;
@@ -27,8 +27,8 @@ const Dialog = ({
 	const { close } = useDialog();
 
 	return (
-		<AlertDialog.Root>
-			<AlertDialog.Portal forceMount>
+		<dialog.Root>
+			<dialog.Portal forceMount>
 				<div className="relative z-10">
 					<motion.div
 						initial={{ opacity: 0 }}
@@ -38,7 +38,7 @@ const Dialog = ({
 							duration: 0.3,
 						}}
 					>
-						<AlertDialog.Overlay className="fixed inset-0 z-10 bg-slate-500/50" />
+						<dialog.Overlay className="fixed inset-0 z-10 bg-slate-500/50" />
 					</motion.div>
 				</div>
 
@@ -53,7 +53,7 @@ const Dialog = ({
 							duration: 0.2,
 						}}
 					>
-						<AlertDialog.Content className="w-full max-w-lg overflow-hidden rounded-lg shadow-xl focus:outline-none">
+						<dialog.Content className="w-full max-w-lg overflow-hidden rounded-lg shadow-xl focus:outline-none">
 							<div className="max-h-96 overflow-y-scroll rounded-t-lg bg-white p-6">
 								<div className="flex flex-col items-center gap-4 sm:flex-row sm:items-start">
 									<div
@@ -72,18 +72,18 @@ const Dialog = ({
 										<ExclamationTriangleIcon className="h-6 w-6" />
 									</div>
 									<div className="flex flex-col gap-2 text-center sm:text-start">
-										<AlertDialog.Title asChild>
+										<dialog.Title asChild>
 											<Title order={5}>{title}</Title>
-										</AlertDialog.Title>
-										<AlertDialog.Description asChild>
+										</dialog.Title>
+										<dialog.Description asChild>
 											<Text>{description}</Text>
-										</AlertDialog.Description>
+										</dialog.Description>
 									</div>
 								</div>
 							</div>
 							<div className="flex flex-col-reverse justify-end gap-3 border border-t-slate-100 bg-slate-50 py-4 px-6 empty:hidden sm:flex-row">
 								{onCancel ? (
-									<AlertDialog.Cancel asChild>
+									<dialog.Cancel asChild>
 										<Button
 											onClick={() => {
 												onCancel();
@@ -95,11 +95,11 @@ const Dialog = ({
 										>
 											Cancel
 										</Button>
-									</AlertDialog.Cancel>
+									</dialog.Cancel>
 								) : null}
 
 								{onConfirm ? (
-									<AlertDialog.Action asChild>
+									<dialog.Action asChild>
 										<Button
 											color={color}
 											onClick={() => {
@@ -112,14 +112,14 @@ const Dialog = ({
 										>
 											Confirm
 										</Button>
-									</AlertDialog.Action>
+									</dialog.Action>
 								) : null}
 							</div>
-						</AlertDialog.Content>
+						</dialog.Content>
 					</motion.div>
 				</div>
-			</AlertDialog.Portal>
-		</AlertDialog.Root>
+			</dialog.Portal>
+		</dialog.Root>
 	);
 };
 

@@ -1,11 +1,11 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import * as dialog from "@radix-ui/react-dialog";
 import clsx from "clsx";
 import { AnimatePresence, motion } from "framer-motion";
+import { Dialog as dialog } from "radix-ui";
 import { type ReactNode, useState } from "react";
+import { ButtonIcon } from "~/components";
 import { Direction } from "~/constants";
 import type { ValueOf } from "~/types";
-import { ButtonIcon } from "..";
 
 type DrawerProps = {
 	position?: ValueOf<Pick<typeof Direction, "LEFT" | "RIGHT">>;

@@ -1,5 +1,5 @@
-import * as tooltip from "@radix-ui/react-tooltip";
 import { AnimatePresence, motion } from "framer-motion";
+import { Tooltip as tooltip } from "radix-ui";
 import { type ReactNode, useState } from "react";
 import type { Direction } from "~/constants";
 import type { ValueOf } from "~/types";

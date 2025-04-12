@@ -5,14 +5,14 @@ import {
 	XCircleIcon,
 } from "@heroicons/react/20/solid";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import * as toast from "@radix-ui/react-toast";
 import clsx from "clsx";
 import { motion } from "framer-motion";
+import { Toast as toast } from "radix-ui";
 import { useEffect } from "react";
+import { ButtonIcon, Spinner, Text, Title } from "~/components";
 import { Color } from "~/constants";
 import { useToast } from "~/hooks";
 import type { ValueOf } from "~/types";
-import { ButtonIcon, Spinner, Text, Title } from "..";
 
 type ToastProps = {
 	id?: string;
