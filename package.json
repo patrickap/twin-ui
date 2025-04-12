@@ -26,10 +26,10 @@
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "tsc && vite build",
-    "release": "npm run test && npm run build && just release_auto",
-    "release:patch": "npm run test && npm run build && just release_patch",
-    "release:minor": "npm run test && npm run build && just release_minor",
-    "release:major": "npm run test && npm run build && just release_major"
+    "release": "npm run build && just release_auto",
+    "release:patch": "npm run build && just release_patch",
+    "release:minor": "npm run build && just release_minor",
+    "release:major": "npm run build && just release_major"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.15",
