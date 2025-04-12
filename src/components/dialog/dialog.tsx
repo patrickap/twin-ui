@@ -1,6 +1,6 @@
 import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
 import clsx from "clsx";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { AlertDialog as dialog } from "radix-ui";
 import { Button, Text, Title } from "~/components";
 import { Color } from "~/constants";

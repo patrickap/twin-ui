@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { Tooltip as tooltip } from "radix-ui";
 import { type ReactNode, useState } from "react";
 import type { Direction } from "~/constants";

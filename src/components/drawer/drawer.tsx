@@ -1,6 +1,6 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { Dialog as dialog } from "radix-ui";
 import { type ReactNode, useState } from "react";
 import { ButtonIcon } from "~/components";

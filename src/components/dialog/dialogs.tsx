@@ -1,4 +1,4 @@
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "motion/react";
 import { useDialog } from "~/hooks";
 import { Dialog } from ".";
 

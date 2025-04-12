@@ -1,4 +1,4 @@
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "motion/react";
 import { Toast as toast } from "radix-ui";
 import { useToast } from "~/hooks";
 import { Toast } from ".";

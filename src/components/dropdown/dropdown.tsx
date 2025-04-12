@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { DropdownMenu as dropdown } from "radix-ui";
 import { type ReactNode, useState } from "react";
 import type { Alignment, Direction } from "~/constants";

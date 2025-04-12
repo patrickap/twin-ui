@@ -6,7 +6,7 @@ import {
 } from "@heroicons/react/20/solid";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Toast as toast } from "radix-ui";
 import { useEffect } from "react";
 import { ButtonIcon, Spinner, Text, Title } from "~/components";
