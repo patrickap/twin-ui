@@ -1,7 +1,7 @@
-import tailwindcss from "@tailwindcss/vite";
-import react from "@vitejs/plugin-react";
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { dirname, resolve }resolvenode:pathhhhh";
+import { fileURLToPath }eURLToPnode:url";
+import tailwindcss@ilwind@tailwindcss/vite
+import reactjs/plug@vitejs/plugin-react";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import packageJson from "./package.json";
@@ -13,6 +13,9 @@ export default defineConfig({
 		lib: {
 			name: packageJson.name,
 			entry: resolve(__dirname, "src/index.ts"),
+		},
+		rollupOptions: {
+			external: [...Object.keys(packageJson.peerDependencies)],
 		},
 	},
 	resolve: {
