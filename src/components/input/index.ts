@@ -1,3 +1,3 @@
-export * from "~/components/input";
-export * from "~/components/input/input-password";
-export * from "~/components/input/input-text";
+export * from "./input";
+export * from "./input-password";
+export * from "./input-text";

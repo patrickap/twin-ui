@@ -1,10 +1,10 @@
 import type { Meta, StoryFn, StoryObj } from "@storybook/react";
 import { Label } from "~/components";
 
-export const meta: Meta<typeof Label> = {
+export default {
 	title: "Components/Label",
 	component: Label,
-};
+} satisfies Meta<typeof Label>;
 
 const render: StoryFn<typeof Label> = (args) => <Label {...args} />;
 

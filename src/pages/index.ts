@@ -1,3 +1,3 @@
-export * from "~/pages/error";
-export * from "~/pages/not-found";
-export * from "~/pages/sign-in";
+export * from "./error";
+export * from "./not-found";
+export * from "./sign-in";

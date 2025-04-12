@@ -1,10 +1,10 @@
 import type { Meta, StoryFn, StoryObj } from "@storybook/react";
 import { Title } from "~/components";
 
-export const meta: Meta<typeof Title> = {
+export default {
 	title: "Components/Title",
 	component: Title,
-};
+} satisfies Meta<typeof Title>;
 
 const render: StoryFn<typeof Title> = (args) => (
 	<Title {...args}>Heading {args.order}</Title>

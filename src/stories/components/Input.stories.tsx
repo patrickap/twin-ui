@@ -2,10 +2,10 @@ import type { Meta, StoryFn, StoryObj } from "@storybook/react";
 import { useState } from "react";
 import { Input, InputPassword } from "~/components";
 
-export const meta: Meta<typeof Input> = {
+export default {
 	title: "Components/Input",
 	component: Input,
-};
+} satisfies Meta<typeof Input>;
 
 const render: StoryFn<typeof Input> = (args) => {
 	const [value, setValue] = useState("");

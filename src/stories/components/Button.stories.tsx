@@ -1,10 +1,10 @@
 import type { Meta, StoryFn, StoryObj } from "@storybook/react";
 import { Button } from "~/components";
 
-export const meta: Meta<typeof Button> = {
+export default {
 	title: "Components/Button",
 	component: Button,
-};
+} satisfies Meta<typeof Button>;
 
 const render: StoryFn<typeof Button> = (args) => (
 	<Button {...args}>Button</Button>

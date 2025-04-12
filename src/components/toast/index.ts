@@ -1,2 +1,2 @@
-export * from "~/components/toast";
-export * from "~/components/toasts";
+export * from "./toast";
+export * from "./toasts";

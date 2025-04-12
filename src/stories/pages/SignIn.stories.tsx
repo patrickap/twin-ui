@@ -2,10 +2,10 @@ import type { Meta, StoryFn, StoryObj } from "@storybook/react";
 import { CenterLayout } from "~/layouts";
 import { NotFoundPage, SignInPage } from "~/pages";
 
-export const meta: Meta<typeof SignInPage> = {
+export default {
 	title: "Pages/SignIn",
 	component: NotFoundPage,
-};
+} satisfies Meta<typeof SignInPage>;
 
 const render: StoryFn<typeof SignInPage> = (args) => (
 	<CenterLayout>

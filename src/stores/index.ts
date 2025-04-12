@@ -1,1 +1,1 @@
-export * from "~/stores/global";
+export * from "./global";

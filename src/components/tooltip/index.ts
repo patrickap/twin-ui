@@ -1,1 +1,1 @@
-export * from "~/components/tooltip";
+export * from "./tooltip";

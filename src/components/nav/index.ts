@@ -1,2 +1,2 @@
-export * from "~/components/nav";
-export * from "~/components/nav/nav-item";
+export * from "./nav";
+export * from "./nav-item";

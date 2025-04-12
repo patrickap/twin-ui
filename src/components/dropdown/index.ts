@@ -1,3 +1,3 @@
-export * from "~/components/dropdown";
-export * from "~/components/dropdown-divider";
-export * from "~/components/dropdown-item";
+export * from "./dropdown";
+export * from "./dropdown-divider";
+export * from "./dropdown-item";

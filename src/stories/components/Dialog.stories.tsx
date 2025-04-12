@@ -2,10 +2,10 @@ import type { Meta, StoryFn, StoryObj } from "@storybook/react";
 import { Button, Dialog, Dialogs } from "~/components";
 import { useDialog } from "~/hooks";
 
-export const meta: Meta<typeof Dialog> = {
+export default {
 	title: "Components/Dialog",
 	component: Dialog,
-};
+} satisfies Meta<typeof Dialog>;
 
 const render: StoryFn<typeof Dialog> = (args) => {
 	const dialog = useDialog();

@@ -1,1 +1,1 @@
-export * from "~/layouts/center";
+export * from "./center";

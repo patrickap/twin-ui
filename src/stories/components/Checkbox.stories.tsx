@@ -2,10 +2,10 @@ import type { Meta, StoryFn, StoryObj } from "@storybook/react";
 import { useState } from "react";
 import { Checkbox } from "~/components";
 
-export const meta: Meta<typeof Checkbox> = {
+export default {
 	title: "Components/Checkbox",
 	component: Checkbox,
-};
+} satisfies Meta<typeof Checkbox>;
 
 const render: StoryFn<typeof Checkbox> = (args) => {
 	const [isChecked, setIsChecked] = useState(false);

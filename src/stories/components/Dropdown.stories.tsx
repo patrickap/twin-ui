@@ -10,10 +10,10 @@ import {
 import type { Meta, StoryFn, StoryObj } from "@storybook/react";
 import { Button, Dropdown, DropdownDivider, DropdownItem } from "~/components";
 
-export const meta: Meta<typeof Dropdown> = {
+export default {
 	title: "Components/Dropdown",
 	component: Dropdown,
-};
+} satisfies Meta<typeof Dropdown>;
 
 const render: StoryFn<typeof Dropdown> = (args) => (
 	<Dropdown

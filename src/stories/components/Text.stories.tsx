@@ -1,10 +1,10 @@
 import type { Meta, StoryFn, StoryObj } from "@storybook/react";
 import { Text } from "~/components";
 
-export const meta: Meta<typeof Text> = {
+export default {
 	title: "Components/Text",
 	component: Text,
-};
+} satisfies Meta<typeof Text>;
 
 const render: StoryFn<typeof Text> = (args) => (
 	<div className="max-w-sm">

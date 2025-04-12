@@ -3,10 +3,10 @@ import type { Meta, StoryFn, StoryObj } from "@storybook/react";
 import { useState } from "react";
 import { Nav, NavItem } from "~/components";
 
-export const meta: Meta<typeof Nav> = {
+export default {
 	title: "Components/Nav",
 	component: Nav,
-};
+} satisfies Meta<typeof Nav>;
 
 const render: StoryFn<typeof Nav> = (args) => {
 	const [active, setActive] = useState(0);

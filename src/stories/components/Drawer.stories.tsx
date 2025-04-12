@@ -1,10 +1,10 @@
 import type { Meta, StoryFn, StoryObj } from "@storybook/react";
 import { Button, Drawer } from "~/components";
 
-export const meta: Meta<typeof Drawer> = {
+export default {
 	title: "Components/Drawer",
 	component: Drawer,
-};
+} satisfies Meta<typeof Drawer>;
 
 const render: StoryFn<typeof Drawer> = (args) => (
 	<Drawer trigger={<Button>Open Drawer</Button>} {...args} />

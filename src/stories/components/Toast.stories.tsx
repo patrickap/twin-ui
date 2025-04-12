@@ -2,10 +2,10 @@ import type { Meta, StoryFn, StoryObj } from "@storybook/react";
 import { Button, Toast, Toasts } from "~/components";
 import { useToast } from "~/hooks";
 
-export const meta: Meta<typeof Toast> = {
+export default {
 	title: "Components/Toast",
 	component: Toast,
-};
+} satisfies Meta<typeof Toast>;
 
 const render: StoryFn<typeof Toast> = (args) => {
 	const toast = useToast();

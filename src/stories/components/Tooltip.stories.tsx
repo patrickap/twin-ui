@@ -1,10 +1,10 @@
 import type { Meta, StoryFn, StoryObj } from "@storybook/react";
 import { Button, Tooltip } from "~/components";
 
-export const meta: Meta<typeof Tooltip> = {
+export default {
 	title: "Components/Tooltip",
 	component: Tooltip,
-};
+} satisfies Meta<typeof Tooltip>;
 
 const render: StoryFn<typeof Tooltip> = (args) => (
 	<Tooltip {...args}>

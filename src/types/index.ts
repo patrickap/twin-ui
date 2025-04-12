@@ -1,1 +1,1 @@
-export * from "~/types/value-of";
+export * from "./value-of";

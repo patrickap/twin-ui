@@ -2,10 +2,10 @@ import type { Meta, StoryFn, StoryObj } from "@storybook/react";
 import { CenterLayout } from "~/layouts";
 import { NotFoundPage } from "~/pages";
 
-export const meta: Meta<typeof NotFoundPage> = {
+export default {
 	title: "Pages/NotFound",
 	component: NotFoundPage,
-};
+} satisfies Meta<typeof NotFoundPage>;
 
 const render: StoryFn<typeof NotFoundPage> = (args) => (
 	<CenterLayout>
