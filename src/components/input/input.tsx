@@ -8,8 +8,8 @@ import {
 	forwardRef,
 	useId,
 } from "react";
-import { Label } from "../label";
-import { Text } from "../text";
+import { Label } from "~/components/label";
+import { Text } from "~/components/text";
 
 type InputProps = {
 	type?: InputHTMLAttributes<HTMLInputElement>["type"];

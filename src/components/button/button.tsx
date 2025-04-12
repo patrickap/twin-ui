@@ -6,9 +6,9 @@ import {
 	type ReactNode,
 	forwardRef,
 } from "react";
+import { Spinner } from "~/components/spinner";
 import { Color } from "~/constants";
 import type { ValueOf } from "~/types";
-import { Spinner } from "../spinner";
 
 type ButtonProps = {
 	type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
