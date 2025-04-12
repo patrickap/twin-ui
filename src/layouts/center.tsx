@@ -1,15 +1,15 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from "react";
 
 type CenterLayoutProps = {
-  children?: ReactNode;
+	children?: ReactNode;
 };
 
 const CenterLayout = ({ children }: CenterLayoutProps) => {
-  return (
-    <div className='flex h-screen w-screen flex-col items-center justify-center p-4'>
-      {children}
-    </div>
-  );
+	return (
+		<div className="flex h-screen w-screen flex-col items-center justify-center p-4">
+			{children}
+		</div>
+	);
 };
 
 export { CenterLayout };

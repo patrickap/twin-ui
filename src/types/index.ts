@@ -1,1 +1,1 @@
-export * from './value-of';
+export * from "./value-of";

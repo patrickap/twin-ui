@@ -1,47 +1,65 @@
-import { Input, InputPassword } from '@/components';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { useState } from 'react';
+import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import { useState } from "react";
+import { Input, InputPassword } from "~/components";
 
 export default {
-  title: 'Components/Input',
-  component: Input,
-} as ComponentMeta<typeof Input>;
+	title: "Components/Input",
+	component: Input,
+} satisfies Meta<typeof Input>;
 
-const Template: ComponentStory<typeof Input> = (args) => {
-  const [value, setValue] = useState('');
+const render: StoryFn<typeof Input> = (args) => {
+	const [value, setValue] = useState("");
 
-  const Component = args.type === 'password' ? InputPassword : Input;
+	const Component = args.type === "password" ? InputPassword : Input;
 
-  return (
-    <div className='max-w-sm'>
-      <Component
-        label='Input'
-        {...args}
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-      />
-    </div>
-  );
+	return (
+		<div className="max-w-sm">
+			<Component
+				label="Input"
+				{...args}
+				value={value}
+				onChange={(e) => setValue(e.target.value)}
+			/>
+		</div>
+	);
 };
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const Text = Template.bind({});
-Text.args = {
-  type: 'text',
+export const Default: StoryObj<typeof Input> = {
+	render,
 };
 
-export const Password = Template.bind({});
-Password.args = {
-  type: 'password',
+export const Text: StoryObj<typeof Input> = {
+	render,
+	args: {
+		type: "text",
+	},
 };
 
-export const Placeholder = Template.bind({});
-Placeholder.args = { placeholder: 'Placeholder' };
+export const Password: StoryObj<typeof Input> = {
+	render,
+	args: {
+		type: "password",
+	},
+};
 
-export const Disabled = Template.bind({});
-Disabled.args = { isDisabled: true };
+export const Placeholder: StoryObj<typeof Input> = {
+	render,
+	args: {
+		placeholder: "Placeholder",
+	},
+};
 
-export const Error = Template.bind({});
-Error.args = { error: 'Required', isError: true };
+export const Disabled: StoryObj<typeof Input> = {
+	render,
+	args: {
+		isDisabled: true,
+	},
+};
+
+export const Error: StoryObj<typeof Input> = {
+	render,
+	args: {
+		error: "Required",
+		isError: true,
+	},
+};

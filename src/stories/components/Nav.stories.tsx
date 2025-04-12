@@ -1,34 +1,36 @@
-import { Nav, NavItem } from '@/components';
-import { HomeIcon } from '@heroicons/react/24/outline';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { useState } from 'react';
+import { HomeIcon } from "@heroicons/react/24/outline";
+import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import { useState } from "react";
+import { Nav, NavItem } from "~/components";
 
 export default {
-  title: 'Components/Nav',
-  component: Nav,
-} as ComponentMeta<typeof Nav>;
+	title: "Components/Nav",
+	component: Nav,
+} satisfies Meta<typeof Nav>;
 
-const Template: ComponentStory<typeof Nav> = (args) => {
-  const [active, setActive] = useState(0);
+const render: StoryFn<typeof Nav> = (args) => {
+	const [active, setActive] = useState(0);
 
-  return (
-    <div className='max-w-sm'>
-      <Nav {...args}>
-        {[1, 2, 3, 4, 5].map((item) => {
-          return (
-            <NavItem
-              icon={<HomeIcon />}
-              isActive={item === active}
-              onClick={() => setActive(item)}
-            >
-              Item {item}
-            </NavItem>
-          );
-        })}
-      </Nav>
-    </div>
-  );
+	return (
+		<div className="max-w-sm">
+			<Nav {...args}>
+				{[1, 2, 3, 4, 5].map((item) => {
+					return (
+						<NavItem
+							key={item}
+							icon={<HomeIcon />}
+							isActive={item === active}
+							onClick={() => setActive(item)}
+						>
+							Item {item}
+						</NavItem>
+					);
+				})}
+			</Nav>
+		</div>
+	);
 };
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: StoryObj<typeof Nav> = {
+	render,
+};

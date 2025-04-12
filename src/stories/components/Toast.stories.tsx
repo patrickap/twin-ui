@@ -1,68 +1,83 @@
-import { Button, Toast, Toasts } from '@/components';
-import { useToast } from '@/hooks';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import { Button, Toast, Toasts } from "~/components";
+import { useToast } from "~/hooks";
 
 export default {
-  title: 'Components/Toast',
-  component: Toast,
-} as ComponentMeta<typeof Toast>;
+	title: "Components/Toast",
+	component: Toast,
+} satisfies Meta<typeof Toast>;
 
-const Template: ComponentStory<typeof Toast> = (args) => {
-  const toast = useToast();
+const render: StoryFn<typeof Toast> = (args) => {
+	const toast = useToast();
 
-  return (
-    <>
-      <Button
-        onClick={() =>
-          toast.add({
-            title: 'Toast',
-            description:
-              'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
-            ...args,
-          })
-        }
-      >
-        Add Toast
-      </Button>
-      <Toasts />
-    </>
-  );
+	return (
+		<>
+			<Button
+				onClick={() =>
+					toast.add({
+						title: "Toast",
+						description:
+							"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+						...args,
+					})
+				}
+			>
+				Add Toast
+			</Button>
+			<Toasts />
+		</>
+	);
 };
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const Primary = Template.bind({});
-Primary.args = {
-  color: 'primary',
+export const Default: StoryObj<typeof Toast> = {
+	render,
 };
 
-export const Neutral = Template.bind({});
-Neutral.args = {
-  color: 'neutral',
+export const Primary: StoryObj<typeof Toast> = {
+	render,
+	args: {
+		color: "primary",
+	},
 };
 
-export const Info = Template.bind({});
-Info.args = {
-  color: 'info',
+export const Neutral: StoryObj<typeof Toast> = {
+	render,
+	args: {
+		color: "neutral",
+	},
 };
 
-export const Warning = Template.bind({});
-Warning.args = {
-  color: 'warning',
+export const Info: StoryObj<typeof Toast> = {
+	render,
+	args: {
+		color: "info",
+	},
 };
 
-export const Error = Template.bind({});
-Error.args = {
-  color: 'error',
+export const Warning: StoryObj<typeof Toast> = {
+	render,
+	args: {
+		color: "warning",
+	},
 };
 
-export const Success = Template.bind({});
-Success.args = {
-  color: 'success',
+export const Error: StoryObj<typeof Toast> = {
+	render,
+	args: {
+		color: "error",
+	},
 };
 
-export const Loading = Template.bind({});
-Loading.args = {
-  isLoading: true,
+export const Success: StoryObj<typeof Toast> = {
+	render,
+	args: {
+		color: "success",
+	},
+};
+
+export const Loading: StoryObj<typeof Toast> = {
+	render,
+	args: {
+		isLoading: true,
+	},
 };

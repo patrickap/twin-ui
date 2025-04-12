@@ -1,65 +1,78 @@
-import { Button, Dialog, Dialogs } from '@/components';
-import { useDialog } from '@/hooks';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import { Button, Dialog, Dialogs } from "~/components";
+import { useDialog } from "~/hooks";
 
 export default {
-  title: 'Components/Dialog',
-  component: Dialog,
-} as ComponentMeta<typeof Dialog>;
+	title: "Components/Dialog",
+	component: Dialog,
+} satisfies Meta<typeof Dialog>;
 
-const Template: ComponentStory<typeof Dialog> = (args) => {
-  const dialog = useDialog();
+const render: StoryFn<typeof Dialog> = (args) => {
+	const dialog = useDialog();
 
-  return (
-    <>
-      <Button
-        onClick={() =>
-          dialog.open({
-            title: 'Dialog',
-            description:
-              'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
-            onCancel: () => {},
-            onConfirm: () => {},
-            ...args,
-          })
-        }
-      >
-        Open Dialog
-      </Button>
-      <Dialogs />
-    </>
-  );
+	return (
+		<>
+			<Button
+				onClick={() =>
+					dialog.open({
+						title: "Dialog",
+						description:
+							"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+						onCancel: () => {},
+						onConfirm: () => {},
+						...args,
+					})
+				}
+			>
+				Open Dialog
+			</Button>
+			<Dialogs />
+		</>
+	);
 };
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const Primary = Template.bind({});
-Primary.args = {
-  color: 'primary',
+export const Default: StoryObj<typeof Button> = {
+	render,
 };
 
-export const Neutral = Template.bind({});
-Neutral.args = {
-  color: 'neutral',
+export const Primary: StoryObj<typeof Button> = {
+	render,
+	args: {
+		color: "primary",
+	},
 };
 
-export const Info = Template.bind({});
-Info.args = {
-  color: 'info',
+export const Neutral: StoryObj<typeof Button> = {
+	render,
+	args: {
+		color: "neutral",
+	},
 };
 
-export const Warning = Template.bind({});
-Warning.args = {
-  color: 'warning',
+export const Info: StoryObj<typeof Button> = {
+	render,
+	args: {
+		color: "info",
+	},
 };
 
-export const Error = Template.bind({});
-Error.args = {
-  color: 'error',
+export const Warning: StoryObj<typeof Button> = {
+	render,
+	args: {
+		color: "warning",
+	},
 };
 
-export const Success = Template.bind({});
-Success.args = {
-  color: 'success',
+export const Error: StoryObj<typeof Button> = {
+	render,
+	args: {
+		color: "error",
+	},
+};
+
+export const Success: StoryObj<typeof Button> = {
+	render,
+	args: {
+		color: "success",
+	},
 };

@@ -1,27 +1,24 @@
-import { ToastProps } from '@/components';
-import { globalStore } from '@/stores';
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
+import type { ToastProps } from "~/components";
+import { useGlobalStore } from "~/stores";
 
 const useToast = () => {
-  const toasts = globalStore.useState((s) => s.toasts);
+	const toasts = useGlobalStore((s) => s.toasts);
+	const setToasts = useGlobalStore((s) => s.setToasts);
 
-  const add = (toast: ToastProps) => {
-    const id = toast.id ?? uuidv4();
+	const add = (toast: ToastProps) => {
+		const id = toast.id ?? uuidv4();
 
-    globalStore.update((s) => {
-      s.toasts = [...s.toasts, { ...toast, id }];
-    });
+		setToasts([...toasts, { ...toast, id }]);
 
-    return id;
-  };
+		return id;
+	};
 
-  const remove = (id: string) => {
-    globalStore.update((s) => {
-      s.toasts = s.toasts.filter((toast) => toast.id !== id);
-    });
-  };
+	const remove = (id: string) => {
+		setToasts(toasts.filter((toast) => toast.id !== id));
+	};
 
-  return { toasts, add, remove };
+	return { toasts, add, remove };
 };
 
 export { useToast };

@@ -1,12 +1,17 @@
-import { Link } from '@/components';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import { Link } from "~/components";
 
 export default {
-  title: 'Components/Link',
-  component: Link,
-} as ComponentMeta<typeof Link>;
+	title: "Components/Link",
+	component: Link,
+} satisfies Meta<typeof Link>;
 
-const Template: ComponentStory<typeof Link> = (args) => <Link {...args} />;
+const render: StoryFn<typeof Link> = (args) => <Link {...args} />;
 
-export const Default = Template.bind({});
-Default.args = { href: '', children: 'Link' };
+export const Default: StoryObj<typeof Link> = {
+	render,
+	args: {
+		href: "",
+		children: "Link",
+	},
+};

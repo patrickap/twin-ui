@@ -1,32 +1,57 @@
-import { Title } from '@/components';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import { Title } from "~/components";
 
 export default {
-  title: 'Components/Title',
-  component: Title,
-} as ComponentMeta<typeof Title>;
+	title: "Components/Title",
+	component: Title,
+} satisfies Meta<typeof Title>;
 
-const Template: ComponentStory<typeof Title> = (args) => (
-  <Title {...args}>Heading {args.order}</Title>
+const render: StoryFn<typeof Title> = (args) => (
+	<Title {...args}>Heading {args.order}</Title>
 );
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: StoryObj<typeof Title> = {
+	render,
+};
 
-export const H1 = Template.bind({});
-H1.args = { order: 1 };
+export const H1: StoryObj<typeof Title> = {
+	render,
+	args: {
+		order: 1,
+	},
+};
 
-export const H2 = Template.bind({});
-H2.args = { order: 2 };
+export const H2: StoryObj<typeof Title> = {
+	render,
+	args: {
+		order: 2,
+	},
+};
 
-export const H3 = Template.bind({});
-H3.args = { order: 3 };
+export const H3: StoryObj<typeof Title> = {
+	render,
+	args: {
+		order: 3,
+	},
+};
 
-export const H4 = Template.bind({});
-H4.args = { order: 4 };
+export const H4: StoryObj<typeof Title> = {
+	render,
+	args: {
+		order: 4,
+	},
+};
 
-export const H5 = Template.bind({});
-H5.args = { order: 5 };
+export const H5: StoryObj<typeof Title> = {
+	render,
+	args: {
+		order: 5,
+	},
+};
 
-export const H6 = Template.bind({});
-H6.args = { order: 6 };
+export const H6: StoryObj<typeof Title> = {
+	render,
+	args: {
+		order: 6,
+	},
+};

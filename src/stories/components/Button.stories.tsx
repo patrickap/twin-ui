@@ -1,54 +1,71 @@
-import { Button } from '@/components';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import { Button } from "~/components";
 
 export default {
-  title: 'Components/Button',
-  component: Button,
-} as ComponentMeta<typeof Button>;
+	title: "Components/Button",
+	component: Button,
+} satisfies Meta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => (
-  <Button {...args}>Button</Button>
+const render: StoryFn<typeof Button> = (args) => (
+	<Button {...args}>Button</Button>
 );
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const Primary = Template.bind({});
-Primary.args = {
-  color: 'primary',
+export const Default: StoryObj<typeof Button> = {
+	render,
 };
 
-export const Neutral = Template.bind({});
-Neutral.args = {
-  color: 'neutral',
+export const Primary: StoryObj<typeof Button> = {
+	render,
+	args: {
+		color: "primary",
+	},
 };
 
-export const Info = Template.bind({});
-Info.args = {
-  color: 'info',
+export const Neutral: StoryObj<typeof Button> = {
+	render,
+	args: {
+		color: "neutral",
+	},
 };
 
-export const Warning = Template.bind({});
-Warning.args = {
-  color: 'warning',
+export const Info: StoryObj<typeof Button> = {
+	render,
+	args: {
+		color: "info",
+	},
 };
 
-export const Error = Template.bind({});
-Error.args = {
-  color: 'error',
+export const Warning: StoryObj<typeof Button> = {
+	render,
+	args: {
+		color: "warning",
+	},
 };
 
-export const Success = Template.bind({});
-Success.args = {
-  color: 'success',
+export const Error: StoryObj<typeof Button> = {
+	render,
+	args: {
+		color: "error",
+	},
 };
 
-export const Loading = Template.bind({});
-Loading.args = {
-  isLoading: true,
+export const Success: StoryObj<typeof Button> = {
+	render,
+	args: {
+		color: "success",
+	},
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  isDisabled: true,
+export const Loading: StoryObj<typeof Button> = {
+	render,
+	args: {
+		isLoading: true,
+	},
+};
+
+export const Disabled: StoryObj<typeof Button> = {
+	render,
+	args: {
+		isDisabled: true,
+	},
 };

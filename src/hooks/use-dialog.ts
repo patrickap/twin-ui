@@ -1,27 +1,24 @@
-import { DialogProps } from '@/components';
-import { globalStore } from '@/stores';
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
+import type { DialogProps } from "~/components";
+import { useGlobalStore } from "~/stores";
 
 const useDialog = () => {
-  const dialogs = globalStore.useState((s) => s.dialogs);
+	const dialogs = useGlobalStore((s) => s.dialogs);
+	const setDialogs = useGlobalStore((s) => s.setDialogs);
 
-  const open = (dialog: DialogProps) => {
-    const id = dialog.id ?? uuidv4();
+	const open = (dialog: DialogProps) => {
+		const id = dialog.id ?? uuidv4();
 
-    globalStore.update((s) => {
-      s.dialogs = [...s.dialogs, { ...dialog, id }];
-    });
+		setDialogs([...dialogs, { ...dialog, id }]);
 
-    return id;
-  };
+		return id;
+	};
 
-  const close = (id: string) => {
-    globalStore.update((s) => {
-      s.dialogs = s.dialogs.filter((dialog) => dialog.id !== id);
-    });
-  };
+	const close = (id: string) => {
+		setDialogs(dialogs.filter((dialog) => dialog.id !== id));
+	};
 
-  return { dialogs, open, close };
+	return { dialogs, open, close };
 };
 
 export { useDialog };

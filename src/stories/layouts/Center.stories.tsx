@@ -1,14 +1,15 @@
-import { CenterLayout } from '@/layouts';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import { CenterLayout } from "~/layouts";
 
 export default {
-  title: 'Layouts/Center',
-  component: CenterLayout,
-} as ComponentMeta<typeof CenterLayout>;
+	title: "Layouts/Center",
+	component: CenterLayout,
+} satisfies Meta<typeof CenterLayout>;
 
-const Template: ComponentStory<typeof CenterLayout> = (args) => (
-  <CenterLayout {...args}>This is centered</CenterLayout>
+const render: StoryFn<typeof CenterLayout> = (args) => (
+	<CenterLayout {...args}>This is centered</CenterLayout>
 );
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: StoryObj<typeof CenterLayout> = {
+	render,
+};

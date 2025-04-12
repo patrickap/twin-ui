@@ -1,17 +1,18 @@
-import { CenterLayout } from '@/layouts';
-import { NotFoundPage } from '@/pages';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import { CenterLayout } from "~/layouts";
+import { NotFoundPage } from "~/pages";
 
 export default {
-  title: 'Pages/NotFoundPage',
-  component: NotFoundPage,
-} as ComponentMeta<typeof NotFoundPage>;
+	title: "Pages/NotFound",
+	component: NotFoundPage,
+} satisfies Meta<typeof NotFoundPage>;
 
-const Template: ComponentStory<typeof NotFoundPage> = (args) => (
-  <CenterLayout>
-    <NotFoundPage />
-  </CenterLayout>
+const render: StoryFn<typeof NotFoundPage> = (args) => (
+	<CenterLayout>
+		<NotFoundPage />
+	</CenterLayout>
 );
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: StoryObj<typeof NotFoundPage> = {
+	render,
+};
