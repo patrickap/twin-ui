@@ -1,16 +1,16 @@
-import { Button, Text, Title } from '@/components';
+import { Button, Text, Title } from "~/components";
 
 const ErrorPage = () => {
-  return (
-    <>
-      <Title order={1}>Error</Title>
-      <Text>An unknown error occurred</Text>
+	return (
+		<>
+			<Title order={1}>Error</Title>
+			<Text>An unknown error occurred</Text>
 
-      <div className='mt-4'>
-        <Button onClick={() => window.location.reload()}>Reload site</Button>
-      </div>
-    </>
-  );
+			<div className="mt-4">
+				<Button onClick={() => window.location.reload()}>Reload site</Button>
+			</div>
+		</>
+	);
 };
 
 export { ErrorPage };

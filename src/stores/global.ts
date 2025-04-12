@@ -1,12 +1,20 @@
-import { DialogProps, ToastProps } from '@/components';
-import { Store } from 'pullstate';
+import { create } from "zustand";
+import type { DialogProps, ToastProps } from "~/components";
 
 type GlobalState = {
-  toasts: ToastProps[];
-  dialogs: DialogProps[];
+	toasts: ToastProps[];
+	dialogs: DialogProps[];
+	setToasts: (toasts: ToastProps[]) => void;
+	setDialogs: (dialogs: DialogProps[]) => void;
 };
 
-const globalStore = new Store<GlobalState>({ toasts: [], dialogs: [] });
+const useGlobalStore = create<GlobalState>((set) => ({
+	toasts: [],
+	dialogs: [],
+	setToasts: (toasts: ToastProps[]) => set((state) => ({ ...state, toasts })),
+	setDialogs: (dialogs: DialogProps[]) =>
+		set((state) => ({ ...state, dialogs })),
+}));
 
-export { globalStore };
+export { useGlobalStore };
 export type { GlobalState };

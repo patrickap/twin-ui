@@ -1,17 +1,18 @@
-import { CenterLayout } from '@/layouts';
-import { ErrorPage } from '@/pages';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import { CenterLayout } from "~/layouts";
+import { ErrorPage } from "~/pages";
 
-export default {
-  title: 'Pages/Error',
-  component: ErrorPage,
-} as ComponentMeta<typeof ErrorPage>;
+export const meta: Meta<typeof ErrorPage> = {
+	title: "Pages/Error",
+	component: ErrorPage,
+};
 
-const Template: ComponentStory<typeof ErrorPage> = (args) => (
-  <CenterLayout>
-    <ErrorPage />
-  </CenterLayout>
+const render: StoryFn<typeof ErrorPage> = (args) => (
+	<CenterLayout>
+		<ErrorPage />
+	</CenterLayout>
 );
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: StoryObj<typeof ErrorPage> = {
+	render,
+};

@@ -1,17 +1,20 @@
-import { Spinner } from '@/components';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import { Spinner } from "~/components";
 
-export default {
-  title: 'Components/Spinner',
-  component: Spinner,
-} as ComponentMeta<typeof Spinner>;
+export const meta: Meta<typeof Spinner> = {
+	title: "Components/Spinner",
+	component: Spinner,
+};
 
-const Template: ComponentStory<typeof Spinner> = (args) => (
-  <Spinner {...args} />
-);
+const render: StoryFn<typeof Spinner> = (args) => <Spinner {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: StoryObj<typeof Spinner> = {
+	render,
+};
 
-export const Inverted = Template.bind({});
-Inverted.args = { theme: 'dark' };
+export const Inverted: StoryObj<typeof Spinner> = {
+	render,
+	args: {
+		theme: "dark",
+	},
+};

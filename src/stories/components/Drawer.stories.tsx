@@ -1,20 +1,29 @@
-import { Button, Drawer } from '@/components';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import { Button, Drawer } from "~/components";
 
-export default {
-  title: 'Components/Drawer',
-  component: Drawer,
-} as ComponentMeta<typeof Drawer>;
+export const meta: Meta<typeof Drawer> = {
+	title: "Components/Drawer",
+	component: Drawer,
+};
 
-const Template: ComponentStory<typeof Drawer> = (args) => (
-  <Drawer trigger={<Button>Open Drawer</Button>} {...args} />
+const render: StoryFn<typeof Drawer> = (args) => (
+	<Drawer trigger={<Button>Open Drawer</Button>} {...args} />
 );
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: StoryObj<typeof Drawer> = {
+	render,
+};
 
-export const Left = Template.bind({});
-Left.args = { position: 'left' };
+export const Left: StoryObj<typeof Drawer> = {
+	render,
+	args: {
+		position: "left",
+	},
+};
 
-export const Right = Template.bind({});
-Right.args = { position: 'right' };
+export const Right: StoryObj<typeof Drawer> = {
+	render,
+	args: {
+		position: "right",
+	},
+};

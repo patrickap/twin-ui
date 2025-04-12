@@ -1,13 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* fix ios tailwind 100vh */
-@supports (-webkit-touch-callout: none) {
-  .h-screen {
-    height: -webkit-fill-available;
-  }
-}
+@import "tailwindcss";
 
 @font-face {
   font-family: 'Inter';
@@ -17,6 +8,7 @@
   src: url('assets/fonts/Inter-Thin.woff2?v=3.19') format('woff2'),
     url('assets/fonts/Inter-Thin.woff?v=3.19') format('woff');
 }
+
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -34,6 +26,7 @@
   src: url('assets/fonts/Inter-ExtraLight.woff2?v=3.19') format('woff2'),
     url('assets/fonts/Inter-ExtraLight.woff?v=3.19') format('woff');
 }
+
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -51,6 +44,7 @@
   src: url('assets/fonts/Inter-Light.woff2?v=3.19') format('woff2'),
     url('assets/fonts/Inter-Light.woff?v=3.19') format('woff');
 }
+
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -68,6 +62,7 @@
   src: url('assets/fonts/Inter-Regular.woff2?v=3.19') format('woff2'),
     url('assets/fonts/Inter-Regular.woff?v=3.19') format('woff');
 }
+
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -85,6 +80,7 @@
   src: url('assets/fonts/Inter-Medium.woff2?v=3.19') format('woff2'),
     url('assets/fonts/Inter-Medium.woff?v=3.19') format('woff');
 }
+
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -102,6 +98,7 @@
   src: url('assets/fonts/Inter-SemiBold.woff2?v=3.19') format('woff2'),
     url('assets/fonts/Inter-SemiBold.woff?v=3.19') format('woff');
 }
+
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -119,6 +116,7 @@
   src: url('assets/fonts/Inter-Bold.woff2?v=3.19') format('woff2'),
     url('assets/fonts/Inter-Bold.woff?v=3.19') format('woff');
 }
+
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -136,6 +134,7 @@
   src: url('assets/fonts/Inter-ExtraBold.woff2?v=3.19') format('woff2'),
     url('assets/fonts/Inter-ExtraBold.woff?v=3.19') format('woff');
 }
+
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -153,6 +152,7 @@
   src: url('assets/fonts/Inter-Black.woff2?v=3.19') format('woff2'),
     url('assets/fonts/Inter-Black.woff?v=3.19') format('woff');
 }
+
 @font-face {
   font-family: 'Inter';
   font-style: italic;
