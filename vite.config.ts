@@ -1,4 +1,5 @@
 import tailwindcss from "@tailwindcss/vite";
+import react from "@vitejs/plugin-react";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
@@ -19,5 +20,5 @@ export default defineConfig({
 			"~": resolve(__dirname, "src"),
 		},
 	},
-	plugins: [tailwindcss(), dts({ exclude: ["**/*.test.ts"] })],
+	plugins: [react(), tailwindcss(), dts({ exclude: ["**/*.test.ts"] })],
 });
