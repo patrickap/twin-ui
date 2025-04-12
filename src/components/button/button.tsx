@@ -6,7 +6,7 @@ import {
 	type ReactNode,
 	forwardRef,
 } from "react";
-import { Spinner } from "~/components/spinner";
+import { Spinner } from "~/components";
 import { Color } from "~/constants";
 import type { ValueOf } from "~/types";
 

@@ -8,8 +8,7 @@ import {
 	forwardRef,
 	useId,
 } from "react";
-import { Label } from "~/components/label";
-import { Text } from "~/components/text";
+import { Label, Text } from "~/components";
 
 type InputProps = {
 	type?: InputHTMLAttributes<HTMLInputElement>["type"];
