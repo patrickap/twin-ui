@@ -58,6 +58,8 @@ npm install twin-ui
 npm install twin-ui@x.x.x
 ```
 
+## Customization
+
 This component library is built with Tailwind CSS, allowing you to easily override any styles through the dedicated directives like `@theme` in your `index.css` file for full customization.
 
 
