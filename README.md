@@ -18,35 +18,6 @@ Furthermore, it comes with pre-configured animations and offers pre-designed com
 <img width="500" alt="dialog-preview-1" src="docs/dialog-preview-1.png">
 </p>
 
-## Contents
-
-**Components**
-
-- Button
-- Checkbox
-- Dialog
-- Drawer
-- Dropdown
-- Input
-- Label
-- Link
-- Nav
-- Spinner
-- Text
-- Title
-- Toast
-- Tooltip
-
-**Layouts**
-
-- Center
-
-**Pages**
-
-- SignIn
-- NotFound
-- Error
-
 ## Installation
 
 To use `twin-ui`, install the package via npm.
@@ -56,44 +27,6 @@ npm install twin-ui
 
 # or install a specific version
 npm install twin-ui@x.x.x
-```
-
-## Customization
-
-This component library is built with Tailwind CSS and supports full customization through CSS variables. You can override theme values globally using either the Tailwind specific `@theme` directive or the CSS `:root` selector in your `index.css`.
-
-**Note**: [Theme variables](https://tailwindcss.com/docs/theme) aren't just CSS variables — they also instruct Tailwind to create new utility classes that you can use in your HTML.
-
-```css
-/* Using the @theme directive */
-@theme {
-  --color-primary-50: #eef2ff;
-  --color-primary-100: #e0e7ff;
-  --color-primary-200: #c7d2fe;
-  --color-primary-300: #a5b4fc;
-  --color-primary-400: #818cf8;
-  --color-primary-500: #6366f1;
-  --color-primary-600: #4f46e5;
-  --color-primary-700: #4338ca;
-  --color-primary-800: #3730a3;
-  --color-primary-900: #312e81;
-  --color-primary-950: #1e1b4b;
-}
-
-/* Or via the :root pseudo-class */
-:root {
-  --color-primary-50: #eef2ff;
-  --color-primary-100: #e0e7ff;
-  --color-primary-200: #c7d2fe;
-  --color-primary-300: #a5b4fc;
-  --color-primary-400: #818cf8;
-  --color-primary-500: #6366f1;
-  --color-primary-600: #4f46e5;
-  --color-primary-700: #4338ca;
-  --color-primary-800: #3730a3;
-  --color-primary-900: #312e81;
-  --color-primary-950: #1e1b4b;
-}
 ```
 
 ## Examples
@@ -145,4 +78,42 @@ const Component = () => (
     <div>Centered</div>
   </CenterLayout>
 );
+```
+
+## Customization
+
+This component library is built with Tailwind CSS and supports full customization through CSS variables. You can override theme values globally using either the Tailwind specific `@theme` directive or the CSS `:root` selector in your `index.css`.
+
+**Note**: [Theme variables](https://tailwindcss.com/docs/theme) aren't just CSS variables — they also instruct Tailwind to create new utility classes that you can use in your HTML.
+
+```css
+/* Using the @theme directive */
+@theme {
+  --color-primary-50: #eef2ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-200: #c7d2fe;
+  --color-primary-300: #a5b4fc;
+  --color-primary-400: #818cf8;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
+  --color-primary-800: #3730a3;
+  --color-primary-900: #312e81;
+  --color-primary-950: #1e1b4b;
+}
+
+/* Or via the :root pseudo-class */
+:root {
+  --color-primary-50: #eef2ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-200: #c7d2fe;
+  --color-primary-300: #a5b4fc;
+  --color-primary-400: #818cf8;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
+  --color-primary-800: #3730a3;
+  --color-primary-900: #312e81;
+  --color-primary-950: #1e1b4b;
+}
 ```
