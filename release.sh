@@ -41,4 +41,4 @@ function main() {
   git_publish
 }
 
-main "${@}"
+main "${@:-}"
