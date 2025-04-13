@@ -4,6 +4,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
+import { viteStaticCopy as copy } from "vite-plugin-static-copy";
 import packageJson from "./package.json";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -13,9 +14,16 @@ export default defineConfig({
 		lib: {
 			name: packageJson.name,
 			entry: resolve(__dirname, "src/index.ts"),
+			cssFileName: "index",
 		},
 		rollupOptions: {
 			external: [...Object.keys(packageJson.peerDependencies)],
+			output: {
+				globals: {
+					react: "React",
+					"react-dom": "ReactDOM",
+				},
+			},
 		},
 	},
 	resolve: {
@@ -23,5 +31,17 @@ export default defineConfig({
 			"~": resolve(__dirname, "src"),
 		},
 	},
-	plugins: [react(), tailwindcss(), dts({ exclude: ["**/*.test.ts"] })],
+	plugins: [
+		react(),
+		tailwindcss(),
+		dts({ exclude: ["**/*.test.ts"] }),
+		copy({
+			targets: [
+				{
+					src: "src/assets",
+					dest: ".",
+				},
+			],
+		}),
+	],
 });
