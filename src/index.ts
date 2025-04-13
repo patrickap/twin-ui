@@ -3,5 +3,4 @@ export * from "./constants";
 export * from "./hooks";
 export * from "./layouts";
 export * from "./pages";
-export * from "./providers";
 export * from "./types";
