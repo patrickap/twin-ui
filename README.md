@@ -60,12 +60,39 @@ npm install twin-ui@x.x.x
 
 ## Customization
 
-This component library is built with Tailwind CSS, allowing you to easily override any styles through the dedicated directives like `@theme` in your `index.css` file for full customization.
+This component library is built with Tailwind CSS and supports full customization through CSS variables. You can override theme values globally using either the `@theme` directive or the `:root` selector in your `index.css`.
 
+**Note**: The [theme variables](https://tailwindcss.com/docs/theme) aren't just CSS variables — they also instruct Tailwind to create new utility classes that you can use in your HTML.
 
 ```css
+/* Using the @theme directive */
 @theme {
-  /* custom styles */
+  --color-primary-50: #eef2ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-200: #c7d2fe;
+  --color-primary-300: #a5b4fc;
+  --color-primary-400: #818cf8;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
+  --color-primary-800: #3730a3;
+  --color-primary-900: #312e81;
+  --color-primary-950: #1e1b4b;
+}
+
+/* Or via the :root pseudo-class */
+:root {
+  --color-primary-50: #eef2ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-200: #c7d2fe;
+  --color-primary-300: #a5b4fc;
+  --color-primary-400: #818cf8;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
+  --color-primary-800: #3730a3;
+  --color-primary-900: #312e81;
+  --color-primary-950: #1e1b4b;
 }
 ```
 
