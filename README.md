@@ -60,9 +60,9 @@ npm install twin-ui@x.x.x
 
 ## Customization
 
-This component library is built with Tailwind CSS and supports full customization through CSS variables. You can override theme values globally using either the `@theme` directive or the `:root` selector in your `index.css`.
+This component library is built with Tailwind CSS and supports full customization through CSS variables. You can override theme values globally using either the Tailwind specific `@theme` directive or the CSS `:root` selector in your `index.css`.
 
-**Note**: The [theme variables](https://tailwindcss.com/docs/theme) aren't just CSS variables — they also instruct Tailwind to create new utility classes that you can use in your HTML.
+**Note**: [Theme variables](https://tailwindcss.com/docs/theme) aren't just CSS variables — they also instruct Tailwind to create new utility classes that you can use in your HTML.
 
 ```css
 /* Using the @theme directive */
