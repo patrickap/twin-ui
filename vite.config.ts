@@ -36,6 +36,7 @@ export default defineConfig({
 		react(),
 		tailwind(),
 		dts({ exclude: ["**/*.test.ts"] }),
+		css(),
 		copy({
 			targets: [
 				{
@@ -44,6 +45,5 @@ export default defineConfig({
 				},
 			],
 		}),
-		css(),
 	],
 });
