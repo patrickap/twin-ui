@@ -25,7 +25,7 @@
 }
 
 /*
-  The default border color has changed to in Tailwind CSS v4
+  The default border color has changed in Tailwind CSS v4
   so for compatibility reasons these styles are applied.
 */
 @layer base {

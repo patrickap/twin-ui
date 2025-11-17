@@ -22,11 +22,17 @@ Furthermore, it comes with pre-configured animations and offers pre-designed com
 
 To use `twin-ui`, install the package via npm.
 
-```shell
+```bash
 npm install twin-ui
 
 # or install a specific version
 npm install twin-ui@x.x.x
+```
+
+Import the styles in your `index.css`.
+
+```css
+@import "twin-ui";
 ```
 
 ## Examples
