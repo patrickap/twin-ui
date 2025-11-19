@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import {
 	type ButtonHTMLAttributes,
 	type ForwardedRef,
@@ -9,6 +8,7 @@ import {
 import { Spinner } from "~/components";
 import { Color } from "~/constants";
 import type { ValueOf } from "~/types";
+import { cn } from "~/utils";
 
 type ButtonProps = {
 	type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
@@ -39,7 +39,7 @@ const Button = forwardRef(
 				type={type}
 				disabled={isDisabled || isLoading}
 				onClick={onClick}
-				className={clsx(
+				className={cn(
 					"inline-flex w-full items-center justify-center rounded-lg border px-4 py-2 text-base font-medium shadow-xs focus:outline-hidden focus:ring-2 focus:ring-offset-2 sm:w-auto sm:text-sm",
 					color === Color.NEUTRAL &&
 						"border-slate-300 bg-white text-slate-700 hover:bg-slate-50 focus:ring-primary-500",
@@ -58,7 +58,7 @@ const Button = forwardRef(
 					isLoading && !isDisabled && "cursor-not-allowed!",
 				)}
 			>
-				<span className={clsx(isLoading && !isDisabled && "opacity-0")}>
+				<span className={cn(isLoading && !isDisabled && "opacity-0")}>
 					{children}
 				</span>
 				{isLoading && !isDisabled ? (
@@ -73,3 +73,4 @@ const Button = forwardRef(
 
 export { Button };
 export type { ButtonProps };
+

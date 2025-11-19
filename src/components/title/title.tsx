@@ -1,5 +1,5 @@
-import clsx from "clsx";
 import { type ForwardedRef, type ReactNode, forwardRef } from "react";
+import { cn } from "~/utils";
 
 type TitleProps = {
 	order?: 1 | 2 | 3 | 4 | 5 | 6;
@@ -16,7 +16,7 @@ const Title = forwardRef(
 			<p
 				{...props}
 				ref={ref}
-				className={clsx(
+				className={cn(
 					"tracking-tight text-slate-700",
 					order === 1 && "text-4xl font-bold",
 					order === 2 && "text-3xl font-bold",
@@ -35,3 +35,4 @@ const Title = forwardRef(
 
 export { Title };
 export type { TitleProps };
+

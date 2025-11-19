@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import {
 	type ChangeEventHandler,
 	type FocusEventHandler,
@@ -9,6 +8,7 @@ import {
 	useId,
 } from "react";
 import { Label, Text } from "~/components";
+import { cn } from "~/utils";
 
 type InputProps = {
 	type?: InputHTMLAttributes<HTMLInputElement>["type"];
@@ -64,7 +64,7 @@ const Input = forwardRef(
 						disabled={isDisabled}
 						onChange={onChange}
 						onBlur={onBlur}
-						className={clsx(
+						className={cn(
 							"block w-full rounded-lg border border-slate-300 shadow-xs focus:border-primary-500 focus:outline-hidden focus:ring-primary-500 sm:text-sm",
 							icon?.left && "pl-9",
 							icon?.right && "pr-9",
@@ -93,3 +93,4 @@ const Input = forwardRef(
 
 export { Input };
 export type { InputProps };
+

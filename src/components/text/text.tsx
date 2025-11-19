@@ -1,7 +1,7 @@
-import clsx from "clsx";
 import { type ForwardedRef, type ReactNode, forwardRef } from "react";
 import { Color } from "~/constants";
 import type { ValueOf } from "~/types";
+import { cn } from "~/utils";
 
 type TextProps = {
 	color?: ValueOf<typeof Color>;
@@ -17,7 +17,7 @@ const Text = forwardRef(
 			<p
 				{...props}
 				ref={ref}
-				className={clsx(
+				className={cn(
 					"text-sm",
 					color === Color.NEUTRAL && "text-slate-600",
 					color === Color.PRIMARY && "text-primary-500",
@@ -35,3 +35,4 @@ const Text = forwardRef(
 
 export { Text };
 export type { TextProps };
+

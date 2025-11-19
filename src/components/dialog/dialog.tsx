@@ -1,11 +1,11 @@
 import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
-import clsx from "clsx";
 import { motion } from "motion/react";
 import { AlertDialog as dialog } from "radix-ui";
 import { Button, Text, Title } from "~/components";
 import { Color } from "~/constants";
 import { useDialog } from "~/hooks";
 import type { ValueOf } from "~/types";
+import { cn } from "~/utils";
 
 type DialogProps = {
 	id?: string;
@@ -57,7 +57,7 @@ const Dialog = ({
 							<div className="max-h-96 overflow-y-scroll rounded-t-lg bg-white p-6">
 								<div className="flex flex-col items-center gap-4 sm:flex-row sm:items-start">
 									<div
-										className={clsx(
+										className={cn(
 											"flex h-10 w-10 shrink-0 items-center justify-center rounded-full",
 											color === Color.NEUTRAL && "bg-slate-100 text-slate-500",
 											color === Color.PRIMARY &&
@@ -125,3 +125,4 @@ const Dialog = ({
 
 export { Dialog };
 export type { DialogProps };
+

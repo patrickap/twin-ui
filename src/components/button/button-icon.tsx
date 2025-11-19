@@ -1,10 +1,10 @@
-import clsx from "clsx";
 import {
 	type ForwardedRef,
 	type MouseEventHandler,
 	type ReactNode,
 	forwardRef,
 } from "react";
+import { cn } from "~/utils";
 
 type ButtonIconProps = {
 	size?: 1 | 2 | 3;
@@ -22,7 +22,7 @@ const ButtonIcon = forwardRef(
 				{...props}
 				ref={ref}
 				onClick={onClick}
-				className={clsx(
+				className={cn(
 					"flex items-center justify-center rounded-lg border-transparent bg-transparent hover:border-slate-100 hover:bg-slate-100 focus:outline-hidden focus:ring-2 focus:ring-primary-500 focus:ring-offset-2",
 					size === 1 && "p-1",
 					size === 2 && "p-2",
@@ -37,3 +37,4 @@ const ButtonIcon = forwardRef(
 
 export { ButtonIcon };
 export type { ButtonIconProps };
+

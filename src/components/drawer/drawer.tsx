@@ -1,11 +1,11 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import clsx from "clsx";
 import { AnimatePresence, motion } from "motion/react";
 import { Dialog as dialog } from "radix-ui";
 import { type ReactNode, useState } from "react";
 import { ButtonIcon } from "~/components";
 import { Direction } from "~/constants";
 import type { ValueOf } from "~/types";
+import { cn } from "~/utils";
 
 type DrawerProps = {
 	position?: ValueOf<Pick<typeof Direction, "LEFT" | "RIGHT">>;
@@ -34,7 +34,7 @@ const Drawer = ({ position = "left", trigger, children }: DrawerProps) => {
 						</motion.div>
 						<dialog.Content
 							asChild
-							className={clsx(
+							className={cn(
 								"fixed top-0 z-10 flex h-full w-full max-w-xs flex-col overflow-hidden bg-white shadow-lg",
 								position === Direction.RIGHT ? "right-0" : "left-0",
 							)}
@@ -70,3 +70,4 @@ const Drawer = ({ position = "left", trigger, children }: DrawerProps) => {
 
 export { Drawer };
 export type { DrawerProps };
+

@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import {
 	type ChangeEventHandler,
 	type FocusEventHandler,
@@ -6,6 +5,7 @@ import {
 	forwardRef,
 	useId,
 } from "react";
+import { cn } from "~/utils";
 import { Label } from "..";
 
 type CheckboxProps = {
@@ -43,7 +43,7 @@ const Checkbox = forwardRef(
 					disabled={isDisabled}
 					onChange={onChange}
 					onBlur={onBlur}
-					className={clsx(
+					className={cn(
 						"h-4 w-4 cursor-pointer rounded-sm border border-slate-300 text-primary-500 shadow-xs focus:outline-hidden focus:ring-primary-500",
 						isDisabled && "cursor-not-allowed! border-slate-200! bg-slate-100!",
 						isError &&
@@ -59,3 +59,4 @@ const Checkbox = forwardRef(
 
 export { Checkbox };
 export type { CheckboxProps };
+

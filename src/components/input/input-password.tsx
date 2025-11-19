@@ -1,6 +1,6 @@
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
-import clsx from "clsx";
 import { type ForwardedRef, forwardRef, useState } from "react";
+import { cn } from "~/utils";
 import { Input, type InputProps } from "..";
 
 type InputPasswordProps = InputProps;
@@ -20,7 +20,7 @@ const InputPassword = forwardRef(
 					right: (
 						<span
 							onClick={toggleVisibility}
-							className={clsx(
+							className={cn(
 								props.isDisabled && "cursor-not-allowed",
 								!props.isDisabled && "cursor-pointer",
 							)}
@@ -36,3 +36,4 @@ const InputPassword = forwardRef(
 
 export { InputPassword };
 export type { InputPasswordProps };
+

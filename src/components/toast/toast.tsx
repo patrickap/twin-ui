@@ -5,7 +5,6 @@ import {
 	XCircleIcon,
 } from "@heroicons/react/20/solid";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import clsx from "clsx";
 import { motion } from "motion/react";
 import { Toast as toast } from "radix-ui";
 import { useEffect } from "react";
@@ -13,6 +12,7 @@ import { ButtonIcon, Spinner, Text, Title } from "~/components";
 import { Color } from "~/constants";
 import { useToast } from "~/hooks";
 import type { ValueOf } from "~/types";
+import { cn } from "~/utils";
 
 type ToastProps = {
 	id?: string;
@@ -63,7 +63,7 @@ const Toast = ({
 				className="relative flex max-w-sm gap-4 rounded-lg bg-white p-4 text-sm shadow-lg outline-hidden"
 			>
 				<div
-					className={clsx(
+					className={cn(
 						"flex h-8 w-8 shrink-0 items-center justify-center rounded-full",
 						color === Color.NEUTRAL && "bg-slate-100 text-slate-500",
 						color === Color.PRIMARY && "bg-primary-100 text-primary-500",
@@ -109,3 +109,4 @@ const Toast = ({
 
 export { Toast };
 export type { ToastProps };
+

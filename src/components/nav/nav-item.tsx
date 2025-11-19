@@ -1,5 +1,5 @@
-import clsx from "clsx";
 import type { AnchorHTMLAttributes, MouseEventHandler, ReactNode } from "react";
+import { cn } from "~/utils";
 
 type NavItemProps = {
 	target?: AnchorHTMLAttributes<HTMLAnchorElement>["target"];
@@ -23,7 +23,7 @@ const NavItem = ({
 			target={target}
 			href={href}
 			onClick={onClick}
-			className={clsx(
+			className={cn(
 				"flex cursor-pointer items-center gap-2.5 rounded-lg p-2.5 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2",
 				isActive && "bg-slate-100!",
 				!children && "inline-flex! justify-center!",
@@ -45,3 +45,4 @@ const NavItem = ({
 
 export { NavItem };
 export type { NavItemProps };
+
