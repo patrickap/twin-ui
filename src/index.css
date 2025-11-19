@@ -24,20 +24,6 @@
   --color-primary-950: #1e1b4b;
 }
 
-/*
-  The default border color has changed in Tailwind CSS v4
-  so for compatibility reasons these styles are applied.
-*/
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
-}
-
 @font-face {
   font-family: 'Inter';
   font-style: normal;

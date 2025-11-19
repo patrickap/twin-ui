@@ -81,7 +81,7 @@ const Dialog = ({
 									</div>
 								</div>
 							</div>
-							<div className="flex flex-col-reverse justify-end gap-3 border border-t-slate-100 bg-slate-50 py-4 px-6 empty:hidden sm:flex-row">
+							<div className="flex flex-col-reverse justify-end gap-3 border border-slate-100 bg-slate-50 py-4 px-6 empty:hidden sm:flex-row">
 								{onCancel ? (
 									<dialog.Cancel asChild>
 										<Button
