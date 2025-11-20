@@ -9,6 +9,7 @@ import packageJson from "./package.json";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
+	publicDir: "src/assets",
 	plugins: [
 		react(),
 		tailwind(),
